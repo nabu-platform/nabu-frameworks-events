@@ -1,0 +1,2 @@
+An event can be any object with any data.
+We need to first identify the type of object, then check if we have any mapping rules to a standardized format.

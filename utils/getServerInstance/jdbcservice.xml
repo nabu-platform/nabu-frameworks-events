@@ -1,0 +1,7 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.microservices.event.model.serverInstance</outputDefinition>
+	<sql>select *
+from ~service_instances si
+where (:name is null or si.name = :name)
+	and (:serverGroupId is null or si.server_group_id = :serverGroupId)</sql>
+</jdbcService>

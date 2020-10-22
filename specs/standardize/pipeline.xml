@@ -1,0 +1,8 @@
+<structure name="pipeline">
+    <structure name="input">
+        <structure definition="java.lang.Object" name="event"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.microservices.event.specs.standardized" name="standardized" restrict="id, additional"/>
+    </structure>
+</structure>

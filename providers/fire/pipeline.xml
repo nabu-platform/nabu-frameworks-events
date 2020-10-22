@@ -1,0 +1,13 @@
+<structure interface="be.nabu.eai.server.api.EventHandler.handle" name="pipeline">
+    <structure name="input"/>
+    <structure name="output">
+        <structure collectionName="events" definition="nabu.microservices.event.model.event" name="event"/>
+    </structure>
+    <structure collectionName="events" definition="nabu.microservices.event.model.event" name="definedEvent"/>
+    <field minOccurs="0" name="serverName" type="java.lang.String"/>
+    <field minOccurs="0" name="serverGroup" type="java.lang.String"/>
+    <field minOccurs="0" name="now" type="java.util.Date"/>
+    <structure collectionName="events" definition="nabu.microservices.event.model.event" maxOccurs="unbounded" minOccurs="0" name="definedEvents"/>
+    <field minOccurs="0" name="eventServerGroup" type="java.lang.String"/>
+    <field minOccurs="0" name="eventServerName" type="java.lang.String"/>
+</structure>

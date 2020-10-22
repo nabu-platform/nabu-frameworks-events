@@ -1,0 +1,54 @@
+<structure collectionName="events" name="event">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field comment="The server instance that reported this" foreignKey="nabu.microservices.event.model.serverInstance:id" name="serverInstanceId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field comment="The host name of the server" minOccurs="0" name="serverHost" type="java.lang.String"/>
+    <field comment="The artifact that triggered the event (if any)" minOccurs="0" name="artifactId" type="java.lang.String"/>
+    <field comment="A local id of the event" minOccurs="0" name="localId" type="java.lang.String"/>
+    <field comment="The event name, as decided by the originator" minOccurs="0" name="eventName" type="java.lang.String"/>
+    <field comment="The event category as decided by the originator" minOccurs="0" name="eventCategory" type="java.lang.String"/>
+    <field minOccurs="0" name="eventCount" type="java.lang.Integer"/>
+    <field minOccurs="0" name="severity" type="java.lang.String"/>
+    <field identifiable="true" minOccurs="0" name="alias" type="java.lang.String"/>
+    <field minOccurs="0" name="realm" type="java.lang.String"/>
+    <field name="created" timezone="UTC" type="java.util.Date"/>
+    <field minOccurs="0" name="started" timezone="UTC" type="java.util.Date"/>
+    <field minOccurs="0" name="stopped" timezone="UTC" type="java.util.Date"/>
+    <field minOccurs="0" name="duration" type="java.lang.Long"/>
+    <field minOccurs="0" name="timezone" type="java.lang.String"/>
+    <field minOccurs="0" name="code" type="java.lang.String"/>
+    <field comment="The message should not contain variables, it is a description of the error type" minOccurs="0" name="message" type="java.lang.String"/>
+    <field minOccurs="0" name="stacktrace" type="java.lang.String"/>
+    <field comment="The context in which this occurred (e.g. service stack)" minOccurs="0" name="context" type="java.lang.String"/>
+    <field minOccurs="0" name="action" type="java.lang.String"/>
+    <field comment="An external id for this event" minOccurs="0" name="externalId" type="java.lang.String"/>
+    <field comment="A further clarification of the message, it can contain as many variables as are relevant to understand the problem" identifiable="true" minOccurs="0" name="reason" type="java.lang.String"/>
+    <field comment="Correlate an event to other events" minOccurs="0" name="correlationId" type="java.lang.String"/>
+    <field comment="The session id (especially for web contexts)" minOccurs="0" name="sessionId" type="java.lang.String"/>
+    <field minOccurs="0" name="deviceId" type="java.lang.String"/>
+    <field comment="Each event can have a unique id, this can be communicated to other parties" minOccurs="0" name="eventId" type="java.lang.String"/>
+    <field minOccurs="0" name="sourcePort" type="java.lang.Integer"/>
+    <field identifiable="true" minOccurs="0" name="sourceHost" type="java.lang.String"/>
+    <field identifiable="true" minOccurs="0" name="sourceIp" type="java.lang.String"/>
+    <field minOccurs="0" name="destinationHost" type="java.lang.String"/>
+    <field minOccurs="0" name="destinationIp" type="java.lang.String"/>
+    <field minOccurs="0" name="destinationPort" type="java.lang.Integer"/>
+    <field minOccurs="0" name="applicationProtocol" type="java.lang.String"/>
+    <field minOccurs="0" name="transportProtocol" type="java.lang.String"/>
+    <field minOccurs="0" name="networkProtocol" type="java.lang.String"/>
+    <field minOccurs="0" name="sizeIn" type="java.lang.Long"/>
+    <field minOccurs="0" name="sizeOut" type="java.lang.Long"/>
+    <field minOccurs="0" name="method" type="java.lang.String"/>
+    <field minOccurs="0" name="requestUri" type="java.net.URI"/>
+    <field minOccurs="0" name="userAgent" type="java.lang.String"/>
+    <field minOccurs="0" name="language" type="java.lang.String"/>
+    <field minOccurs="0" name="bot" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="responseCode" type="java.lang.Integer"/>
+    <field comment="Whether or not this event has been anonimized" name="anonymized" type="java.lang.Boolean"/>
+    <field comment="When the event was last checked for classification based on rules" minOccurs="0" name="classified" timezone="UTC" type="java.util.Date"/>
+    <field comment="When the event was last notified" minOccurs="0" name="notified" timezone="UTC" type="java.util.Date"/>
+    <field comment="The classification that was assigned to this event by retroactive rule evaluation" minOccurs="0" name="classification" type="java.lang.String"/>
+    <field comment="The id of the rule that triggered this classification" minOccurs="0" name="classificationRuleId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field comment="This contains any additional information in the event that was not captured in one of the above fields, marshalled as JSON" identifiable="true" minOccurs="0" name="additional" type="java.lang.String"/>
+    <field comment="Correlate multiple events within for example a single REST call." identifiable="true" minOccurs="0" name="contextId" type="java.lang.String"/>
+    <field comment="The origin of the event (e.g. frontend, backend, service runtime vs security...)" identifiable="true" minOccurs="0" name="origin" type="java.lang.String"/>
+</structure>

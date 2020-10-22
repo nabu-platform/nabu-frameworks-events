@@ -1,0 +1,5 @@
+<structure interface="nabu.microservices.event.specs.standardize" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure definition="nabu.microservices.event.specs.standardized" name="empty" restrict="id, additional"/>
+</structure>

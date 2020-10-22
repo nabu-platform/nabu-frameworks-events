@@ -1,0 +1,11 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <structure collectionName="events" definition="nabu.microservices.event.model.event" name="event"/>
+        <structure collectionName="eventRules" definition="nabu.microservices.event.model.eventRule" maxOccurs="unbounded" minOccurs="0" name="rules"/>
+    </structure>
+    <structure name="output">
+        <structure collectionName="eventRules" definition="nabu.microservices.event.model.eventRule" minOccurs="0" name="rule"/>
+    </structure>
+    <field name="value" type="java.lang.Boolean"/>
+</structure>

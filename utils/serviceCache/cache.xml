@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cache>
+    <cacheProvider>nabu.microservices.event.utils.clusteredCache</cacheProvider>
+    <service>nabu.microservices.event.services.getServerInstance</service>
+</cache>

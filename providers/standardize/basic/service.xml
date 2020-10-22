@@ -1,0 +1,193 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="c28e239c-3708-4d57-9a33-c1f3e7f46f5f">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Create two instances, one to map to, one to clear"
+			disabled="false"
+			id="a729a6d2-44a5-46e5-a950-fee8e0b696bd">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="eba26e43-7ea2-4ead-85bf-138687c193d0"
+				serviceId="nabu.utils.reflection.Type.newInstance"
+				resultName="result0c7435acca1642a59183841468e65d9e"
+				temporaryMapping="true"
+				x="29"
+				y="57"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="065d30a6-e168-4065-90d7-763ef453cfbc"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>nabu.microservices.event.specs.standardized</from>
+				<to>typeId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="35d334c8-5793-489c-8a5b-e6599acd0954"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result0c7435acca1642a59183841468e65d9e/typeInstance</from>
+			<to>output/standardized</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="dc235323-46fb-4bb1-b7b6-5511365c0aae"
+				serviceId="nabu.utils.reflection.Type.newInstance"
+				resultName="result89f591c545a849c08a2d4b77ef5f972e"
+				temporaryMapping="true"
+				x="63"
+				y="135"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9753cbe6-9e74-45a7-93f3-833dd00af53b"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>nabu.microservices.event.specs.standardized</from>
+				<to>typeId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="76280c1d-87bb-4341-9d3b-552658c404c1"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result89f591c545a849c08a2d4b77ef5f972e/typeInstance</from>
+			<to>empty</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Map into the output"
+			disabled="false"
+			id="d75f89fe-1c1b-461d-b740-dee220559822">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="dbbe3578-1e5f-458b-8641-8a1b5e74e84f"
+				serviceId="nabu.utils.Object.mapByKey"
+				resultName="result3086436bf1714c72b4c06c10eb83f0dc"
+				temporaryMapping="true"
+				x="18"
+				y="38"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c1f45746-a3e5-46d4-b773-58ab14333b15"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event</from>
+				<to>from</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ae9c22ac-602e-4d22-8fd8-4374c27dfc72"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>output/standardized</from>
+				<to>into</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Clear out fields with the same name"
+			disabled="false"
+			id="473c2ea4-4b64-4bc7-b9d5-603dd57ee3b2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="c4baea01-e6b0-4ff4-a13c-ae2920133a55"
+				serviceId="nabu.utils.Object.mapByKey"
+				resultName="result6ad9649c30a14e6280515c841674e50b"
+				temporaryMapping="true"
+				x="41"
+				y="68"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9b00b6cc-6613-42ba-ad0c-d3ee0c841adb"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>empty</from>
+				<to>from</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2b19a440-c908-472e-a22c-1b4247d43e4f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event</from>
+				<to>into</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2a1282c7-ff0f-47c0-8b04-ee2ab3b08025"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>includeNull</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Marshal the remainder into additional"
+			disabled="false"
+			id="ea6ac957-d685-4d3c-a57e-226159472573">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="0bd73940-d34b-437b-824a-85a626bc75d6"
+				serviceId="nabu.data.json.Services.marshal"
+				resultName="result51074a9b9cad4277a48df22270e4278b"
+				temporaryMapping="true"
+				x="53"
+				y="137"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="db1953a0-5ef5-48c0-9800-f32b38069c6b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event</from>
+				<to>data</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="c32db877-ee22-4301-8d11-e3e76651bc04"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result51074a9b9cad4277a48df22270e4278b/marshalled</from>
+			<to>output/standardized/additional</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Drop empty"
+			disabled="false"
+			id="b5012fd0-e2be-4d43-9174-fcd328860312"
+			label="output/standardized/additional ~ &quot;(?s)^\{[\s]*\}$&quot;">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Drop"
+				disabled="false"
+				id="07bbd7fd-59a9-4d6b-bbce-97638c96650b"
+				path="output/standardized/additional" xsi:nil="true"/>
+	</steps>
+</sequence>

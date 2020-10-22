@@ -1,0 +1,7 @@
+<structure collectionName="eventNotifications" name="eventNotification">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field name="created" timezone="UTC" type="java.util.Date"/>
+    <field name="modified" timezone="UTC" type="java.util.Date"/>
+    <field comment="The service implementation based on spec" name="service" type="java.lang.String"/>
+    <field comment="How often you want to notify people (always if empty)" minOccurs="0" name="notificationInterval" type="be.nabu.libs.types.base.Duration"/>
+</structure>

@@ -1,0 +1,6 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.microservices.event.model.event</outputDefinition>
+	<sql>select *
+from ~events e
+where classified is null</sql>
+</jdbcService>
