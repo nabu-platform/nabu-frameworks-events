@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataModel>
+    <entries>
+        <type>nabu.frameworks.event.database.serverGroup</type>
+        <x>49</x>
+        <y>74</y>
+    </entries>
+    <entries>
+        <type>nabu.frameworks.event.database.serverInstance</type>
+        <x>113</x>
+        <y>198</y>
+    </entries>
+    <entries>
+        <type>nabu.frameworks.event.database.event</type>
+        <x>66</x>
+        <y>388</y>
+    </entries>
+    <entries>
+        <type>nabu.frameworks.event.database.eventRule</type>
+        <x>560</x>
+        <y>536</y>
+    </entries>
+    <entries>
+        <type>nabu.frameworks.event.database.eventNotification</type>
+        <x>879</x>
+        <y>229</y>
+    </entries>
+    <entries>
+        <type>nabu.frameworks.event.database.eventNotificationSubscriber</type>
+        <x>1427</x>
+        <y>231</y>
+    </entries>
+    <entries>
+        <type>nabu.frameworks.event.database.eventNotificationRule</type>
+        <x>679</x>
+        <y>399</y>
+    </entries>
+</dataModel>

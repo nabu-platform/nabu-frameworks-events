@@ -1,4 +1,4 @@
-<structure name="standardized" restrict="id, classified, classification, classificationRuleId, serverInstanceId" superType="nabu.microservices.event.model.event">
+<structure name="standardized" restrict="id, classified, classification, classificationRuleId, serverInstanceId" superType="nabu.frameworks.event.database.event">
     <field minOccurs="0" name="serverName" type="java.lang.String"/>
     <field minOccurs="0" name="serverGroup" type="java.lang.String"/>
 </structure>

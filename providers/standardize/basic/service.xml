@@ -22,7 +22,7 @@
 					mask="false"
 					optional="false"
 					fixedValue="true">
-				<from>nabu.microservices.event.specs.standardized</from>
+				<from>nabu.frameworks.event.specs.standardized</from>
 				<to>typeId</to>
 			</steps>
 		</steps>
@@ -52,7 +52,7 @@
 					mask="false"
 					optional="false"
 					fixedValue="true">
-				<from>nabu.microservices.event.specs.standardized</from>
+				<from>nabu.frameworks.event.specs.standardized</from>
 				<to>typeId</to>
 			</steps>
 		</steps>

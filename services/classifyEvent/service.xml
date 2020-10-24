@@ -153,7 +153,7 @@ result = " + rule/rule</from>
 				optional="false"
 				fixedValue="false">
 			<from>output/rule/id</from>
-			<to>input/event/classificationRuleId</to>
+			<to>input/event/eventRuleId</to>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

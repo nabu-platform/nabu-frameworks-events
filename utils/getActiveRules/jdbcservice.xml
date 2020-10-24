@@ -1,5 +1,5 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<outputDefinition>nabu.microservices.event.model.eventRule</outputDefinition>
+	<outputDefinition>nabu.frameworks.event.database.eventRule</outputDefinition>
 	<sql>select *
 from ~event_rules er
 where er.active = true</sql>

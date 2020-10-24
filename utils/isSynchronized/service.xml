@@ -59,8 +59,8 @@
 					serviceId="nabu.protocols.jdbc.pool.Services.listCollectionTypes"
 					resultName="resulte2c32bc1659c41cb9e2f038e6213664b"
 					temporaryMapping="true"
-					x="255"
-					y="46"
+					x="91"
+					y="24"
 					invocationOrder="0"
 					asynchronous="false"
 					recache="false">
@@ -70,7 +70,7 @@
 						mask="false"
 						optional="false"
 						fixedValue="true">
-					<from>nabu.microservices.event.model</from>
+					<from>nabu.frameworks.event.database</from>
 					<to>entryId</to>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"

@@ -1,5 +1,5 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<outputDefinition>nabu.microservices.event.model.serverGroup</outputDefinition>
+	<outputDefinition>nabu.frameworks.event.database.serverGroup</outputDefinition>
 	<sql>select *
 from ~server_groups sg
 where (:name is null or sg.name = :name)</sql>

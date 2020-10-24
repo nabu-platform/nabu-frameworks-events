@@ -2,9 +2,9 @@
     <structure name="input"/>
     <structure name="output"/>
     <field name="locked" type="java.lang.Boolean"/>
-    <structure collectionName="events" definition="nabu.microservices.event.model.event" maxOccurs="unbounded" minOccurs="0" name="events"/>
+    <structure collectionName="events" definition="nabu.frameworks.event.database.event" maxOccurs="unbounded" minOccurs="0" name="events"/>
     <field minOccurs="0" name="totalRowCount" type="java.lang.Long"/>
-    <structure collectionName="eventRules" definition="nabu.microservices.event.model.eventRule" maxOccurs="unbounded" minOccurs="0" name="rules"/>
+    <structure collectionName="eventRules" definition="nabu.frameworks.event.database.eventRule" maxOccurs="unbounded" minOccurs="0" name="rules"/>
     <field name="synchronized" type="java.lang.Boolean"/>
     <field minOccurs="0" name="jdbcId" type="java.lang.String"/>
 </structure>
