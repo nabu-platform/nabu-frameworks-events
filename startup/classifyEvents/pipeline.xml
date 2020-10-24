@@ -5,4 +5,6 @@
     <structure collectionName="events" definition="nabu.microservices.event.model.event" maxOccurs="unbounded" minOccurs="0" name="events"/>
     <field minOccurs="0" name="totalRowCount" type="java.lang.Long"/>
     <structure collectionName="eventRules" definition="nabu.microservices.event.model.eventRule" maxOccurs="unbounded" minOccurs="0" name="rules"/>
+    <field name="synchronized" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="jdbcId" type="java.lang.String"/>
 </structure>

@@ -1,4 +1,4 @@
-<structure collectionName="events" name="event">
+<structure collectionName="serverInstanceEvents" name="event">
     <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
     <field comment="The server instance that reported this" foreignKey="nabu.microservices.event.model.serverInstance:id" name="serverInstanceId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
     <field comment="The host name of the server" minOccurs="0" name="serverHost" type="java.lang.String"/>
@@ -47,8 +47,10 @@
     <field comment="When the event was last checked for classification based on rules" minOccurs="0" name="classified" timezone="UTC" type="java.util.Date"/>
     <field comment="When the event was last notified" minOccurs="0" name="notified" timezone="UTC" type="java.util.Date"/>
     <field comment="The classification that was assigned to this event by retroactive rule evaluation" minOccurs="0" name="classification" type="java.lang.String"/>
-    <field comment="The id of the rule that triggered this classification" minOccurs="0" name="classificationRuleId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field comment="The id of the rule that triggered this classification" foreignKey="nabu.microservices.event.model.eventRule:id" minOccurs="0" name="classificationRuleId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
     <field comment="This contains any additional information in the event that was not captured in one of the above fields, marshalled as JSON" identifiable="true" minOccurs="0" name="additional" type="java.lang.String"/>
     <field comment="Correlate multiple events within for example a single REST call." identifiable="true" minOccurs="0" name="contextId" type="java.lang.String"/>
     <field comment="The origin of the event (e.g. frontend, backend, service runtime vs security...)" identifiable="true" minOccurs="0" name="origin" type="java.lang.String"/>
+    <field minOccurs="0" name="fileUri" type="java.net.URI"/>
+    <field minOccurs="0" name="fileSize" type="java.lang.Long"/>
 </structure>

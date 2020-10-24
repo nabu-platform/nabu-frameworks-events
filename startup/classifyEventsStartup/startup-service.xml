@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<startupService>
+    <service>nabu.microservices.event.startup.classifyEvents</service>
+    <asynchronous>true</asynchronous>
+    <runPostDeploy>false</runPostDeploy>
+    <properties/>
+</startupService>

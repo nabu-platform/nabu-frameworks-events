@@ -10,3 +10,8 @@ You configure the nabu.microservices.event.providers.fire service as the event h
 It can then push to a local database _or_ a cloud endpoint.
 
 The fire will standardize any event into the common format and annotate further where necessary.
+
+# TODO
+
+Limit selects in time (like only the last week or so)
+-> for partitioning

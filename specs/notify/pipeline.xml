@@ -1,0 +1,8 @@
+<structure name="pipeline">
+    <structure name="input">
+        <structure collectionName="events" definition="nabu.microservices.event.model.event" name="event"/>
+        <structure collectionName="eventNotifications" definition="nabu.microservices.event.model.eventNotification" name="notification"/>
+        <structure definition="nabu.microservices.event.model.eventNotificationSubscriber" maxOccurs="unbounded" minOccurs="0" name="subscribers"/>
+    </structure>
+    <structure name="output"/>
+</structure>

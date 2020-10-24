@@ -1,0 +1,11 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="synchronize" type="java.lang.Boolean"/>
+    </structure>
+    <structure name="output">
+        <field name="synchronized" type="java.lang.Boolean"/>
+        <structure definition="nabu.protocols.jdbc.pool.types.TableChange" maxOccurs="unbounded" minOccurs="0" name="changes"/>
+        <field minOccurs="0" name="jdbcId" type="java.lang.String"/>
+    </structure>
+    <field name="amountOfChanges" type="java.lang.Integer"/>
+</structure>
