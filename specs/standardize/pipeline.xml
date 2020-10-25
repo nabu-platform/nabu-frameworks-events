@@ -3,6 +3,6 @@
         <structure definition="java.lang.Object" name="event"/>
     </structure>
     <structure name="output">
-        <structure definition="nabu.frameworks.event.specs.standardized" name="standardized" restrict="id, additional"/>
+        <structure definition="nabu.frameworks.events.specs.standardized" name="standardized" restrict="id, additional"/>
     </structure>
 </structure>

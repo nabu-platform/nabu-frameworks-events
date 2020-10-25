@@ -1,5 +1,5 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<outputDefinition>nabu.frameworks.event.database.serverInstance</outputDefinition>
+	<outputDefinition>nabu.frameworks.events.database.serverInstance</outputDefinition>
 	<sql>select *
 from ~service_instances si
 where (:name is null or si.name = :name)

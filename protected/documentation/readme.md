@@ -6,7 +6,7 @@ We want to start pushing everything via events:
 - performance tracking: use the same algorithm as performance tracker to upgrade service invoke events from debug to like warning
 
 
-You configure the nabu.microservices.event.providers.fire service as the event handler for this server.
+You configure the nabu.frameworks.events.providers.fire service as the event handler for this server.
 It can then push to a local database _or_ a cloud endpoint.
 
 The fire will standardize any event into the common format and annotate further where necessary.

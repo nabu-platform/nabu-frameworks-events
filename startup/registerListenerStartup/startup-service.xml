@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <startupService>
-    <service>nabu.frameworks.event.startup.registerListener</service>
+    <service>nabu.frameworks.events.startup.registerListener</service>
     <asynchronous>false</asynchronous>
     <runPostDeploy>false</runPostDeploy>
     <properties/>

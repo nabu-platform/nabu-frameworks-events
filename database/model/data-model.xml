@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <dataModel>
     <entries>
-        <type>nabu.frameworks.event.database.serverGroup</type>
+        <type>nabu.frameworks.events.database.serverGroup</type>
         <x>176</x>
         <y>58</y>
     </entries>
     <entries>
-        <type>nabu.frameworks.event.database.serverInstance</type>
+        <type>nabu.frameworks.events.database.serverInstance</type>
         <x>315</x>
         <y>146</y>
     </entries>
     <entries>
-        <type>nabu.frameworks.event.database.event</type>
+        <type>nabu.frameworks.events.database.event</type>
         <x>215</x>
         <y>331</y>
     </entries>
     <entries>
-        <type>nabu.frameworks.event.database.eventRule</type>
+        <type>nabu.frameworks.events.database.eventRule</type>
         <x>560</x>
         <y>536</y>
     </entries>
     <entries>
-        <type>nabu.frameworks.event.database.eventNotification</type>
+        <type>nabu.frameworks.events.database.eventNotification</type>
         <x>912</x>
         <y>315</y>
     </entries>
     <entries>
-        <type>nabu.frameworks.event.database.eventNotificationSubscriber</type>
+        <type>nabu.frameworks.events.database.eventNotificationSubscriber</type>
         <x>1089</x>
         <y>215</y>
     </entries>
     <entries>
-        <type>nabu.frameworks.event.database.eventNotificationRule</type>
+        <type>nabu.frameworks.events.database.eventNotificationRule</type>
         <x>696</x>
         <y>430</y>
     </entries>

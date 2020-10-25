@@ -1,8 +1,8 @@
 <structure name="pipeline">
     <structure name="input">
-        <structure collectionName="events" definition="nabu.frameworks.event.database.event" name="event"/>
-        <structure collectionName="eventNotifications" definition="nabu.frameworks.event.database.eventNotification" name="notification"/>
-        <structure collectionName="eventNotificationSubscribers" definition="nabu.frameworks.event.database.eventNotificationSubscriber" maxOccurs="unbounded" minOccurs="0" name="subscribers"/>
+        <structure collectionName="events" definition="nabu.frameworks.events.database.event" name="event"/>
+        <structure collectionName="eventNotifications" definition="nabu.frameworks.events.database.eventNotification" name="notification"/>
+        <structure collectionName="eventNotificationSubscribers" definition="nabu.frameworks.events.database.eventNotificationSubscriber" maxOccurs="unbounded" minOccurs="0" name="subscribers"/>
     </structure>
     <structure name="output"/>
 </structure>

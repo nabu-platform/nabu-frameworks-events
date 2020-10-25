@@ -2,11 +2,11 @@
     <structure name="input">
         <field minOccurs="0" name="connectionId" type="java.lang.String"/>
         <field minOccurs="0" name="transactionId" type="java.lang.String"/>
-        <structure collectionName="events" definition="nabu.frameworks.event.database.event" name="event"/>
-        <structure collectionName="eventRules" definition="nabu.frameworks.event.database.eventRule" maxOccurs="unbounded" minOccurs="0" name="rules"/>
+        <structure collectionName="events" definition="nabu.frameworks.events.database.event" name="event"/>
+        <structure collectionName="eventRules" definition="nabu.frameworks.events.database.eventRule" maxOccurs="unbounded" minOccurs="0" name="rules"/>
     </structure>
     <structure name="output">
-        <structure collectionName="eventRules" definition="nabu.frameworks.event.database.eventRule" minOccurs="0" name="rule"/>
+        <structure collectionName="eventRules" definition="nabu.frameworks.events.database.eventRule" minOccurs="0" name="rule"/>
     </structure>
     <field name="value" type="java.lang.Boolean"/>
 </structure>

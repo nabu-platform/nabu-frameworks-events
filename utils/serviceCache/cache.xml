@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <cache>
-    <cacheProvider>nabu.frameworks.event.utils.clusteredCache</cacheProvider>
-    <service>nabu.frameworks.event.services.getServerInstance</service>
+    <cacheProvider>nabu.frameworks.events.utils.clusteredCache</cacheProvider>
+    <service>nabu.frameworks.events.services.getServerInstance</service>
 </cache>

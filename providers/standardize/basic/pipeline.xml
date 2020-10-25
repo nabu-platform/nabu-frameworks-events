@@ -1,5 +1,5 @@
-<structure interface="nabu.frameworks.event.specs.standardize" name="pipeline">
+<structure interface="nabu.frameworks.events.specs.standardize" name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
-    <structure definition="nabu.frameworks.event.specs.standardized" name="empty" restrict="id, additional"/>
+    <structure definition="nabu.frameworks.events.specs.standardized" name="empty" restrict="id, additional"/>
 </structure>

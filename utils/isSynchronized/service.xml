@@ -70,7 +70,7 @@
 						mask="false"
 						optional="false"
 						fixedValue="true">
-					<from>nabu.frameworks.event.database</from>
+					<from>nabu.frameworks.events.database</from>
 					<to>entryId</to>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"

@@ -7,7 +7,7 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="5bfc19ae-949a-4fac-b190-f55313855cf6"
-				serviceId="nabu.frameworks.event.utils.isSynchronized"
+				serviceId="nabu.frameworks.events.utils.isSynchronized"
 				resultName="resultcf39271006164149a567ffed242aea9f"
 				temporaryMapping="true"
 				x="86"
