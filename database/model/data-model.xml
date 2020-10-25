@@ -2,18 +2,18 @@
 <dataModel>
     <entries>
         <type>nabu.frameworks.event.database.serverGroup</type>
-        <x>49</x>
-        <y>74</y>
+        <x>176</x>
+        <y>58</y>
     </entries>
     <entries>
         <type>nabu.frameworks.event.database.serverInstance</type>
-        <x>113</x>
-        <y>198</y>
+        <x>315</x>
+        <y>146</y>
     </entries>
     <entries>
         <type>nabu.frameworks.event.database.event</type>
-        <x>66</x>
-        <y>388</y>
+        <x>215</x>
+        <y>331</y>
     </entries>
     <entries>
         <type>nabu.frameworks.event.database.eventRule</type>
@@ -22,17 +22,17 @@
     </entries>
     <entries>
         <type>nabu.frameworks.event.database.eventNotification</type>
-        <x>879</x>
-        <y>229</y>
+        <x>912</x>
+        <y>315</y>
     </entries>
     <entries>
         <type>nabu.frameworks.event.database.eventNotificationSubscriber</type>
-        <x>1427</x>
-        <y>231</y>
+        <x>1089</x>
+        <y>215</y>
     </entries>
     <entries>
         <type>nabu.frameworks.event.database.eventNotificationRule</type>
-        <x>679</x>
-        <y>399</y>
+        <x>696</x>
+        <y>430</y>
     </entries>
 </dataModel>

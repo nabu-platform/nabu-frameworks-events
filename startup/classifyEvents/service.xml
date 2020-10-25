@@ -328,7 +328,8 @@
 					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 							comment="Batch update"
 							disabled="false"
-							id="e50acfae-be23-4eb2-b34a-ecb03b2ad2d2">
+							id="e50acfae-be23-4eb2-b34a-ecb03b2ad2d2"
+							label="events">
 						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 								disabled="false"
 								id="0ec434a1-b2ff-42aa-bba7-d1f452f5deba"

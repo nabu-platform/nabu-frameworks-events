@@ -1,0 +1,6 @@
+<structure name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field name="synchronized" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="jdbcId" type="java.lang.String"/>
+</structure>

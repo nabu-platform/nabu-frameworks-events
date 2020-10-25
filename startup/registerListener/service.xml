@@ -1,0 +1,103 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="f9c9dbde-9e71-4203-a08e-cc29b7a102fa">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="bba19787-fffc-486f-9948-88e8078a1946">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="5bfc19ae-949a-4fac-b190-f55313855cf6"
+				serviceId="nabu.frameworks.event.utils.isSynchronized"
+				resultName="resultcf39271006164149a567ffed242aea9f"
+				temporaryMapping="true"
+				x="86"
+				y="72"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="dcc3793e-f393-4c3b-8e3e-477fea918ac4"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultcf39271006164149a567ffed242aea9f/synchronized</from>
+			<to>synchronized</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="bd7f7df9-b210-459d-8bbc-d28777e0b5a5"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultcf39271006164149a567ffed242aea9f/jdbcId</from>
+			<to>jdbcId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="70ed4ae6-5dc7-454f-a85f-d60c63571683"
+			query="synchronized">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="737283c9-12bf-4c11-8c76-8501e3a6cb3f"
+				label="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="d73dc183-62b5-4308-acfb-af83e1ab023a"
+					serviceId="nabu.utils.Server.log"
+					resultName="resultc66d3c873cdf46318bc7e253d6a7c1ea"
+					temporaryMapping="true"
+					x="51"
+					y="71"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="166a01fa-d2b5-4f0d-8855-0f6de313d1ae"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>Either the jdbc pool for events is not configured, or the tables are not synchronized. Not registering listener.</from>
+					<to>message</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="e51f6a68-7e47-43bf-b830-9bfbaeea0c44"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>WARN</from>
+					<to>level</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="a00bc1cb-30e9-438e-8f3f-6530938b6b3b">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="c5ca3943-75db-41b2-8d66-53a1010bf1dd"
+					serviceId="nabu.utils.Runtime.subscribeEvents"
+					resultName="resultbd94e00e05504e83812b385739b2a385"
+					temporaryMapping="true"
+					x="46"
+					y="54"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="ce1fd818-fcda-4b18-b141-e0f030eb5233"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>nabu.frameworks.event.providers.fire</from>
+					<to>serviceId</to>
+				</steps>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

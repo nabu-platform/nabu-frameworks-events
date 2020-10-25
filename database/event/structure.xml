@@ -53,4 +53,5 @@
     <field comment="The origin of the event (e.g. frontend, backend, service runtime vs security...)" identifiable="true" minOccurs="0" name="origin" type="java.lang.String"/>
     <field minOccurs="0" name="fileUri" type="java.net.URI"/>
     <field minOccurs="0" name="fileSize" type="java.lang.Long"/>
+    <field minOccurs="0" name="externalDependency" type="java.lang.String"/>
 </structure>
