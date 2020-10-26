@@ -1,0 +1,4 @@
+<structure name="notificationWithEvents" superType="nabu.frameworks.events.utils.notification.getNotificationsForRule.results">
+    <field maxOccurs="unbounded" minOccurs="0" name="eventRuleIds" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <structure collectionName="events" definition="nabu.frameworks.events.database.event" maxOccurs="unbounded" minOccurs="0" name="events"/>
+</structure>

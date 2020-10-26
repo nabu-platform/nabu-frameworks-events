@@ -4,4 +4,5 @@
     <field name="modified" timezone="UTC" type="java.util.Date"/>
     <field comment="The service implementation based on spec" name="service" type="java.lang.String"/>
     <field comment="How often you want to notify people (always if empty)" minOccurs="0" name="notificationInterval" type="be.nabu.libs.types.base.Duration"/>
+    <field comment="The name of this notification" name="name" type="java.lang.String"/>
 </structure>

@@ -1,0 +1,14 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select
+	en.id as notification_id,
+	en.service,
+	en.notification_interval,
+	ens.last_notified,
+	ens.subscriber_id,
+	ens.id as event_subscriber_id,
+	enr.event_rule_id
+from ~event_notifications en
+	join ~event_notification_subscribers ens on en.id = ens.event_notification_id
+	join ~event_notification_rules enr on en.id = enr.event_notification_id
+where enr.event_rule_id = any(:eventRuleId)</sql>
+</jdbcService>

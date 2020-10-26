@@ -15,3 +15,9 @@ The fire will standardize any event into the common format and annotate further 
 
 Limit selects in time (like only the last week or so)
 -> for partitioning
+
+
+# Catch All
+
+If you want a catch all notification, write a rule that matches everything?
+Very likely you want to match at least _something_ like the severity.

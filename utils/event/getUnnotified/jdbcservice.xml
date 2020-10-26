@@ -1,5 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<outputDefinition>nabu.frameworks.events.database.event</outputDefinition>
 	<sql>select *
-from ~server_instance_events sie</sql>
+from ~server_instance_events sie
+where notified is null</sql>
 </jdbcService>
