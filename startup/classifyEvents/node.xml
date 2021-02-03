@@ -1,1 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-22T20:03:37.199+02:00" lastModified="2020-10-25T19:30:52.526+01:00" leaf="true" version="75"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>nabu.utils.Server.log</references><references>nabu.frameworks.events.database.event</references><references>nabu.frameworks.events.utils.event.getUnclassified</references><references>nabu.services.jdbc.Services.update</references><references>nabu.utils.Lock.tryLock</references><references>nabu.frameworks.events.services.classifyEvent</references><references>java.lang.Long</references><references>nabu.frameworks.events.utils.getActiveRules</references><references>nabu.frameworks.events.utils.isSynchronized</references><references>java.lang.Boolean</references><references>java.lang.String</references><references>nabu.utils.Server.sleep</references><references>nabu.frameworks.events.database.eventRule</references><references>nabu.utils.Lock.unlock</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-22T20:03:37.199+02:00" lastModified="2021-01-30T08:40:49.540+01:00" leaf="true" version="81">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.Server.log</references>
+    <references>nabu.frameworks.events.database.event</references>
+    <references>nabu.frameworks.events.utils.event.getUnclassified</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.utils.Lock.tryLock</references>
+    <references>nabu.utils.List.size</references>
+    <references>nabu.frameworks.events.services.classifyEvent</references>
+    <references>java.lang.Long</references>
+    <references>nabu.frameworks.events.utils.getActiveRules</references>
+    <references>nabu.frameworks.events.utils.isSynchronized</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.Server.sleep</references>
+    <references>nabu.frameworks.events.database.eventRule</references>
+    <references>nabu.utils.Lock.unlock</references>
+</node>

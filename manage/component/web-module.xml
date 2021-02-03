@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <webModule>
-    <webFragments>nabu.frameworks.events.manage.crud.event.services.list</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotification.services.create</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotification.services.delete</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotification.services.get</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotification.services.list</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotification.services.update</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationRule.services.create</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationRule.services.delete</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationRule.services.get</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationRule.services.list</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationRule.services.update</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationSubscriber.services.create</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationSubscriber.services.delete</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationSubscriber.services.get</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationSubscriber.services.list</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationSubscriber.services.update</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventRule.services.create</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventRule.services.delete</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventRule.services.get</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventRule.services.list</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventRule.services.update</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.serverGroup.services.list</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.serviceInstance.services.list</webFragments>
+    <webFragments>nabu.frameworks.events.manage.crud.event</webFragments>
+    <webFragments>nabu.frameworks.events.manage.crud.eventNotification</webFragments>
+    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationRule</webFragments>
+    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationSubscriber</webFragments>
+    <webFragments>nabu.frameworks.events.manage.crud.eventRule</webFragments>
+    <webFragments>nabu.frameworks.events.manage.crud.serverGroup</webFragments>
+    <webFragments>nabu.frameworks.events.manage.crud.serviceInstance</webFragments>
+    <audience>MANAGER</audience>
 </webModule>

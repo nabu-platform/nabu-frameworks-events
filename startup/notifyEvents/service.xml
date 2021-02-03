@@ -165,15 +165,6 @@
 							</steps>
 							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 									disabled="false"
-									id="6d2d8dd5-39be-4993-aca0-90639fa3396a"
-									mask="false"
-									optional="false"
-									fixedValue="true">
-								<from>true</from>
-								<to>totalRowCount</to>
-							</steps>
-							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-									disabled="false"
 									id="6a3187c6-765e-4d23-9346-48a8d6a9f153"
 									mask="false"
 									optional="false"
@@ -200,13 +191,34 @@
 							<from>result7ecbefd3a72e4cc6be05fd43ad2a2982/results</from>
 							<to>events</to>
 						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+								disabled="false"
+								id="76522a67-695e-4b5f-91ce-ff2eca1d6684"
+								serviceId="nabu.utils.List.size"
+								resultName="result1061b113e44f421693f2765eb7a0fa76"
+								temporaryMapping="true"
+								x="230"
+								y="256"
+								invocationOrder="1"
+								asynchronous="false"
+								recache="false">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="75b89f6f-c9c9-4ae8-81d5-7017b3b854fb"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>result7ecbefd3a72e4cc6be05fd43ad2a2982/results</from>
+								<to>list</to>
+							</steps>
+						</steps>
 						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 								disabled="false"
-								id="065b7fe4-0b65-41a8-bf16-0f2bc291cd0b"
+								id="4127a110-6082-4f0d-a010-9513d1bb4dfd"
 								mask="false"
 								optional="false"
 								fixedValue="false">
-							<from>result7ecbefd3a72e4cc6be05fd43ad2a2982/totalRowCount</from>
+							<from>result1061b113e44f421693f2765eb7a0fa76/size</from>
 							<to>totalRowCount</to>
 						</steps>
 					</steps>
@@ -619,15 +631,6 @@
 										</steps>
 										<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 												disabled="false"
-												id="2eac3362-e43e-48df-b0c7-fa9afc72691a"
-												mask="false"
-												optional="false"
-												fixedValue="false">
-											<from>allEvents</from>
-											<to>events</to>
-										</steps>
-										<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-												disabled="false"
 												id="53a112f0-1112-4333-bb7e-d0eae608417d"
 												mask="false"
 												optional="false"
@@ -733,6 +736,15 @@
 									<from>now</from>
 									<to>singleEvent/notified</to>
 								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="5cf95487-fde0-4603-adf3-c0a5725f063a"
+										mask="false"
+										optional="false"
+										fixedValue="true">
+									<from>NOTIFIED</from>
+									<to>singleEvent/state</to>
+								</steps>
 							</steps>
 							<query>events</query>
 						</steps>
@@ -830,7 +842,7 @@
 					comment="We only sleep if we did not process anything or we didn't hit our processing limit"
 					disabled="false"
 					id="669e8091-9994-4873-bcf9-d885c326df21"
-					label="totalRowCount = null || totalRowCount &lt;= 1000">
+					label="totalRowCount = null || totalRowCount &lt; 1000">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Sleep for a while. The server who previously had the lock takes a certain amount of time to notify, introducing random server selection"
 						disabled="false"

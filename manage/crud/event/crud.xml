@@ -3,6 +3,56 @@
     <coreType>nabu.frameworks.events.database.event</coreType>
     <createRole>manager</createRole>
     <deleteRole>manager</deleteRole>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>action</key>
+        <operator>ilike</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>additional</key>
+        <operator>ilike</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>alias</key>
+        <operator>ilike</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>anonymized</key>
+        <operator>=</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>artifactId</key>
+        <operator>=</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>classification</key>
+        <operator>=</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>classification</key>
+        <operator>is null</operator>
+        <or>false</or>
+        <alias>unclassified</alias>
+        <input>true</input>
+    </filters>
     <listRole>manager</listRole>
     <provider>nabu.services.crud.provider.basic.provider</provider>
     <updateRole>manager</updateRole>

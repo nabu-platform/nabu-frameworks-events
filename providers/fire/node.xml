@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-20T17:47:50.635+02:00" lastModified="2020-10-25T19:30:52.580+01:00" leaf="true" version="35"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>java.util.Date</references><references>nabu.utils.Server.getServerGroup</references><references>nabu.utils.Date.now</references><references>nabu.utils.Server.uuid</references><references>nabu.frameworks.events.database.event</references><references>be.nabu.eai.server.api.EventHandler.handle</references><references>nabu.utils.Server.getServerName</references><references>nabu.services.jdbc.Services.insert</references><references>java.lang.Boolean</references><references>java.lang.Object</references><references>java.lang.String</references><references>nabu.frameworks.events.specs.standardize</references><references>nabu.frameworks.events.services.getServerInstance</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-20T17:47:50.635+02:00" lastModified="2021-02-03T13:28:43.862+01:00" leaf="true" version="43">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.Server.log</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.Server.getServerGroup</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.utils.Server.uuid</references>
+    <references>nabu.utils.reflection.Type.of</references>
+    <references>nabu.frameworks.events.database.event</references>
+    <references>nabu.utils.Server.property</references>
+    <references>be.nabu.eai.server.api.EventHandler.handle</references>
+    <references>nabu.data.xml.Services.marshal</references>
+    <references>nabu.utils.Server.getServerName</references>
+    <references>nabu.services.jdbc.Services.insert</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.events.specs.standardize</references>
+    <references>nabu.frameworks.events.services.getServerInstance</references>
+</node>

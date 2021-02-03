@@ -2,9 +2,45 @@
 		disabled="false"
 		id="a6c73b57-1af8-43a5-8ed7-df1911591ee8">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Get connection settings"
+			disabled="false"
+			id="bbe11e8c-897c-4bee-9a55-4e4b2b641158">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="ae75c60b-1e35-4b05-9b8c-8edfd2bba306"
+				serviceId="nabu.utils.Server.property"
+				resultName="result57cdc7c8e50a497fb8be442c23683c9c"
+				temporaryMapping="true"
+				x="103"
+				y="54"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d4c39b57-66b9-4ee2-8aab-3703d23df24e"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>events.connection</from>
+				<to>key</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ecdf0422-4890-4c65-ad22-6225564fd71e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result57cdc7c8e50a497fb8be442c23683c9c/value</from>
+			<to>output/jdbcId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get jdbc artifact"
 			disabled="false"
-			id="bba19787-fffc-486f-9948-88e8078a1946">
+			id="bba19787-fffc-486f-9948-88e8078a1946"
+			label="output/jdbcId = null">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="ca8c1260-3442-4109-85d1-b353fc7a72a5"

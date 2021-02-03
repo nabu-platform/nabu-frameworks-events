@@ -1,1 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.data.model.DataModelManager" created="2020-10-24T21:09:27.992+02:00" lastModified="2020-10-25T13:14:16.064+01:00" leaf="true" version="5"><environmentId>apollo</environmentId><hidden>false</hidden><properties/></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.data.model.DataModelManager" created="2020-10-24T21:09:27.992+02:00" lastModified="2020-11-25T09:22:31.558+01:00" leaf="true" version="8">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+</node>

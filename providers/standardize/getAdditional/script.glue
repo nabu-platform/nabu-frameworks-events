@@ -1,0 +1,13 @@
+event ?= null
+standardized ?= null
+
+@return
+additional = null
+
+standardKeys = keys(standardized)
+for (key : keys(event))
+	if (key !? standardKeys && event[/key] != null)
+		if (additional == null)
+			additional = structure()
+		additional[/key] = event[/key]
+		

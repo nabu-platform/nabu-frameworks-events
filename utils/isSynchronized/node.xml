@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-24T07:50:01.625+02:00" lastModified="2020-10-25T19:31:32.256+01:00" leaf="true" version="18"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>nabu.protocols.jdbc.pool.types.TableChange</references><references>nabu.utils.reflection.Node.resolveFor</references><references>nabu.protocols.jdbc.pool.Services.listCollectionTypes</references><references>nabu.utils.List.size</references><references>java.lang.Boolean</references><references>java.lang.String</references><references>java.lang.Integer</references><references>nabu.protocols.jdbc.pool.Services.synchronize</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-24T07:50:01.625+02:00" lastModified="2021-01-30T08:39:18.514+01:00" leaf="true" version="19">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.protocols.jdbc.pool.types.TableChange</references>
+    <references>nabu.utils.reflection.Node.resolveFor</references>
+    <references>nabu.protocols.jdbc.pool.Services.listCollectionTypes</references>
+    <references>nabu.utils.List.size</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.utils.Server.property</references>
+    <references>java.lang.String</references>
+    <references>java.lang.Integer</references>
+    <references>nabu.protocols.jdbc.pool.Services.synchronize</references>
+</node>

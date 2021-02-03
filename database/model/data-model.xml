@@ -1,36 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <dataModel>
     <entries>
+        <synchronize>true</synchronize>
         <type>nabu.frameworks.events.database.serverGroup</type>
         <x>176</x>
         <y>58</y>
     </entries>
     <entries>
+        <synchronize>true</synchronize>
         <type>nabu.frameworks.events.database.serverInstance</type>
-        <x>315</x>
-        <y>146</y>
+        <x>458</x>
+        <y>212</y>
     </entries>
     <entries>
+        <synchronize>true</synchronize>
         <type>nabu.frameworks.events.database.event</type>
-        <x>215</x>
-        <y>331</y>
+        <x>205</x>
+        <y>371</y>
     </entries>
     <entries>
+        <synchronize>true</synchronize>
         <type>nabu.frameworks.events.database.eventRule</type>
         <x>560</x>
         <y>536</y>
     </entries>
     <entries>
+        <synchronize>true</synchronize>
         <type>nabu.frameworks.events.database.eventNotification</type>
         <x>912</x>
         <y>315</y>
     </entries>
     <entries>
+        <synchronize>true</synchronize>
         <type>nabu.frameworks.events.database.eventNotificationSubscriber</type>
-        <x>1089</x>
-        <y>215</y>
+        <x>1092</x>
+        <y>113</y>
     </entries>
     <entries>
+        <synchronize>true</synchronize>
         <type>nabu.frameworks.events.database.eventNotificationRule</type>
         <x>696</x>
         <y>430</y>

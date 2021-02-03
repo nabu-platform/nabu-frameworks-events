@@ -98,6 +98,27 @@
 					<to>serviceId</to>
 				</steps>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="ee30710b-649b-4352-b0bd-353c60a3c54a"
+					serviceId="nabu.utils.Server.log"
+					resultName="result1c2d7d751c9c4539b169967da35aa20e"
+					temporaryMapping="true"
+					x="114"
+					y="226"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a237fdd9-9873-416f-95a1-2bf8e8944d0b"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>="Event listener registered on connection: " + jdbcId</from>
+					<to>message</to>
+				</steps>
+			</steps>
 		</steps>
 	</steps>
 </sequence>

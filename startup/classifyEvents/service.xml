@@ -231,15 +231,6 @@
 							</steps>
 							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 									disabled="false"
-									id="58219450-c11f-4add-aaab-c308ed4ba690"
-									mask="false"
-									optional="false"
-									fixedValue="true">
-								<from>true</from>
-								<to>totalRowCount</to>
-							</steps>
-							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-									disabled="false"
 									id="3ab830ba-a244-406a-8a15-32b35603ad70"
 									mask="false"
 									optional="false"
@@ -257,13 +248,34 @@
 							<from>result38c0d3d893fc4ed4a55a57a0ef750000/results</from>
 							<to>events</to>
 						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+								disabled="false"
+								id="27e6d162-de4e-4969-b4f6-4dae848442b2"
+								serviceId="nabu.utils.List.size"
+								resultName="result55ffff5822fe46f79ad65bc74ae6798d"
+								temporaryMapping="true"
+								x="197"
+								y="194"
+								invocationOrder="1"
+								asynchronous="false"
+								recache="false">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="a85b5db6-9932-4ca2-89da-a18f13f001de"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>result38c0d3d893fc4ed4a55a57a0ef750000/results</from>
+								<to>list</to>
+							</steps>
+						</steps>
 						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 								disabled="false"
-								id="acbad833-6f8a-4e4a-90f4-e80c5c493af5"
+								id="6dbae7f6-f5df-42e4-810a-bbab2d486caf"
 								mask="false"
 								optional="false"
 								fixedValue="false">
-							<from>result38c0d3d893fc4ed4a55a57a0ef750000/totalRowCount</from>
+							<from>result55ffff5822fe46f79ad65bc74ae6798d/size</from>
 							<to>totalRowCount</to>
 						</steps>
 					</steps>
@@ -419,7 +431,7 @@
 					comment="We only sleep if we did not process anything or we didn't hit our processing limit"
 					disabled="false"
 					id="669e8091-9994-4873-bcf9-d885c326df21"
-					label="totalRowCount = null || totalRowCount &lt;= 1000">
+					label="totalRowCount = null || totalRowCount &lt; 1000">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Sleep for a while. The server who previously had the lock takes a certain amount of time to classify, introducing random server selection"
 						disabled="false"

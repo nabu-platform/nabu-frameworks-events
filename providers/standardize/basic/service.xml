@@ -35,36 +35,6 @@
 			<from>result0c7435acca1642a59183841468e65d9e/typeInstance</from>
 			<to>output/standardized</to>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-				disabled="false"
-				id="dc235323-46fb-4bb1-b7b6-5511365c0aae"
-				serviceId="nabu.utils.reflection.Type.newInstance"
-				resultName="result89f591c545a849c08a2d4b77ef5f972e"
-				temporaryMapping="true"
-				x="63"
-				y="135"
-				invocationOrder="0"
-				asynchronous="false"
-				recache="false">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="9753cbe6-9e74-45a7-93f3-833dd00af53b"
-					mask="false"
-					optional="false"
-					fixedValue="true">
-				<from>nabu.frameworks.events.specs.standardized</from>
-				<to>typeId</to>
-			</steps>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
-				id="76280c1d-87bb-4341-9d3b-552658c404c1"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>result89f591c545a849c08a2d4b77ef5f972e/typeInstance</from>
-			<to>empty</to>
-		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Map into the output"
@@ -103,7 +73,7 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Clear out fields with the same name"
-			disabled="false"
+			disabled="true"
 			id="473c2ea4-4b64-4bc7-b9d5-603dd57ee3b2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
@@ -146,9 +116,53 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="eea37f1d-2191-48ce-96dc-e8fa4ce4e0ad">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="5965aa89-db54-4066-8a49-07ff4fe35b5e"
+				serviceId="nabu.frameworks.events.providers.standardize.getAdditional"
+				resultName="result03902ce9952848cba0ff28751015807f"
+				temporaryMapping="true"
+				x="67"
+				y="47"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="84df679e-e46c-4389-b648-591088151390"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event</from>
+				<to>event</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="59f1bab8-5347-4aa3-9938-e809249e98ec"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>output/standardized</from>
+				<to>standardized</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="7d8c0f01-2786-40fd-ac74-88d0aa32401d"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result03902ce9952848cba0ff28751015807f/additional</from>
+			<to>additional</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Marshal the remainder into additional"
 			disabled="false"
-			id="ea6ac957-d685-4d3c-a57e-226159472573">
+			id="ea6ac957-d685-4d3c-a57e-226159472573"
+			label="additional">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="0bd73940-d34b-437b-824a-85a626bc75d6"
@@ -162,12 +176,21 @@
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="db1953a0-5ef5-48c0-9800-f32b38069c6b"
+					id="b026dbf5-13a4-415c-bc2e-ed344ac5f2a4"
 					mask="false"
 					optional="false"
 					fixedValue="false">
-				<from>input/event</from>
+				<from>additional</from>
 				<to>data</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9ce87f94-e88d-4595-80a7-67392cef0ff2"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>prettyPrint</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -184,7 +207,7 @@
 			comment="Drop empty"
 			disabled="false"
 			id="b5012fd0-e2be-4d43-9174-fcd328860312"
-			label="output/standardized/additional ~ &quot;(?s)^\{[\s]*\}$&quot;">
+			label="output/standardized/additional != null &amp;&amp; output/standardized/additional ~ &quot;(?s)^\{[\s]*\}$&quot;">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Drop"
 				disabled="false"
 				id="07bbd7fd-59a9-4d6b-bbce-97638c96650b"

@@ -2,5 +2,5 @@
 	<outputDefinition>nabu.frameworks.events.database.event</outputDefinition>
 	<sql>select *
 from ~server_instance_events sie
-where classified is null</sql>
+where state = 'CREATED'</sql>
 </jdbcService>

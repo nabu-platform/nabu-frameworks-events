@@ -1,0 +1,2 @@
+We first did a "totalPageCount" on the select which meant we knew if there were more than 1000.
+However the count query is too slow so instead we just count, if we select exactly 1000, there is a decent chance that there are more.

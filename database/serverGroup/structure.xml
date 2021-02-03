@@ -1,4 +1,5 @@
 <structure collectionName="serverGroups" name="serverGroup">
     <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
     <field name="name" type="java.lang.String"/>
+    <field comment="The id of the owner (if any) for central management.&#10;Note that the name _combined_ with the ownerId must be unique.&#10;Otherwise we don't know where incoming logs should go.&#10;The owner id is initially the id of the identity that created it.&#10;Later on it can be reassigned to another identity for central management.&#10;&#10;At all times the combination of name &amp; ownerid must be unique.&#10;&#10;Event in such cases however, multiple hits can occur, if you assign one server identity to multiple central identities.&#10;Across those central identities you can still have naming collissions." minOccurs="0" name="ownerId" type="java.lang.String"/>
 </structure>

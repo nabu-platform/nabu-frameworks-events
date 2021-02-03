@@ -140,6 +140,15 @@ result = " + rule/rule</from>
 			<from>result5f3357efdd4c441d9a292469492b968b/date</from>
 			<to>input/event/classified</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="11cf5222-148c-43eb-a53b-1885e805723d"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>CLASSIFIED</from>
+			<to>input/event/state</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="If we have a rule, update the event and start the notification process"
