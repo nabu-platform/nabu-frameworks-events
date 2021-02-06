@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-20T17:47:50.635+02:00" lastModified="2021-02-03T13:28:43.862+01:00" leaf="true" version="43">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-20T17:47:50.635+02:00" lastModified="2021-02-06T11:04:41.108+01:00" leaf="true" version="47">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
+    <references>nabu.utils.Runtime.getCurrentToken</references>
     <references>nabu.utils.Server.log</references>
     <references>java.util.Date</references>
     <references>nabu.utils.Server.getServerGroup</references>
@@ -12,6 +13,7 @@
     <references>nabu.frameworks.events.database.event</references>
     <references>nabu.utils.Server.property</references>
     <references>be.nabu.eai.server.api.EventHandler.handle</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
     <references>nabu.data.xml.Services.marshal</references>
     <references>nabu.utils.Server.getServerName</references>
     <references>nabu.services.jdbc.Services.insert</references>
@@ -19,5 +21,4 @@
     <references>java.lang.Object</references>
     <references>java.lang.String</references>
     <references>nabu.frameworks.events.specs.standardize</references>
-    <references>nabu.frameworks.events.services.getServerInstance</references>
 </node>

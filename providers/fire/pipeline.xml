@@ -8,10 +8,9 @@
     <field minOccurs="0" name="serverGroup" type="java.lang.String"/>
     <field minOccurs="0" name="now" type="java.util.Date"/>
     <structure collectionName="events" definition="nabu.frameworks.events.database.event" maxOccurs="unbounded" minOccurs="0" name="definedEvents"/>
-    <field minOccurs="0" name="eventServerGroup" type="java.lang.String"/>
-    <field minOccurs="0" name="eventServerName" type="java.lang.String"/>
     <field minOccurs="0" name="eventName" type="java.lang.String"/>
     <field name="serializedEvent" type="java.lang.String"/>
     <field minOccurs="0" name="connectionId" type="java.lang.String"/>
     <field minOccurs="0" name="eventTypeId" type="java.lang.String"/>
+    <structure definition="be.nabu.libs.authentication.api.Token" minOccurs="0" name="token"/>
 </structure>

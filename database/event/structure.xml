@@ -1,6 +1,7 @@
-<structure collectionName="serverInstanceEvents" name="event">
+<structure collectionName="events" name="event">
     <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
-    <field comment="The server instance that reported this" foreignKey="nabu.frameworks.events.database.serverInstance:id" name="serverInstanceId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field minOccurs="0" name="serverGroup" type="java.lang.String"/>
+    <field minOccurs="0" name="serverName" type="java.lang.String"/>
     <field comment="The host name of the server" minOccurs="0" name="serverHost" type="java.lang.String"/>
     <field comment="The artifact that triggered the event (if any)" minOccurs="0" name="artifactId" type="java.lang.String"/>
     <field comment="A local id of the event" minOccurs="0" name="localId" type="java.lang.String"/>
@@ -23,11 +24,11 @@
     <field comment="An external id for this event" minOccurs="0" name="externalId" type="java.lang.String"/>
     <field comment="A further clarification of the message, it can contain as many variables as are relevant to understand the problem" identifiable="true" minOccurs="0" name="reason" type="java.lang.String"/>
     <field comment="Correlate an event to other events" minOccurs="0" name="correlationId" type="java.lang.String"/>
+    <field identifiable="true" minOccurs="0" name="sourceHost" type="java.lang.String"/>
     <field comment="The session id (especially for web contexts)" minOccurs="0" name="sessionId" type="java.lang.String"/>
     <field minOccurs="0" name="deviceId" type="java.lang.String"/>
     <field comment="Each event can have a unique id, this can be communicated to other parties" minOccurs="0" name="eventId" type="java.lang.String"/>
     <field minOccurs="0" name="sourcePort" type="java.lang.Integer"/>
-    <field identifiable="true" minOccurs="0" name="sourceHost" type="java.lang.String"/>
     <field identifiable="true" minOccurs="0" name="sourceIp" type="java.lang.String"/>
     <field minOccurs="0" name="destinationHost" type="java.lang.String"/>
     <field minOccurs="0" name="destinationIp" type="java.lang.String"/>
@@ -51,10 +52,16 @@
     <field comment="This contains any additional information in the event that was not captured in one of the above fields, marshalled as JSON" identifiable="true" maxLength="1000000" minOccurs="0" name="additional" type="java.lang.String"/>
     <field comment="Correlate multiple events within for example a single REST call." identifiable="true" minOccurs="0" name="contextId" type="java.lang.String"/>
     <field comment="The origin of the event (e.g. frontend, backend, service runtime vs security...)" identifiable="true" minOccurs="0" name="origin" type="java.lang.String"/>
+    <field comment="A component within the origin, this is a larger part of the stack." minOccurs="0" name="component" type="java.lang.String"/>
     <field minOccurs="0" name="fileUri" type="java.net.URI"/>
     <field minOccurs="0" name="fileSize" type="java.lang.Long"/>
     <field minOccurs="0" name="externalDependency" type="java.lang.String"/>
     <field comment="Can indicate whether a cache was used" minOccurs="0" name="cached" type="java.lang.Boolean"/>
     <field comment="The threshold for this event" minOccurs="0" name="threshold" type="java.lang.Double"/>
     <field comment="The event state, one of &quot;CREATED&quot;, &quot;CLASSIFIED&quot;, &quot;NOTIFIED&quot;, &quot;IGNORED&quot;" name="state" type="java.lang.String"/>
+    <field minOccurs="0" name="sourceLatitude" type="java.lang.Double"/>
+    <field minOccurs="0" name="sourceLongitude" type="java.lang.Double"/>
+    <field minOccurs="0" name="destinationLatitude" type="java.lang.Double"/>
+    <field minOccurs="0" name="destinationLongitude" type="java.lang.Double"/>
+    <field minOccurs="0" name="ownerId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
 </structure>

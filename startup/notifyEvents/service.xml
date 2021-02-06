@@ -341,8 +341,8 @@
 										serviceId="nabu.frameworks.events.utils.notification.getNotificationsForRule"
 										resultName="result6939344dd90a4c648a4241bb9acfe88e"
 										temporaryMapping="true"
-										x="501"
-										y="92"
+										x="96"
+										y="130"
 										invocationOrder="1"
 										asynchronous="false"
 										recache="false">
@@ -354,6 +354,15 @@
 											fixedValue="false">
 										<from>resultbdbeeb5cfb5f4c688debc638a3c45266/list</from>
 										<to>parameters/eventRuleId</to>
+									</steps>
+									<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+											disabled="false"
+											id="774b2d21-2383-4a63-91a8-6f962f078fd2"
+											mask="false"
+											optional="false"
+											fixedValue="false">
+										<from>jdbcId</from>
+										<to>connection</to>
 									</steps>
 								</steps>
 								<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"

@@ -2,18 +2,6 @@
 <dataModel>
     <entries>
         <synchronize>true</synchronize>
-        <type>nabu.frameworks.events.database.serverGroup</type>
-        <x>176</x>
-        <y>58</y>
-    </entries>
-    <entries>
-        <synchronize>true</synchronize>
-        <type>nabu.frameworks.events.database.serverInstance</type>
-        <x>458</x>
-        <y>212</y>
-    </entries>
-    <entries>
-        <synchronize>true</synchronize>
         <type>nabu.frameworks.events.database.event</type>
         <x>205</x>
         <y>371</y>

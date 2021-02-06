@@ -1,1 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-23T17:23:52.539+02:00" lastModified="2020-11-19T14:21:08.682+01:00" leaf="true" version="61"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>nabu.utils.Server.log</references><references>java.util.Date</references><references>nabu.utils.Date.now</references><references>nabu.frameworks.events.database.event</references><references>nabu.frameworks.events.database.eventNotificationSubscriber</references><references>nabu.utils.List.unique</references><references>java.util.UUID</references><references>nabu.services.jdbc.Services.update</references><references>nabu.utils.Lock.tryLock</references><references>nabu.utils.List.size</references><references>java.lang.Long</references><references>nabu.frameworks.events.utils.groupedEvent</references><references>nabu.frameworks.events.utils.notification.getNotificationsForRule.results</references><references>nabu.frameworks.events.utils.isSynchronized</references><references>nabu.frameworks.events.utils.notification.getNotificationsForRule</references><references>java.lang.Boolean</references><references>nabu.frameworks.events.utils.groupedNotification</references><references>nabu.frameworks.events.specs.notify</references><references>java.lang.String</references><references>nabu.utils.Server.sleep</references><references>nabu.frameworks.events.utils.event.getUnnotified</references><references>nabu.utils.Lock.unlock</references><references>nabu.utils.List.group</references><references>nabu.utils.Date.incrementDuration</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-23T17:23:52.539+02:00" lastModified="2021-02-06T10:34:55.332+01:00" leaf="true" version="62">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.Server.log</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.frameworks.events.database.event</references>
+    <references>nabu.frameworks.events.database.eventNotificationSubscriber</references>
+    <references>nabu.utils.List.unique</references>
+    <references>java.util.UUID</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.utils.Lock.tryLock</references>
+    <references>nabu.utils.List.size</references>
+    <references>java.lang.Long</references>
+    <references>nabu.frameworks.events.utils.groupedEvent</references>
+    <references>nabu.frameworks.events.utils.notification.getNotificationsForRule.results</references>
+    <references>nabu.frameworks.events.utils.isSynchronized</references>
+    <references>nabu.frameworks.events.utils.notification.getNotificationsForRule</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.frameworks.events.utils.groupedNotification</references>
+    <references>nabu.frameworks.events.specs.notify</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.Server.sleep</references>
+    <references>nabu.frameworks.events.utils.event.getUnnotified</references>
+    <references>nabu.utils.Lock.unlock</references>
+    <references>nabu.utils.List.group</references>
+    <references>nabu.utils.Date.incrementDuration</references>
+</node>

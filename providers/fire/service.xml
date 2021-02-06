@@ -103,6 +103,27 @@
 			<from>result0a215e36a55d445dbdf53c696a02cb61/date</from>
 			<to>now</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="5aa5066d-229a-45cc-8120-725e3e5be07c"
+				serviceId="nabu.utils.Runtime.getCurrentToken"
+				resultName="result7463872b5c6e40f7b1823080279aef68"
+				temporaryMapping="true"
+				x="388"
+				y="19"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e81a9647-0d40-4ecf-829c-c1911440af26"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result7463872b5c6e40f7b1823080279aef68/token</from>
+			<to>token</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.For"
 			disabled="false"
@@ -142,24 +163,6 @@
 					fixedValue="false">
 				<from>result57d811f9bced446ba11245e578d36db0/standardized</from>
 				<to>definedEvent</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="41e96ac9-9578-4131-9392-755c8651f018"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>result57d811f9bced446ba11245e578d36db0/standardized/serverGroup</from>
-				<to>eventServerGroup</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="0359d952-ecd4-4bec-99c1-dc35f9bc38a2"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>result57d811f9bced446ba11245e578d36db0/standardized/serverName</from>
-				<to>eventServerName</to>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
@@ -345,24 +348,6 @@
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
-							id="b0602c73-536e-467e-b2f8-59ab0e370434"
-							mask="false"
-							optional="true"
-							fixedValue="false">
-						<from>serverGroup</from>
-						<to>eventServerGroup</to>
-					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-							disabled="false"
-							id="fc062b5b-48c8-4ebe-9ae3-38e0cb7d4d05"
-							mask="false"
-							optional="true"
-							fixedValue="false">
-						<from>serverName</from>
-						<to>eventServerName</to>
-					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-							disabled="false"
 							id="458427ab-e055-4e48-b6c4-1262f3db1327"
 							mask="false"
 							optional="false"
@@ -370,49 +355,37 @@
 						<from>CREATED</from>
 						<to>definedEvent/state</to>
 					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="73674330-536d-49bf-9ddf-07395a9601aa"
+							mask="false"
+							optional="true"
+							fixedValue="false">
+						<from>serverName</from>
+						<to>definedEvent/serverName</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="60384ac6-a5af-419c-81a5-406006718f3a"
+							mask="false"
+							optional="true"
+							fixedValue="false">
+						<from>serverGroup</from>
+						<to>definedEvent/serverGroup</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="cfee2cdc-5383-4498-88fe-eae9cc981711"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>token/id</from>
+						<to>definedEvent/ownerId</to>
+					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						disabled="false"
 						id="88665cd8-f4af-454a-90bf-4b5861acd234">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-							disabled="false"
-							id="6c575c50-7f8d-48d3-b143-2ae4cf94c227"
-							serviceId="nabu.frameworks.events.services.getServerInstance"
-							resultName="resultfebd8def332b44dca2bda90d42d3d3d0"
-							temporaryMapping="true"
-							x="43"
-							y="96"
-							invocationOrder="0"
-							asynchronous="false"
-							recache="false">
-						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-								disabled="false"
-								id="3f32f316-18b4-49c8-81ca-be6aabe944a7"
-								mask="false"
-								optional="false"
-								fixedValue="false">
-							<from>serverName</from>
-							<to>serverName</to>
-						</steps>
-						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-								disabled="false"
-								id="eb027d40-e683-4873-bc69-afe1ece2256d"
-								mask="false"
-								optional="false"
-								fixedValue="false">
-							<from>serverGroup</from>
-							<to>serverGroup</to>
-						</steps>
-					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-							disabled="false"
-							id="2bbda3d1-d209-4f96-aa86-063a3907d36c"
-							mask="false"
-							optional="false"
-							fixedValue="false">
-						<from>resultfebd8def332b44dca2bda90d42d3d3d0/serverInstanceId</from>
-						<to>definedEvent/serverInstanceId</to>
-					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Add to list"
