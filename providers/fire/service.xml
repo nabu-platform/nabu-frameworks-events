@@ -375,11 +375,11 @@
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
-							id="cfee2cdc-5383-4498-88fe-eae9cc981711"
+							id="afe4cb09-5012-4e5b-88e2-6203db89eb0a"
 							mask="false"
 							optional="false"
 							fixedValue="false">
-						<from>token/id</from>
+						<from>token/authenticationId</from>
 						<to>definedEvent/ownerId</to>
 					</steps>
 				</steps>

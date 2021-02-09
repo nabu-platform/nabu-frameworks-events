@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <crud>
+    <allowHeaderAsQueryParameter>true</allowHeaderAsQueryParameter>
     <coreType>nabu.frameworks.events.database.event</coreType>
     <createRole>manager</createRole>
     <deleteRole>manager</deleteRole>
@@ -34,7 +35,7 @@
     <filters>
         <caseInsensitive>false</caseInsensitive>
         <key>artifactId</key>
-        <operator>=</operator>
+        <operator>ilike</operator>
         <or>false</or>
         <input>true</input>
     </filters>
@@ -51,6 +52,41 @@
         <operator>is null</operator>
         <or>false</or>
         <alias>unclassified</alias>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>severity</key>
+        <operator>=</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>code</key>
+        <operator>ilike</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>eventName</key>
+        <operator>ilike</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>correlationId</key>
+        <operator>=</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>sessionId</key>
+        <operator>=</operator>
+        <or>false</or>
         <input>true</input>
     </filters>
     <listRole>manager</listRole>

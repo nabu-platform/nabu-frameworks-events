@@ -1,0 +1,2247 @@
+{ 
+	"category": "Monitoring",
+	"name": "Events",
+	"description": "Get an overview of the events",
+	"icon": "images/events/events-large.png",
+	"content": {
+		"type": "page",
+		"content": {
+			"label": "Events",
+			"rows": [
+				{
+					"id": 1,
+					"cells": [
+						{
+							"id": 2,
+							"rows": [],
+							"alias": "data-table-list",
+							"bindings": {
+								"limit": null,
+								"offset": null,
+								"orderBy": null,
+								"action": null,
+								"additional": null,
+								"alias": null,
+								"anonymized": null,
+								"artifactId": null,
+								"classification": null,
+								"unclassified": null,
+								"properties": null,
+								"severity": null,
+								"code": null
+							},
+							"name": null,
+							"state": {
+								"autoRefresh": null,
+								"orderBy": [
+									"created desc"
+								],
+								"filterPlaceHolder": null,
+								"filterType": "data-filter-default",
+								"title": "%{Events}",
+								"limit": 10,
+								"actions": [
+									{
+										"name": "filterSeverity",
+										"icon": "fa-filter",
+										"class": "inline",
+										"label": null,
+										"condition": null,
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false,
+										"field": 2
+									},
+									{
+										"name": "filterCode",
+										"icon": "fa-filter",
+										"class": "inline",
+										"label": null,
+										"condition": "!!state.record.code",
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false,
+										"field": 6
+									},
+									{
+										"name": "filterAlias",
+										"icon": "fa-filter",
+										"class": "inline",
+										"label": null,
+										"condition": "!!state.record.alias",
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false,
+										"field": 9
+									},
+									{
+										"name": "filterArtifact",
+										"icon": "fa-filter",
+										"class": "inline",
+										"label": null,
+										"condition": "!state.record.requestUri && !!state.record.artifactId",
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false,
+										"field": 7
+									},
+									{
+										"name": "filterCorrelation",
+										"icon": "fa-link",
+										"class": null,
+										"label": null,
+										"condition": "!!state.record.correlationId",
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false,
+										"field": 1
+									},
+									{
+										"name": "filterSession",
+										"icon": "fa-user",
+										"class": "inline",
+										"label": null,
+										"condition": "!!state.record.sessionId",
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false,
+										"field": 1
+									},
+									{
+										"name": "filterEvent",
+										"icon": "fa-filter",
+										"class": null,
+										"label": null,
+										"condition": "!!state.record.eventName",
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false,
+										"field": 5
+									},
+									{
+										"name": "selectEvent",
+										"icon": null,
+										"class": null,
+										"label": null,
+										"condition": null,
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									}
+								],
+								"filters": [
+									{
+										"arbitrary": false,
+										"name": "alias",
+										"label": "Alias",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"textType": null,
+										"bindings": {},
+										"listeners": [
+											{
+												"to": "filterAlias.alias"
+											}
+										]
+									},
+									{
+										"arbitrary": false,
+										"name": "severity",
+										"label": "Severity",
+										"description": null,
+										"type": "enumeration",
+										"enumerations": [
+											"INFO",
+											"WARNING",
+											"ERROR"
+										],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"listeners": [
+											{
+												"to": "filterSeverity.severity"
+											}
+										]
+									},
+									{
+										"arbitrary": false,
+										"name": "code",
+										"label": "Code",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"textType": null,
+										"bindings": {},
+										"listeners": [
+											{
+												"to": "filterCode.code"
+											}
+										]
+									},
+									{
+										"arbitrary": false,
+										"name": "artifactId",
+										"label": "Artifact",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"textType": null,
+										"bindings": {},
+										"listeners": [
+											{
+												"to": "filterArtifact.artifactId"
+											}
+										]
+									},
+									{
+										"arbitrary": false,
+										"name": "sessionId",
+										"label": "Session",
+										"description": null,
+										"type": "hidden",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"textType": null,
+										"bindings": {},
+										"listeners": [
+											{
+												"to": "filterSession.sessionId"
+											}
+										]
+									},
+									{
+										"arbitrary": false,
+										"name": "eventName",
+										"label": "Event",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"textType": null,
+										"bindings": {},
+										"listeners": [
+											{
+												"to": "filterEvent.eventName"
+											}
+										]
+									},
+									{
+										"arbitrary": false,
+										"name": "correlationId",
+										"label": "Correlation",
+										"description": null,
+										"type": "hidden",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"textType": null,
+										"bindings": {},
+										"listeners": [
+											{
+												"to": "filterCorrelation.correlationId"
+											}
+										]
+									}
+								],
+								"fields": [
+									{
+										"label": "%{Server}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "serverName",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											},
+											{
+												"type": "text",
+												"content": " (",
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": null,
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"multiline": false
+											},
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "serverGroup",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											},
+											{
+												"type": "text",
+												"content": ")",
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": null,
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"multiline": false
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "%{Created}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "created",
+												"content": null,
+												"format": "date",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {},
+												"dateFormat": "MMM dd HH:mm:ss.SSS",
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "%{Severity}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "severity",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [
+											{
+												"class": "danger",
+												"condition": "state.record.severity == \"ERROR\""
+											},
+											{
+												"class": "warning",
+												"condition": "state.record.severity == \"WARNING\""
+											},
+											{
+												"class": "info",
+												"condition": "state.record.severity == \"INFO\""
+											}
+										],
+										"hidden": null
+									},
+									{
+										"label": "%{Origin}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "origin",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": "tag",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											},
+											{
+												"type": "text",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": "spacer",
+												"key": null,
+												"disabled": null,
+												"hidden": "!state.record.component",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"multiline": false
+											},
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "component",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": "!state.record.origin"
+									},
+									{
+										"label": "%{Category}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "eventCategory",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "%{Name}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "eventName",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "%{Code}",
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "text",
+												"javascript": null,
+												"template": null,
+												"class": "tag warning",
+												"key": "responseCode",
+												"disabled": null,
+												"hidden": "!state.record.responseCode",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											},
+											{
+												"type": "text",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": "spacer",
+												"key": null,
+												"disabled": null,
+												"hidden": "!state.record.responseCode",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"multiline": false
+											},
+											{
+												"type": "data",
+												"key": "code",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "%{Target}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "method",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": "tag",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"hidden": "!state.record.method"
+											},
+											{
+												"type": "text",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": "spacer",
+												"key": null,
+												"disabled": null,
+												"hidden": "!state.record.method",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"multiline": false
+											},
+											{
+												"type": "data",
+												"content": null,
+												"format": "link",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "requestUri",
+												"disabled": null,
+												"hidden": "!state.record.requestUri",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											},
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "artifactId",
+												"disabled": null,
+												"hidden": "!!state.record.requestUri",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "%{Duration}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "duration",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "%{User}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "alias",
+												"content": null,
+												"format": "text",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"maxLength": "35",
+												"hidden": "!state.record.alias"
+											},
+											{
+												"type": "text",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": "spacer",
+												"key": null,
+												"disabled": null,
+												"hidden": "!state.record.alias",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"multiline": false
+											},
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": "tag light",
+												"key": "realm",
+												"disabled": null,
+												"hidden": "!state.record.alias",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											},
+											{
+												"type": "text",
+												"content": "anonymous",
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": null,
+												"disabled": null,
+												"hidden": "!!state.record.alias",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"multiline": false
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "%{External Dependency}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "externalDependency",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "%{Classification}",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "classification",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [],
+										"hidden": null
+									}
+								],
+								"updateOperation": null,
+								"updateBindings": {},
+								"multiselect": false,
+								"styles": [],
+								"refreshOn": [],
+								"showRefresh": true,
+								"result": {
+									"action": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"additional": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"alias": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"anonymized": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"applicationProtocol": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"artifactId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"bot": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"cached": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"classification": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"classified": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"code": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"component": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"context": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"contextId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"correlationId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"created": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"destinationHost": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"destinationIp": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"destinationLatitude": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"destinationLongitude": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"destinationPort": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"deviceId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"duration": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"eventCategory": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"eventCount": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"eventId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"eventName": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"eventRuleId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"externalDependency": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"externalId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"fileSize": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"fileUri": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"id": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"language": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"localId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"message": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"method": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"networkProtocol": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"notified": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"origin": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"ownerId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"realm": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"reason": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"requestUri": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"responseCode": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"serverGroup": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"serverHost": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"serverName": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"sessionId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"severity": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"sizeIn": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"sizeOut": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"sourceHost": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"sourceIp": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"sourceLatitude": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"sourceLongitude": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"sourcePort": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"stacktrace": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"started": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"state": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"stopped": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"threshold": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"timezone": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"transportProtocol": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"userAgent": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									}
+								},
+								"operation": "nabu.frameworks.events.manage.crud.event.services.list",
+								"comboFilter": {
+									"useTags": true
+								},
+								"useNativeTable": true,
+								"class": "small",
+								"defaultFilter": {
+									"displayOpenOnly": true,
+									"useTags": true,
+									"textBefore": null
+								},
+								"allowFrontendFiltering": false,
+								"showClear": false
+							},
+							"target": "page",
+							"on": null,
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": null,
+							"$$initialize": null,
+							"result": {}
+						}
+					],
+					"class": "full-width",
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				},
+				{
+					"id": 5,
+					"cells": [
+						{
+							"id": 6,
+							"rows": [],
+							"alias": "page-fields",
+							"bindings": {},
+							"name": null,
+							"state": {
+								"class": "facts",
+								"fields": [
+									{
+										"label": "Created",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "date",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.created",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": "'yy MMM dd HH:mm:ss.SSS",
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.created\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Started",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "date",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.started",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": "'yy MMM dd HH:mm:ss.SSS",
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.started\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Stopped",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "date",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.stopped",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": "'yy MMM dd HH:mm:ss.SSS",
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.stopped\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Timezone",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.timezone",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.timezone\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Message",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.message",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.message\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Reason",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.reason",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.reason\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "User Agent",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.userAgent",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.userAgent\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Bot",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.bot",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.bot\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Additional",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "highlight",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.additional",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.additional\")",
+										"styles": [],
+										"arbitrary": false
+									}
+								]
+							},
+							"target": "page",
+							"on": "selectEvent",
+							"class": "align-start",
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": {
+								"eventFields": [],
+								"name": null
+							}
+						},
+						{
+							"id": 7,
+							"rows": [],
+							"alias": "page-fields",
+							"bindings": {},
+							"name": null,
+							"state": {
+								"class": "facts",
+								"fields": [
+									{
+										"label": "Artifact",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.artifactId",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.artifactId\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Action",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.action",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.action\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Context",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.context",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.context\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "External Id",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.externalId",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.externalId\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Device Id",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.deviceId",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.deviceId\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Local Id",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.localId",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.localId\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Context Id",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.contextId",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.contextId\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Cached",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "javascript",
+												"javascript": "value ? \"Yes\" : \"No\"",
+												"template": null,
+												"class": null,
+												"key": "selectEvent.cached",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "$value(\"selectEvent.cached\") == null",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Anonymized",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "javascript",
+												"javascript": "value ? \"Yes\" : \"No\"",
+												"template": null,
+												"class": null,
+												"key": "selectEvent.anonymized",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "$value(\"selectEvent.anonymized\") == null",
+										"styles": [],
+										"arbitrary": false
+									}
+								]
+							},
+							"target": "page",
+							"on": "selectEvent",
+							"class": "align-start",
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": {
+								"eventFields": [],
+								"name": null
+							}
+						},
+						{
+							"id": 8,
+							"rows": [],
+							"alias": "page-fields",
+							"bindings": {},
+							"name": null,
+							"state": {
+								"class": "facts",
+								"fields": [
+									{
+										"label": "Server Group",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.serverGroup",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.serverGroup\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Server Name",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.serverName",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.serverName\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Transport Protocol",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.transportProtocol",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.transportProtocol\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Network Protocol",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.networkProtocol",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.networkProtocol\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Application Protocol",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.applicationProtocol",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.applicationProtocol\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Destination Host",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.destinationHost",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.destinationHost\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Destination IP",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.destinationIp",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.destinationIp\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Destination Port",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.destinationPort",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.destinationPort\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Source Host",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.sourceHost",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.sourceHost\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Source IP",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.sourceIp",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.sourceIp\")",
+										"styles": [],
+										"arbitrary": false
+									},
+									{
+										"label": "Source Port",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectEvent.sourcePort",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": "!$value(\"selectEvent.sourcePort\")",
+										"styles": [],
+										"arbitrary": false
+									}
+								]
+							},
+							"target": "page",
+							"on": "selectEvent",
+							"class": "align-start",
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": {
+								"eventFields": [],
+								"name": null
+							}
+						}
+					],
+					"class": "full-width",
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				},
+				{
+					"id": 3,
+					"cells": [
+						{
+							"id": 4,
+							"rows": [],
+							"alias": "page-fields",
+							"bindings": {},
+							"name": null,
+							"state": {
+								"class": "facts",
+								"fields": [
+									{
+										"label": "Stack Trace",
+										"info": null,
+										"infoIcon": null,
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "text",
+												"javascript": null,
+												"template": null,
+												"class": "code",
+												"key": "selectEvent.stacktrace",
+												"disabled": null,
+												"hidden": "!$value(\"selectEvent.stacktrace\")",
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"clickEvent": {
+													"eventFields": [],
+													"name": null
+												}
+											}
+										],
+										"hidden": null,
+										"styles": [],
+										"arbitrary": false
+									}
+								]
+							},
+							"target": "page",
+							"on": "selectEvent",
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": {
+								"eventFields": [],
+								"name": null
+							}
+						}
+					],
+					"class": "full-width",
+					"customId": null,
+					"instances": {},
+					"condition": "$value(\"selectEvent.stacktrace\")",
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				}
+			],
+			"path": "/events",
+			"counter": 9,
+			"variables": [],
+			"query": [],
+			"actions": [],
+			"class": null,
+			"initial": false,
+			"menuX": 0,
+			"menuY": 0,
+			"states": [],
+			"category": "Monitoring",
+			"slow": false,
+			"name": "event-list",
+			"parameters": [],
+			"roles": [
+				"$user"
+			]
+		}
+	}
+}
