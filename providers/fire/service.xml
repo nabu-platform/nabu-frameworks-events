@@ -384,8 +384,19 @@
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						comment="We ignore events for classification if they are not WARNING or below"
 						disabled="false"
-						id="88665cd8-f4af-454a-90bf-4b5861acd234">
+						id="88665cd8-f4af-454a-90bf-4b5861acd234"
+						label="definedEvent/severity = &quot;INFO&quot; || definedEvent/severity = &quot;DEBUG&quot; || definedEvent/severity = &quot;TRACE&quot;">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="2fd3b02f-971e-4bee-8166-ce11f39e7b98"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>IGNORED</from>
+						<to>definedEvent/state</to>
+					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Add to list"
