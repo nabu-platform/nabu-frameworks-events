@@ -7,7 +7,7 @@
     <filters>
         <caseInsensitive>false</caseInsensitive>
         <key>action</key>
-        <operator>ilike</operator>
+        <operator>=</operator>
         <or>false</or>
         <input>true</input>
     </filters>
@@ -35,7 +35,7 @@
     <filters>
         <caseInsensitive>false</caseInsensitive>
         <key>artifactId</key>
-        <operator>ilike</operator>
+        <operator>=</operator>
         <or>false</or>
         <input>true</input>
     </filters>
@@ -64,14 +64,14 @@
     <filters>
         <caseInsensitive>false</caseInsensitive>
         <key>code</key>
-        <operator>ilike</operator>
+        <operator>=</operator>
         <or>false</or>
         <input>true</input>
     </filters>
     <filters>
         <caseInsensitive>false</caseInsensitive>
         <key>eventName</key>
-        <operator>ilike</operator>
+        <operator>=</operator>
         <or>false</or>
         <input>true</input>
     </filters>
