@@ -89,6 +89,22 @@
         <or>false</or>
         <input>true</input>
     </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>created</key>
+        <operator>&gt;=</operator>
+        <or>false</or>
+        <alias>since</alias>
+        <input>true</input>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>created</key>
+        <operator>&lt;</operator>
+        <or>false</or>
+        <alias>until</alias>
+        <input>true</input>
+    </filters>
     <listRole>manager</listRole>
     <provider>nabu.services.crud.provider.basic.provider</provider>
     <updateRole>manager</updateRole>
