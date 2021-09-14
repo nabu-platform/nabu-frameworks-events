@@ -1,0 +1,17 @@
+<structure interface="be.nabu.eai.server.api.EventHandler.handle" name="pipeline">
+    <structure name="input"/>
+    <structure name="output">
+        <structure collectionName="events" definition="nabu.frameworks.events.api.event.event" name="event" restrict="id, classified, classification, classificationRuleId, state, serverId"/>
+    </structure>
+    <structure collectionName="events" definition="nabu.frameworks.events.api.event.event" name="definedEvent" restrict="id, classified, classification, classificationRuleId, state, serverId"/>
+    <field minOccurs="0" name="serverName" type="java.lang.String"/>
+    <field minOccurs="0" name="serverGroup" type="java.lang.String"/>
+    <field minOccurs="0" name="now" type="java.util.Date"/>
+    <structure collectionName="events" definition="nabu.frameworks.events.api.event.event" maxOccurs="unbounded" minOccurs="0" name="definedEvents" restrict="id, classified, classification, classificationRuleId, state, serverId"/>
+    <field minOccurs="0" name="eventName" type="java.lang.String"/>
+    <field name="serializedEvent" type="java.lang.String"/>
+    <field minOccurs="0" name="endpoint" type="java.lang.String"/>
+    <field minOccurs="0" name="eventTypeId" type="java.lang.String"/>
+    <structure definition="be.nabu.libs.authentication.api.Token" minOccurs="0" name="token"/>
+    <field minOccurs="0" name="apiKey" type="java.lang.String"/>
+</structure>

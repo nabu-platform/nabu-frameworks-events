@@ -1,0 +1,103 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="95ba3003-16fe-414c-94dd-8b4e805f6487">
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="08bbe23c-f9c2-474f-bf04-680256143ea1"
+			variable="event"
+			into="storedEvents">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Upgrade to storable event"
+				disabled="false"
+				id="d0d6291b-c240-4d8a-b778-e462c1765906">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0d8e7339-6dbe-4031-a002-37c3c5530de6"
+					mask="true"
+					optional="false"
+					fixedValue="false">
+				<from>event</from>
+				<to>storedEvent</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Set default values"
+				disabled="false"
+				id="adece065-abed-4d55-9fab-2fe5f44d6e2e">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f00317c4-3641-4309-be2b-815959c75fb5"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>CREATED</from>
+				<to>storedEvent/state</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ea4eaa73-bcfd-4c5f-bc2a-04d18f20d049"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/token/authenticationId</from>
+				<to>storedEvent/serverId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="We ignore events for classification if they are not WARNING or below"
+				disabled="false"
+				id="88665cd8-f4af-454a-90bf-4b5861acd234"
+				label="storedEvent/severity = &quot;INFO&quot; || storedEvent/severity = &quot;DEBUG&quot; || storedEvent/severity = &quot;TRACE&quot;">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="5f80e7f9-e16a-4f3b-9838-f84d3a1be28f"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>IGNORED</from>
+				<to>storedEvent/state</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Map output"
+				disabled="false"
+				id="389bf6e0-8c68-48f7-afcf-a033c93a43e6">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="94629688-43a2-493a-bc46-e05a108ad0a9"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>storedEvent</from>
+				<to>storedEvents[0]</to>
+			</steps>
+		</steps>
+		<query>input/content/events</query>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="6a79d622-9680-48b9-9390-fd0f4f160270"
+			label="storedEvents">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="0d841209-a941-487d-b0bf-8f0baad1a28e"
+				serviceId="nabu.services.jdbc.Services.insert"
+				resultName="result12c73e6b8cb2481bbb9a0b95d2e87888"
+				temporaryMapping="true"
+				x="76"
+				y="59"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b658e9b7-5b31-4968-9901-357f52d91359"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>storedEvents</from>
+				<to>instances</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

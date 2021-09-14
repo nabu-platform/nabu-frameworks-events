@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-20T17:47:50.635+02:00" lastModified="2021-09-14T23:56:10.228+02:00" leaf="true" version="58">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.Runtime.getCurrentToken</references>
+    <references>nabu.utils.Server.log</references>
+    <references>nabu.frameworks.events.services.remoteClient</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.Server.getServerGroup</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.utils.reflection.Type.of</references>
+    <references>nabu.utils.Server.property</references>
+    <references>be.nabu.eai.server.api.EventHandler.handle</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
+    <references>nabu.data.xml.Services.marshal</references>
+    <references>nabu.utils.Server.getServerName</references>
+    <references>nabu.frameworks.events.api.event.event</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.events.specs.standardize</references>
+</node>

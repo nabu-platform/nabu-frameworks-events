@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restClient>
+    <method>POST</method>
+    <path>/event/fire</path>
+    <input>nabu.frameworks.events.api.event.eventList</input>
+    <preemptiveAuthorizationType>BEARER</preemptiveAuthorizationType>
+    <requestType>JSON</requestType>
+    <responseType>JSON</responseType>
+    <lenient>true</lenient>
+    <ignoreRootIfArrayWrapper>true</ignoreRootIfArrayWrapper>
+</restClient>

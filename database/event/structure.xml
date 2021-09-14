@@ -2,6 +2,7 @@
     <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
     <field minOccurs="0" name="serverGroup" type="java.lang.String"/>
     <field minOccurs="0" name="serverName" type="java.lang.String"/>
+    <field comment="The authentication id of the server that reported it. It is set at the side of the one inserting into the database." minOccurs="0" name="serverId" type="java.lang.String"/>
     <field comment="The host name of the server" minOccurs="0" name="serverHost" type="java.lang.String"/>
     <field comment="The artifact that triggered the event (if any)" minOccurs="0" name="artifactId" type="java.lang.String"/>
     <field comment="A local id of the event" minOccurs="0" name="localId" type="java.lang.String"/>
@@ -11,6 +12,7 @@
     <field minOccurs="0" name="severity" type="java.lang.String"/>
     <field identifiable="true" minOccurs="0" name="alias" type="java.lang.String"/>
     <field minOccurs="0" name="realm" type="java.lang.String"/>
+    <field comment="An anonymous single identifier of the user" minOccurs="0" name="authenticationId" type="java.lang.String"/>
     <field name="created" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="started" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="stopped" timezone="UTC" type="java.util.Date"/>

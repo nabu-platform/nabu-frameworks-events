@@ -1,0 +1,6 @@
+<structure interface="nabu.frameworks.events.api.event.fire:api" name="pipeline">
+    <structure name="input" validate="true"/>
+    <structure name="output"/>
+    <structure collectionName="events" definition="nabu.frameworks.events.database.event" name="storedEvent"/>
+    <structure collectionName="events" definition="nabu.frameworks.events.database.event" maxOccurs="unbounded" name="storedEvents"/>
+</structure>

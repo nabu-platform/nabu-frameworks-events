@@ -1,0 +1,3 @@
+<structure name="eventList">
+    <structure definition="nabu.frameworks.events.api.event.event" maxOccurs="1000" minOccurs="0" name="events" restrict="id, classified, classification, classificationRuleId, state, serverId"/>
+</structure>

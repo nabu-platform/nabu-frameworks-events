@@ -1,0 +1,1 @@
+<structure name="event" restrict="id, classified, classification, classificationRuleId, state, serverId" superType="nabu.frameworks.events.database.event"/>
