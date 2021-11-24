@@ -1,1 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2020-10-26T08:43:18.726+01:00" lastModified="2020-10-26T09:39:48.132+01:00" leaf="false" version="15"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>java.lang.String</references><references>java.lang.Long</references><references>java.lang.Integer</references><references>java.lang.Boolean</references><references>be.nabu.libs.types.api.KeyValuePair</references><references xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/><references>java.lang.Long</references><references>java.lang.Boolean</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2020-10-26T08:43:18.726+01:00" lastModified="2021-10-29T11:49:15.700+02:00" leaf="false" version="17">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.lang.String</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Integer</references>
+    <references>java.lang.Boolean</references>
+    <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>nabu.frameworks.events.utils.notification.getNotificationsForRule.parameters</references>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
+    <references>nabu.frameworks.events.utils.notification.getNotificationsForRule.results</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Boolean</references>
+</node>

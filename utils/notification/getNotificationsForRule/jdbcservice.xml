@@ -2,6 +2,7 @@
 	<sql>select
 	en.id as notification_id,
 	en.service,
+	en.input,
 	en.notification_interval,
 	ens.last_notified,
 	ens.subscriber_id,

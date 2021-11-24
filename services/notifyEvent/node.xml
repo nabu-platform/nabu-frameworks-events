@@ -1,1 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-26T08:42:11.053+01:00" lastModified="2020-10-26T08:42:46.294+01:00" leaf="true" version="5"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>nabu.frameworks.events.database.event</references><references>java.lang.String</references><references>java.util.UUID</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2021-03-05T14:12:39.945+01:00" lastModified="2021-10-29T11:50:30.498+02:00" leaf="true" version="52">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.frameworks.signals.crud.signalSubscription.types.output</references>
+    <references>nabu.frameworks.events.types.propertyList</references>
+    <references>nabu.utils.reflection.Service.invoke</references>
+    <references>nabu.frameworks.signals.crud.signalInstanceSubscription.services.create</references>
+    <references>nabu.frameworks.events.database.event</references>
+    <references>nabu.services.glue.Services.evaluate</references>
+    <references>java.util.UUID</references>
+    <references>nabu.utils.reflection.Type.set</references>
+    <references>nabu.utils.reflection.Type.newInstance</references>
+    <references>nabu.frameworks.events.utils.notification.getNotificationsForRule.results</references>
+    <references>nabu.utils.String.substring</references>
+    <references>nabu.frameworks.events.types.evaluationContext</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+    <references>nabu.data.json.Services.marshal</references>
+    <references>nabu.data.json.Services.unmarshal</references>
+</node>

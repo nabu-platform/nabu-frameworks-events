@@ -140,14 +140,38 @@ result = " + rule/rule</from>
 			<from>result5f3357efdd4c441d9a292469492b968b/date</from>
 			<to>input/event/classified</to>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			comment="Set the state to either CLASSIFIED or IGNORED depending on whether you want to signal or not"
+			disabled="false"
+			id="a39a868e-8bbf-41b5-b641-782ad146f72c"
+			query="output/rule/signal">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
-				id="11cf5222-148c-43eb-a53b-1885e805723d"
-				mask="false"
-				optional="false"
-				fixedValue="true">
-			<from>CLASSIFIED</from>
-			<to>input/event/state</to>
+				id="bb6076b1-c3c9-4df6-b629-494d00bf53b9"
+				label="true">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="dab37971-bbbc-4c34-a7cd-a2be08d1ac4e"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>CLASSIFIED</from>
+				<to>input/event/state</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="51ea86b7-67f6-4d17-bf8f-f1de82669142">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c4e0fdea-416d-495c-8966-0342e5c25e80"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>IGNORED</from>
+				<to>input/event/state</to>
+			</steps>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"

@@ -1,9 +1,18 @@
 <structure name="pipeline">
     <structure name="input">
         <field minOccurs="0" name="connectionId" type="java.lang.String"/>
-        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
         <field name="eventRuleId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-        <structure collectionName="events" definition="nabu.frameworks.events.database.event" maxOccurs="unbounded" minOccurs="0" name="events"/>
+        <structure collectionName="events" definition="nabu.frameworks.events.database.event" name="event"/>
+        <structure definition="nabu.frameworks.events.utils.notification.getNotificationsForRule.results" name="notification"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="typeId" type="java.lang.String"/>
     </structure>
     <structure name="output"/>
+    <structure collectionName="signalSubscription" definition="nabu.frameworks.signals.crud.signalSubscription.types.output" maxOccurs="unbounded" minOccurs="0" name="subscriptions"/>
+    <structure definition="nabu.frameworks.events.types.propertyList" name="propertyList"/>
+    <structure definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
+    <field name="serviceInputMarshalled" type="java.lang.String"/>
+    <structure definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
+    <field name="serviceOutputMarshalled" type="java.lang.String"/>
+    <structure definition="java.lang.Object" minOccurs="0" name="propertyValue"/>
+    <structure definition="nabu.frameworks.events.types.evaluationContext" name="context"/>
 </structure>

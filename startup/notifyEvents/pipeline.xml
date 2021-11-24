@@ -13,7 +13,6 @@
     <structure definition="nabu.frameworks.events.utils.groupedEvent" maxOccurs="unbounded" minOccurs="0" name="applicableEvents"/>
     <structure definition="nabu.frameworks.events.utils.notification.getNotificationsForRule.results" maxOccurs="unbounded" minOccurs="0" name="applicableNotifications"/>
     <field minOccurs="0" name="lastNotifiedBefore" type="java.util.Date"/>
-    <structure collectionName="eventNotificationSubscribers" definition="nabu.frameworks.events.database.eventNotificationSubscriber" maxOccurs="unbounded" minOccurs="0" name="allSubscribers"/>
     <field minOccurs="0" name="now" type="java.util.Date"/>
     <field maxOccurs="unbounded" minOccurs="0" name="uniqueEventRuleIds" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
 </structure>

@@ -3,31 +3,13 @@
     <entries>
         <synchronize>true</synchronize>
         <type>nabu.frameworks.events.database.event</type>
-        <x>205</x>
-        <y>371</y>
+        <x>152</x>
+        <y>2</y>
     </entries>
     <entries>
         <synchronize>true</synchronize>
         <type>nabu.frameworks.events.database.eventRule</type>
-        <x>570</x>
-        <y>740</y>
-    </entries>
-    <entries>
-        <synchronize>true</synchronize>
-        <type>nabu.frameworks.events.database.eventNotification</type>
-        <x>912</x>
-        <y>315</y>
-    </entries>
-    <entries>
-        <synchronize>true</synchronize>
-        <type>nabu.frameworks.events.database.eventNotificationSubscriber</type>
-        <x>1092</x>
-        <y>113</y>
-    </entries>
-    <entries>
-        <synchronize>true</synchronize>
-        <type>nabu.frameworks.events.database.eventNotificationRule</type>
-        <x>705</x>
-        <y>550</y>
+        <x>583</x>
+        <y>267</y>
     </entries>
 </dataModel>

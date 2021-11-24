@@ -1,0 +1,7 @@
+<structure name="evaluationContext">
+    <field name="$typeId" type="java.lang.String"/>
+    <field name="$index" type="java.lang.Long"/>
+    <field name="$rule" type="java.lang.String"/>
+    <field minOccurs="0" name="$subscriber" type="java.lang.String"/>
+    <structure definition="java.lang.Object" name="$event"/>
+</structure>
