@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2022-02-11T14:24:28.043+01:00" lastModified="2022-02-11T16:39:06.100+01:00" leaf="true" version="6">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.util.UUID</references>
+    <references>nabu.frameworks.events.database.types.eventFunnel</references>
+    <references>java.util.Date</references>
+    <references>nabu.frameworks.events.database.event</references>
+    <references>java.lang.String</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Double</references>
+</node>

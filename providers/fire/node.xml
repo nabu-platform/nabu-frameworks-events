@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-20T17:47:50.635+02:00" lastModified="2021-02-10T10:10:54.505+01:00" leaf="true" version="50">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-20T17:47:50.635+02:00" lastModified="2021-12-12T12:15:59.214+01:00" leaf="true" version="56">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
     <references>nabu.utils.Runtime.getCurrentToken</references>
     <references>nabu.utils.Server.log</references>
+    <references>nabu.frameworks.events.crud.event.services.create</references>
     <references>java.util.Date</references>
     <references>nabu.utils.Server.getServerGroup</references>
     <references>nabu.utils.Date.now</references>
-    <references>nabu.utils.Server.uuid</references>
     <references>nabu.utils.reflection.Type.of</references>
     <references>nabu.frameworks.events.database.event</references>
     <references>nabu.utils.Server.property</references>

@@ -1,0 +1,816 @@
+{ 
+	"category": "Monitoring",
+	"name": "Event Rules",
+	"description": "Configure rules for events",
+	"icon": "images/events/events-large.png",
+	"content": {
+		"type": "page",
+		"content": 
+{
+	"label": "Event Rules",
+	"rows": [
+		{
+			"id": 1,
+			"cells": [
+				{
+					"id": 2,
+					"rows": [],
+					"alias": "data-table-list",
+					"bindings": {
+						"limit": null,
+						"offset": null,
+						"orderBy": null,
+						"classification": null,
+						"name": null,
+						"properties": null
+					},
+					"name": null,
+					"state": {
+						"autoRefresh": null,
+						"orderBy": [
+							"priority desc"
+						],
+						"filterPlaceHolder": null,
+						"filterType": "data-combo-filter",
+						"title": "Event Rule",
+						"limit": 10,
+						"actions": [
+							{
+								"name": "createEventRule",
+								"global": true,
+								"label": "%{Create}",
+								"type": "button",
+								"class": "primary"
+							},
+							{
+								"name": "updateEventRule",
+								"global": false,
+								"icon": "fa-pencil-alt",
+								"type": "button",
+								"class": "inline"
+							}
+						],
+						"filters": [],
+						"fields": [
+							{
+								"label": "%{Active}",
+								"fragments": [
+									{
+										"type": "form",
+										"key": "active",
+										"content": null,
+										"format": "checkbox",
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {
+											"name": "active",
+											"label": null,
+											"description": null,
+											"type": "checkbox",
+											"enumerations": [],
+											"value": null,
+											"validationSuccessEvent": {
+												"eventFields": [],
+												"name": null
+											}
+										},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"disabled": null
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Name}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "name",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Classification}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "classification",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Severity}",
+								"info": null,
+								"infoIcon": null,
+								"fragments": [
+									{
+										"type": "data",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"key": "severity",
+										"disabled": null,
+										"hidden": null,
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									}
+								],
+								"hidden": null,
+								"styles": [],
+								"arbitrary": false
+							},
+							{
+								"label": "%{Created}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "created",
+										"content": null,
+										"format": "date",
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Modified}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "modified",
+										"content": null,
+										"format": "date",
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Priority}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "priority",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Rule}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "rule",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Signal}",
+								"fragments": [
+									{
+										"type": "form",
+										"key": "signal",
+										"content": null,
+										"format": "checkbox",
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {
+											"name": "signal",
+											"label": null,
+											"description": null,
+											"type": "checkbox",
+											"enumerations": [],
+											"value": null,
+											"validationSuccessEvent": {
+												"eventFields": [],
+												"name": null
+											}
+										},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"disabled": null
+									}
+								],
+								"styles": [],
+								"hidden": null
+							}
+						],
+						"updateOperation": "nabu.frameworks.events.manage.crud.eventRule.services.update",
+						"updateBindings": {
+							"id": "record.id",
+							"body": null
+						},
+						"multiselect": false,
+						"styles": [],
+						"refreshOn": [
+							"createdEventRule"
+						],
+						"showRefresh": false,
+						"result": {
+							"active": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"classification": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"created": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"id": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"modified": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"name": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"priority": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"rule": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"signal": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"severity": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							}
+						},
+						"operation": "nabu.frameworks.events.manage.crud.eventRule.services.list",
+						"comboFilter": {
+							"useTags": true
+						},
+						"useNativeTable": true,
+						"detailFields": []
+					},
+					"target": "page",
+					"on": null,
+					"class": null,
+					"customId": null,
+					"width": 1,
+					"height": null,
+					"instances": {},
+					"condition": null,
+					"devices": [],
+					"clickEvent": null,
+					"$$initialize": null,
+					"result": {}
+				}
+			],
+			"class": null,
+			"customId": null,
+			"instances": {},
+			"condition": null,
+			"direction": null,
+			"align": null,
+			"on": null,
+			"collapsed": false,
+			"name": null
+		},
+		{
+			"id": 3,
+			"cells": [
+				{
+					"id": 4,
+					"rows": [],
+					"alias": "page-form",
+					"bindings": {
+						"body.name": null,
+						"body.active": "fixed.true",
+						"body.rule": null,
+						"body.priority": "fixed.0",
+						"body.classification": null,
+						"body.signal": null
+					},
+					"name": null,
+					"state": {
+						"title": "%{Create Rule}",
+						"immediate": false,
+						"pages": [
+							{
+								"name": "Form Fields",
+								"title": null,
+								"fields": [
+									{
+										"arbitrary": false,
+										"name": "body.name",
+										"label": "%{Name}",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"textType": null,
+										"bindings": {},
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"after": "A logical name for this rule"
+									},
+									{
+										"arbitrary": false,
+										"name": "body.priority",
+										"label": "%{Priority}",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"textType": "number",
+										"bindings": {},
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"placeholder": null,
+										"after": "The priority of this rule in the execution order"
+									},
+									{
+										"arbitrary": false,
+										"name": "body.classification",
+										"label": "%{Classification}",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"textType": null,
+										"bindings": {},
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"after": "Classify an event once it's been identified"
+									},
+									{
+										"arbitrary": false,
+										"name": "body.severity",
+										"label": "%{Severity}",
+										"description": null,
+										"type": "enumeration",
+										"enumerations": [
+											"CRITICAL",
+											"ERROR",
+											"WARNING",
+											"INFO"
+										],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"after": "Override the current severity of the event"
+									},
+									{
+										"arbitrary": false,
+										"name": "body.rule",
+										"label": "%{Rule}",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"textType": null,
+										"bindings": {},
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"info": null,
+										"after": "This glue rule is evaluated against the event itself"
+									},
+									{
+										"arbitrary": false,
+										"name": "body.signal",
+										"label": "%{Signal}",
+										"description": null,
+										"type": "switch",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										}
+									}
+								]
+							}
+						],
+						"class": null,
+						"ok": "%{Create}",
+						"edit": "Edit",
+						"next": "Next",
+						"cancel": "%{Cancel}",
+						"event": "createdEventRule",
+						"synchronize": false,
+						"operation": "nabu.frameworks.events.manage.crud.eventRule.services.create",
+						"mode": "component"
+					},
+					"target": "prompt",
+					"on": "createEventRule",
+					"class": null,
+					"customId": null,
+					"width": 1,
+					"height": null,
+					"instances": {},
+					"condition": null,
+					"devices": [],
+					"clickEvent": null,
+					"$$initialize": null,
+					"cellState": {
+						"form": {
+							"properties": {
+								"body": {
+									"type": "object",
+									"required": [
+										"name",
+										"active",
+										"rule",
+										"priority"
+									],
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"active": {
+											"type": "boolean"
+										},
+										"rule": {
+											"description": "The glue-based rule",
+											"type": "string"
+										},
+										"priority": {
+											"description": "The rule priority (defaults to 0). Higher priority rules are fired first.",
+											"type": "integer",
+											"format": "int32"
+										},
+										"classification": {
+											"description": "The classification to set on the event (if any). In theory only classified events are considered \"handled\". A rule can however be used to notify without classifying.",
+											"type": "string"
+										},
+										"signal": {
+											"description": "Whether or not to send a signal for events that match this rule",
+											"type": "boolean"
+										},
+										"severity": {
+											"description": "You can optionally override the severity of the event. For example upgrade an ERROR to CRITICAL.",
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			],
+			"class": null,
+			"customId": null,
+			"instances": {},
+			"condition": null,
+			"direction": null,
+			"align": null,
+			"on": null,
+			"collapsed": false,
+			"name": null
+		},
+		{
+			"id": 5,
+			"cells": [
+				{
+					"id": 6,
+					"rows": [],
+					"alias": "page-form",
+					"bindings": {
+						"id": "updateEventRule.id",
+						"body.name": "updateEventRule.name",
+						"body.active": "updateEventRule.active",
+						"body.rule": "updateEventRule.rule",
+						"body.priority": "updateEventRule.priority",
+						"body.classification": "updateEventRule.classification",
+						"body.signal": "updateEventRule.signal",
+						"body.severity": "updateEventRule.severity"
+					},
+					"name": null,
+					"state": {
+						"title": "%{Update EventRule}",
+						"immediate": false,
+						"pages": [
+							{
+								"name": "Form Fields",
+								"title": null,
+								"fields": [
+									{
+										"arbitrary": false,
+										"name": "body.name",
+										"label": "%{Name}",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"textType": null,
+										"bindings": {},
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"after": "A logical name for this rule"
+									},
+									{
+										"arbitrary": false,
+										"name": "body.priority",
+										"label": "%{Priority}",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"textType": "number",
+										"bindings": {},
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"placeholder": null,
+										"after": "The priority of this rule in the execution order"
+									},
+									{
+										"arbitrary": false,
+										"name": "body.classification",
+										"label": "%{Classification}",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"textType": null,
+										"bindings": {},
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"after": "Classify an event once it's been identified"
+									},
+									{
+										"arbitrary": false,
+										"name": "body.severity",
+										"label": "%{Severity}",
+										"description": null,
+										"type": "enumeration",
+										"enumerations": [
+											"CRITICAL",
+											"ERROR",
+											"WARNING",
+											"INFO"
+										],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"after": "Override the current severity of the event"
+									},
+									{
+										"arbitrary": false,
+										"name": "body.rule",
+										"label": "%{Rule}",
+										"description": null,
+										"type": "text",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"textType": null,
+										"bindings": {},
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										},
+										"info": null,
+										"after": "This glue rule is evaluated against the event itself"
+									},
+									{
+										"arbitrary": false,
+										"name": "body.signal",
+										"label": "%{Signal}",
+										"description": null,
+										"type": "switch",
+										"enumerations": [],
+										"value": null,
+										"group": null,
+										"joinGroup": false,
+										"validationSuccessEvent": {
+											"eventFields": [],
+											"name": null
+										}
+									}
+								]
+							}
+						],
+						"class": null,
+						"ok": "Ok",
+						"edit": "Edit",
+						"next": "Next",
+						"cancel": "Cancel",
+						"event": "updatedEventRule",
+						"synchronize": true,
+						"operation": "nabu.frameworks.events.manage.crud.eventRule.services.update",
+						"mode": "component"
+					},
+					"target": "prompt",
+					"on": "updateEventRule",
+					"class": null,
+					"customId": null,
+					"width": 1,
+					"height": null,
+					"instances": {},
+					"condition": null,
+					"devices": [],
+					"clickEvent": null,
+					"$$initialize": null,
+					"cellState": {
+						"form": {
+							"properties": {
+								"id": {
+									"in": "path",
+									"required": true,
+									"name": "id",
+									"pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}",
+									"type": "string",
+									"format": "uuid"
+								},
+								"body": {
+									"type": "object",
+									"required": [
+										"name",
+										"active",
+										"rule",
+										"priority"
+									],
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"active": {
+											"type": "boolean"
+										},
+										"rule": {
+											"description": "The glue-based rule",
+											"type": "string"
+										},
+										"priority": {
+											"description": "The rule priority (defaults to 0). Higher priority rules are fired first.",
+											"type": "integer",
+											"format": "int32"
+										},
+										"classification": {
+											"description": "The classification to set on the event (if any). In theory only classified events are considered \"handled\". A rule can however be used to notify without classifying.",
+											"type": "string"
+										},
+										"signal": {
+											"description": "Whether or not to send a signal for events that match this rule",
+											"type": "boolean"
+										},
+										"severity": {
+											"description": "You can optionally override the severity of the event. For example upgrade an ERROR to CRITICAL.",
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			],
+			"class": null,
+			"customId": null,
+			"instances": {},
+			"condition": null,
+			"direction": null,
+			"align": null,
+			"on": null,
+			"collapsed": false,
+			"name": null
+		}
+	],
+	"path": "/event-rules",
+	"counter": 7,
+	"variables": [],
+	"query": [],
+	"actions": [],
+	"class": null,
+	"initial": false,
+	"menuX": 0,
+	"menuY": 0,
+	"states": [],
+	"category": "Monitoring",
+	"slow": false,
+	"name": "event-rules"
+}
+	}
+}

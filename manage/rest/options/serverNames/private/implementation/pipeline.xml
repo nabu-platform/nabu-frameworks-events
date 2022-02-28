@@ -1,0 +1,5 @@
+<structure interface="nabu.frameworks.events.manage.rest.options.serverNames:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure definition="nabu.frameworks.events.manage.rest.options.selectServerNames.results" maxOccurs="unbounded" minOccurs="0" name="results"/>
+</structure>

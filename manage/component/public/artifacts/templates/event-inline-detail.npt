@@ -1,0 +1,1313 @@
+{ 
+	"category": "Monitoring",
+	"name": "Event Inline Detail",
+	"description": "An inline overview of the details. Needed for the event list page.",
+	"icon": "images/events/events-large.png",
+	"content": {
+		"type": "page",
+		"content": {
+	"label": "Event Inline Detail",
+	"rows": [
+		{
+			"id": 3,
+			"cells": [
+				{
+					"id": 4,
+					"rows": [],
+					"alias": "data-table-list",
+					"bindings": {
+						"limit": null,
+						"offset": null,
+						"orderBy": null,
+						"action": null,
+						"additional": null,
+						"alias": null,
+						"anonymized": null,
+						"artifactId": null,
+						"classification": null,
+						"unclassified": null,
+						"properties": null,
+						"severity": null,
+						"code": null,
+						"since": "page.since",
+						"until": "page.until",
+						"correlationId": "page.correlationId"
+					},
+					"name": null,
+					"state": {
+						"autoRefresh": null,
+						"orderBy": [
+							"created asc"
+						],
+						"filterPlaceHolder": null,
+						"filterType": "data-filter-default",
+						"title": null,
+						"limit": 10,
+						"actions": [
+							{
+								"name": "selectEvent",
+								"icon": null,
+								"class": null,
+								"label": null,
+								"condition": null,
+								"refresh": false,
+								"global": false,
+								"close": false,
+								"type": "button",
+								"useSelection": false
+							}
+						],
+						"filters": [],
+						"fields": [
+							{
+								"label": "%{Server}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "serverName",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									},
+									{
+										"type": "text",
+										"content": " (",
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"key": null,
+										"disabled": null,
+										"hidden": null,
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"multiline": false
+									},
+									{
+										"type": "data",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"key": "serverGroup",
+										"disabled": null,
+										"hidden": null,
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									},
+									{
+										"type": "text",
+										"content": ")",
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"key": null,
+										"disabled": null,
+										"hidden": null,
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"multiline": false
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Created}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "created",
+										"content": null,
+										"format": "date",
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {},
+										"dateFormat": "MMM dd HH:mm:ss.SSS",
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Severity}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "severity",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									}
+								],
+								"styles": [
+									{
+										"class": "danger",
+										"condition": "state.record.severity == \"ERROR\""
+									},
+									{
+										"class": "warning",
+										"condition": "state.record.severity == \"WARNING\""
+									},
+									{
+										"class": "info",
+										"condition": "state.record.severity == \"INFO\""
+									}
+								],
+								"hidden": null
+							},
+							{
+								"label": "%{Origin}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "origin",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": "tag",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									},
+									{
+										"type": "text",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": "spacer",
+										"key": null,
+										"disabled": null,
+										"hidden": "!state.record.component",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"multiline": false
+									},
+									{
+										"type": "data",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"key": "component",
+										"disabled": null,
+										"hidden": null,
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									}
+								],
+								"styles": [],
+								"hidden": "!state.record.origin"
+							},
+							{
+								"label": "%{Category}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "eventCategory",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Name}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "eventName",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Code}",
+								"fragments": [
+									{
+										"type": "data",
+										"content": null,
+										"format": "text",
+										"javascript": null,
+										"template": null,
+										"class": "tag warning",
+										"key": "responseCode",
+										"disabled": null,
+										"hidden": "!state.record.responseCode",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									},
+									{
+										"type": "text",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": "spacer",
+										"key": null,
+										"disabled": null,
+										"hidden": "!state.record.responseCode",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"multiline": false
+									},
+									{
+										"type": "data",
+										"key": "code",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Target}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "method",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": "tag",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"hidden": "!state.record.method"
+									},
+									{
+										"type": "text",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": "spacer",
+										"key": null,
+										"disabled": null,
+										"hidden": "!state.record.method",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"multiline": false
+									},
+									{
+										"type": "data",
+										"content": null,
+										"format": "link",
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"key": "requestUri",
+										"disabled": null,
+										"hidden": "!state.record.requestUri",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									},
+									{
+										"type": "data",
+										"content": null,
+										"format": "javascript",
+										"javascript": "value.replace(/http.*:\\/\\/[^\\/]+([^?]*).*/, \"$1\")",
+										"template": null,
+										"class": "request-path",
+										"key": "requestUri",
+										"disabled": null,
+										"hidden": "!state.record.requestUri",
+										"form": {},
+										"dateFormat": null,
+										"tag": "div",
+										"html": null,
+										"amountOfDecimals": null,
+										"compile": true
+									},
+									{
+										"type": "data",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"key": "artifactId",
+										"disabled": null,
+										"hidden": "!!state.record.requestUri",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Duration}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "duration",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{User}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "alias",
+										"content": null,
+										"format": "text",
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"maxLength": "35",
+										"hidden": "!state.record.alias"
+									},
+									{
+										"type": "text",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": "spacer",
+										"key": null,
+										"disabled": null,
+										"hidden": "!state.record.alias",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"multiline": false
+									},
+									{
+										"type": "data",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": "tag light",
+										"key": "realm",
+										"disabled": null,
+										"hidden": "!state.record.alias",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null
+									},
+									{
+										"type": "text",
+										"content": "anonymous",
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"key": null,
+										"disabled": null,
+										"hidden": "!!state.record.alias",
+										"form": {},
+										"dateFormat": null,
+										"tag": null,
+										"html": null,
+										"amountOfDecimals": null,
+										"multiline": false
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{External Dependency}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "externalDependency",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									}
+								],
+								"styles": [],
+								"hidden": null
+							},
+							{
+								"label": "%{Classification}",
+								"fragments": [
+									{
+										"type": "data",
+										"key": "classification",
+										"content": null,
+										"format": null,
+										"javascript": null,
+										"template": null,
+										"class": null,
+										"form": {}
+									}
+								],
+								"styles": [],
+								"hidden": null
+							}
+						],
+						"updateOperation": null,
+						"updateBindings": {},
+						"multiselect": false,
+						"styles": [],
+						"refreshOn": [],
+						"showRefresh": true,
+						"result": {
+							"action": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"additional": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"alias": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"anonymized": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"applicationProtocol": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"artifactId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"bot": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"cached": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"classification": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"classified": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"code": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"component": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"context": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"contextId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"correlationId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"created": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"destinationHost": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"destinationIp": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"destinationLatitude": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"destinationLongitude": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"destinationPort": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"deviceId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"duration": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"eventCategory": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"eventCount": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"eventId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"eventName": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"eventRuleId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"externalDependency": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"externalId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"fileSize": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"fileUri": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"id": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"language": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"localId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"message": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"method": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"networkProtocol": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"notified": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"origin": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"ownerId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"realm": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"reason": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"requestUri": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"responseCode": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"serverGroup": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"serverHost": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"serverName": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"sessionId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"severity": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"sizeIn": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"sizeOut": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"sourceHost": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"sourceIp": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"sourceLatitude": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"sourceLongitude": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"sourcePort": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"stacktrace": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"started": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"state": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"stopped": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"threshold": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"timezone": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"transportProtocol": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"userAgent": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"data": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"serverId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							},
+							"authenticationId": {
+								"label": null,
+								"format": null,
+								"custom": null,
+								"styles": []
+							}
+						},
+						"operation": "nabu.frameworks.events.manage.crud.event.services.list",
+						"comboFilter": {
+							"useTags": true
+						},
+						"useNativeTable": true,
+						"class": "small",
+						"defaultFilter": {
+							"displayOpenOnly": true,
+							"useTags": false,
+							"textBefore": null
+						},
+						"allowFrontendFiltering": false,
+						"showClear": false,
+						"detailFields": []
+					},
+					"target": "page",
+					"on": null,
+					"class": "is-plain",
+					"customId": null,
+					"width": 1,
+					"height": null,
+					"instances": {},
+					"condition": null,
+					"devices": [],
+					"clickEvent": {
+						"eventFields": [],
+						"name": null
+					},
+					"$$initialize": null,
+					"result": {}
+				}
+			],
+			"class": "full-width",
+			"customId": null,
+			"instances": {},
+			"condition": null,
+			"direction": null,
+			"align": null,
+			"on": null,
+			"collapsed": false,
+			"name": null
+		}
+	],
+	"path": null,
+	"counter": 5,
+	"variables": [],
+	"query": [],
+	"actions": [],
+	"class": null,
+	"initial": false,
+	"menuX": 0,
+	"menuY": 0,
+	"states": [],
+	"category": "Monitoring",
+	"slow": false,
+	"name": "event-inline-detail",
+	"parameters": [
+		{
+			"name": "correlationId",
+			"type": "string",
+			"format": null,
+			"default": null,
+			"global": false,
+			"listeners": []
+		},
+		{
+			"name": "since",
+			"type": "string",
+			"format": "date-time",
+			"default": null,
+			"global": false,
+			"listeners": []
+		},
+		{
+			"name": "until",
+			"type": "string",
+			"format": "date-time",
+			"default": null,
+			"global": false,
+			"listeners": []
+		}
+	],
+	"globalEvents": [
+		{
+			"localName": "selectEvent",
+			"globalName": null,
+			"properties": {
+				"type": "object",
+				"required": [
+					"id",
+					"eventName",
+					"created",
+					"anonymized",
+					"state"
+				],
+				"properties": {
+					"id": {
+						"pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}",
+						"type": "string",
+						"format": "uuid"
+					},
+					"serverGroup": {
+						"type": "string"
+					},
+					"serverName": {
+						"type": "string"
+					},
+					"serverId": {
+						"description": "The authentication id of the server that reported it. It is set at the side of the one inserting into the database.",
+						"type": "string"
+					},
+					"serverHost": {
+						"description": "The host name of the server",
+						"type": "string"
+					},
+					"artifactId": {
+						"description": "The artifact that triggered the event (if any)",
+						"type": "string"
+					},
+					"localId": {
+						"description": "A local id of the event",
+						"type": "string"
+					},
+					"eventName": {
+						"description": "The event name, as decided by the originator",
+						"type": "string"
+					},
+					"eventCategory": {
+						"description": "The event category as decided by the originator",
+						"type": "string"
+					},
+					"eventCount": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"severity": {
+						"type": "string"
+					},
+					"alias": {
+						"type": "string"
+					},
+					"realm": {
+						"type": "string"
+					},
+					"authenticationId": {
+						"description": "An anonymous single identifier of the user",
+						"type": "string"
+					},
+					"created": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"started": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"stopped": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"duration": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"timezone": {
+						"type": "string"
+					},
+					"code": {
+						"type": "string"
+					},
+					"message": {
+						"description": "The message should not contain variables, it is a description of the error type",
+						"type": "string"
+					},
+					"stacktrace": {
+						"maxLength": 1000000,
+						"type": "string"
+					},
+					"context": {
+						"description": "The context in which this occurred (e.g. service stack)",
+						"type": "string"
+					},
+					"action": {
+						"type": "string"
+					},
+					"externalId": {
+						"description": "An external id for this event",
+						"type": "string"
+					},
+					"reason": {
+						"maxLength": 1000000,
+						"description": "A further clarification of the message, it can contain as many variables as are relevant to understand the problem",
+						"type": "string"
+					},
+					"data": {
+						"maxLength": 1000000,
+						"description": "Any structured data",
+						"type": "string"
+					},
+					"correlationId": {
+						"description": "Correlate an event to other events",
+						"type": "string"
+					},
+					"sourceHost": {
+						"type": "string"
+					},
+					"sessionId": {
+						"description": "The session id (especially for web contexts)",
+						"type": "string"
+					},
+					"deviceId": {
+						"type": "string"
+					},
+					"eventId": {
+						"description": "Each event can have a unique id, this can be communicated to other parties",
+						"type": "string"
+					},
+					"sourcePort": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"sourceIp": {
+						"type": "string"
+					},
+					"destinationHost": {
+						"type": "string"
+					},
+					"destinationIp": {
+						"type": "string"
+					},
+					"destinationPort": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"applicationProtocol": {
+						"type": "string"
+					},
+					"transportProtocol": {
+						"type": "string"
+					},
+					"networkProtocol": {
+						"type": "string"
+					},
+					"sizeIn": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"sizeOut": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"method": {
+						"type": "string"
+					},
+					"requestUri": {
+						"type": "string",
+						"format": "uri"
+					},
+					"userAgent": {
+						"type": "string"
+					},
+					"language": {
+						"type": "string"
+					},
+					"bot": {
+						"type": "boolean"
+					},
+					"responseCode": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"anonymized": {
+						"description": "Whether or not this event has been anonimized",
+						"type": "boolean"
+					},
+					"classified": {
+						"description": "When the event was last checked for classification based on rules",
+						"type": "string",
+						"format": "date-time"
+					},
+					"notified": {
+						"description": "When the event was last notified",
+						"type": "string",
+						"format": "date-time"
+					},
+					"classification": {
+						"description": "The classification that was assigned to this event by retroactive rule evaluation or manual action",
+						"type": "string"
+					},
+					"eventRuleId": {
+						"pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}",
+						"description": "The id of the rule that triggered this classification",
+						"type": "string",
+						"format": "uuid"
+					},
+					"additional": {
+						"maxLength": 1000000,
+						"description": "This contains any additional information in the event that was not captured in one of the above fields, marshalled as JSON",
+						"type": "string"
+					},
+					"contextId": {
+						"description": "Correlate multiple events within for example a single REST call.",
+						"type": "string"
+					},
+					"origin": {
+						"description": "The origin of the event (e.g. frontend, backend, service runtime vs security...)",
+						"type": "string"
+					},
+					"component": {
+						"description": "A component within the origin, this is a larger part of the stack.",
+						"type": "string"
+					},
+					"fileUri": {
+						"type": "string",
+						"format": "uri"
+					},
+					"fileSize": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"externalDependency": {
+						"type": "string"
+					},
+					"cached": {
+						"description": "Can indicate whether a cache was used",
+						"type": "boolean"
+					},
+					"threshold": {
+						"description": "The threshold for this event",
+						"type": "number",
+						"format": "double"
+					},
+					"state": {
+						"description": "The event state, one of \"CREATED\", \"CLASSIFIED\", \"NOTIFIED\", \"IGNORED\"",
+						"type": "string"
+					},
+					"sourceLatitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"sourceLongitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"destinationLatitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"destinationLongitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"ownerId": {
+						"pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}",
+						"type": "string"
+					}
+				}
+			}
+		}
+	]
+}
+	}
+}

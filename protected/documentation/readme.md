@@ -16,6 +16,14 @@ The fire will standardize any event into the common format and annotate further 
 Limit selects in time (like only the last week or so)
 -> for partitioning
 
+# UUID vs string
+
+In the beginning, authenticationId, ownerId and serverId were modelled as strings to allow for flexible storage even though we always use uuids internally.
+However, turns out that postgres uses numeric resolving for the UUID type which makes it a _lot_ faster to resolve on UUID than on string comparison (even equals with various index types).
+
+For that reason these key filter fields were updated to uuids for quick lookup.
+
+Note that if you still want to store something other than a uuid, you can add a mapping table where you resolve a non-uuid into a uuid. If the resolving is cached, you still have a massive performance increase.
 
 # Catch All
 
@@ -30,3 +38,17 @@ That means we can select by server id and get events for the whole cluster.
 
 The assumption is, for a particular server id, there is only one server group but potentially multiple members.
 We can use this to our advantage to create dynamic groupings which are still correct security wise (meaning, we can check if you have access to a server id and still generate the full cluster).
+
+# Priority
+
+Event priority is meant to be controlled by the people configuring the followup of events.
+
+We generally differentatie these levels:
+
+- priority: 0 -> the default and indicates that there is no followup priority
+- priority: 500+ -> important, should follow up as soon as possible (e.g. within business hours)
+- priority: 1000+ -> critical, should follow up immediately (earliest possible moment depending on SLA)
+
+In between you are free to choose as many or as few levels as you want to differentate. For example you can decide that everything between 750-1000 should be reported to technical people whereas 500-750 should be infra team.
+
+Once you have "handled" an event, the priority is generally set to 0.

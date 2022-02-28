@@ -1,0 +1,4 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select distinct server_group as server_group from events
+where :q is null or server_group like '%' || :q || '%'</sql>
+</jdbcService>

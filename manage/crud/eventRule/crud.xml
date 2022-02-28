@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <crud>
+    <allowHeaderAsQueryParameter>true</allowHeaderAsQueryParameter>
     <coreType>nabu.frameworks.events.database.eventRule</coreType>
     <createBlacklistFields>created</createBlacklistFields>
     <createBlacklistFields>modified</createBlacklistFields>
-    <createRole>manager</createRole>
-    <deleteRole>manager</deleteRole>
+    <createRole>$user</createRole>
+    <deleteRole>$user</deleteRole>
     <filters>
         <caseInsensitive>false</caseInsensitive>
         <key>classification</key>
@@ -19,11 +20,11 @@
         <or>false</or>
         <input>true</input>
     </filters>
-    <listRole>manager</listRole>
+    <listRole>$user</listRole>
     <provider>nabu.services.crud.provider.basic.provider</provider>
     <updateBlacklistFields>created</updateBlacklistFields>
     <updateRegenerateFields>modified</updateRegenerateFields>
-    <updateRole>manager</updateRole>
+    <updateRole>$user</updateRole>
     <useExplicitLanguage>false</useExplicitLanguage>
     <useLanguage>false</useLanguage>
 </crud>

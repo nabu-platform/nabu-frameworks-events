@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <webModule>
-    <webFragments>nabu.frameworks.events.manage.crud.event</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotification</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationRule</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.eventNotificationSubscriber</webFragments>
     <webFragments>nabu.frameworks.events.manage.crud.eventRule</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.serverGroup</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.serviceInstance</webFragments>
+    <webFragments>nabu.frameworks.events.manage.crud.event</webFragments>
+    <webFragments>nabu.frameworks.events.manage.rest.options.serverGroups</webFragments>
+    <webFragments>nabu.frameworks.events.manage.rest.options.serverNames</webFragments>
     <audience>MANAGER</audience>
 </webModule>

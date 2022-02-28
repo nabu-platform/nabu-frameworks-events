@@ -1,19 +1,19 @@
 <structure collectionName="events" name="event">
     <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
-    <field minOccurs="0" name="serverGroup" type="java.lang.String"/>
-    <field minOccurs="0" name="serverName" type="java.lang.String"/>
-    <field comment="The authentication id of the server that reported it. It is set at the side of the one inserting into the database." minOccurs="0" name="serverId" type="java.lang.String"/>
+    <field indexed="true" minOccurs="0" name="serverGroup" type="java.lang.String"/>
+    <field indexed="true" minOccurs="0" name="serverName" type="java.lang.String"/>
+    <field comment="The authentication id of the server that reported it. It is set at the side of the one inserting into the database." indexed="true" minOccurs="0" name="serverId" type="java.lang.String"/>
     <field comment="The host name of the server" minOccurs="0" name="serverHost" type="java.lang.String"/>
-    <field comment="The artifact that triggered the event (if any)" minOccurs="0" name="artifactId" type="java.lang.String"/>
+    <field comment="The artifact that triggered the event (if any)" indexed="true" minOccurs="0" name="artifactId" type="java.lang.String"/>
     <field comment="A local id of the event" minOccurs="0" name="localId" type="java.lang.String"/>
-    <field comment="The event name, as decided by the originator" name="eventName" type="java.lang.String"/>
+    <field comment="The event name, as decided by the originator" indexed="true" name="eventName" type="java.lang.String"/>
     <field comment="The event category as decided by the originator" minOccurs="0" name="eventCategory" type="java.lang.String"/>
     <field minOccurs="0" name="eventCount" type="java.lang.Integer"/>
     <field minOccurs="0" name="severity" type="java.lang.String"/>
     <field identifiable="true" minOccurs="0" name="alias" type="java.lang.String"/>
     <field minOccurs="0" name="realm" type="java.lang.String"/>
     <field comment="An anonymous single identifier of the user" minOccurs="0" name="authenticationId" type="java.lang.String"/>
-    <field name="created" timezone="UTC" type="java.util.Date"/>
+    <field indexed="true" name="created" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="started" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="stopped" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="duration" type="java.lang.Long"/>
@@ -26,7 +26,7 @@
     <field comment="An external id for this event" minOccurs="0" name="externalId" type="java.lang.String"/>
     <field comment="A further clarification of the message, it can contain as many variables as are relevant to understand the problem" identifiable="true" maxLength="1000000" minOccurs="0" name="reason" type="java.lang.String"/>
     <field comment="Any structured data" identifiable="true" maxLength="1000000" minOccurs="0" name="data" type="java.lang.String"/>
-    <field comment="Correlate an event to other events" minOccurs="0" name="correlationId" type="java.lang.String"/>
+    <field comment="Correlate an event to other events" indexed="true" minOccurs="0" name="correlationId" type="java.lang.String"/>
     <field identifiable="true" minOccurs="0" name="sourceHost" type="java.lang.String"/>
     <field comment="The session id (especially for web contexts)" minOccurs="0" name="sessionId" type="java.lang.String"/>
     <field minOccurs="0" name="deviceId" type="java.lang.String"/>
@@ -50,7 +50,7 @@
     <field comment="Whether or not this event has been anonimized" name="anonymized" type="java.lang.Boolean"/>
     <field comment="When the event was last checked for classification based on rules" minOccurs="0" name="classified" timezone="UTC" type="java.util.Date"/>
     <field comment="When the event was last notified" minOccurs="0" name="notified" timezone="UTC" type="java.util.Date"/>
-    <field comment="The classification that was assigned to this event by retroactive rule evaluation or manual action" minOccurs="0" name="classification" type="java.lang.String"/>
+    <field comment="The classification that was assigned to this event by retroactive rule evaluation or manual action" indexed="true" minOccurs="0" name="classification" type="java.lang.String"/>
     <field comment="The id of the rule that triggered this classification" foreignKey="nabu.frameworks.events.database.eventRule:id" minOccurs="0" name="eventRuleId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
     <field comment="This contains any additional information in the event that was not captured in one of the above fields, marshalled as JSON" identifiable="true" maxLength="1000000" minOccurs="0" name="additional" type="java.lang.String"/>
     <field comment="Correlate multiple events within for example a single REST call." identifiable="true" minOccurs="0" name="contextId" type="java.lang.String"/>
@@ -61,10 +61,12 @@
     <field minOccurs="0" name="externalDependency" type="java.lang.String"/>
     <field comment="Can indicate whether a cache was used" minOccurs="0" name="cached" type="java.lang.Boolean"/>
     <field comment="The threshold for this event" minOccurs="0" name="threshold" type="java.lang.Double"/>
-    <field comment="The event state, one of &quot;CREATED&quot;, &quot;CLASSIFIED&quot;, &quot;NOTIFIED&quot;, &quot;IGNORED&quot;" name="state" type="java.lang.String"/>
+    <field comment="The event state, one of &quot;CREATED&quot;, &quot;CLASSIFIED&quot;, &quot;NOTIFIED&quot;, &quot;IGNORED&quot;" indexed="true" name="state" type="java.lang.String"/>
     <field minOccurs="0" name="sourceLatitude" type="java.lang.Double"/>
     <field minOccurs="0" name="sourceLongitude" type="java.lang.Double"/>
     <field minOccurs="0" name="destinationLatitude" type="java.lang.Double"/>
     <field minOccurs="0" name="destinationLongitude" type="java.lang.Double"/>
-    <field minOccurs="0" name="ownerId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.lang.String"/>
+    <field indexed="true" minOccurs="0" name="ownerId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.lang.String"/>
+    <field comment="The priority of the event can be manipulated with rules and can be used in signalling. You choose (based on the rules) how many levels you have." indexed="true" minOccurs="0" name="priority" type="java.lang.Long"/>
+    <field comment="If an event has been looked at and &quot;handled&quot;, the priority is likely changed and a comment can be added to indicate the reasoning." minOccurs="0" name="comment" type="java.lang.String"/>
 </structure>

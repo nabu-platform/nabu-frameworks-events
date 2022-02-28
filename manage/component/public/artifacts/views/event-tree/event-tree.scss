@@ -1,0 +1,103 @@
+.n-event-tree {
+	.n-event-tree-item {
+		margin-left: 2rem;
+		padding: 0.7rem;
+		.n-event-tree-item-instance {
+			cursor: pointer;
+			> span, > input {
+				display: inline-block;
+			}
+			border-left: solid 1px #ccc;
+			padding-left: 1rem;
+		}
+	}
+	.full-duration-bar {
+		width: 100px;
+		height: 1rem;
+		border: solid 1px #ccc;
+		position: relative;
+		margin: 0 0.7rem;
+		.duration-bar {
+			height: 100%;
+			background-color: #d1eed1;
+			display: block;
+		}
+		.duration {
+			position: absolute;
+			left: 0.1rem;
+			top: 0rem;
+			font-size: 0.7rem;
+			color: #aaa;
+		}
+		.duration-percent {
+			position: absolute;
+			right: 0.1rem;
+			top: 0rem;
+			font-size: 0.7rem;
+			color: #666;
+		}
+	}
+	.event-toggle {
+		width: 1rem;
+		cursor: pointer;
+	}
+	input {
+		margin: 0.7rem;
+	}
+	.event-name {
+		padding: 0.3rem 0.7rem;
+		margin: 0 0.3rem;
+		background-color: lighten($warning-color, 50%);
+		color: darken($warning-color, 25%);
+	}
+	.n-event-tree-item-instance.selected {
+		border-left-color: steelblue;
+		background: linear-gradient(270deg, #dbe1e6 1%, transparent 100%); 
+		.event-name {
+			background-color: steelblue;
+			color: white;
+		}
+	}
+	.event-uri {
+		margin-left: 0.7rem;
+	}
+	.event-artifact-id {
+		color: #333;
+	}
+	.event-code {
+		background-color: #eaeaea;
+		color: #666;
+		padding: 0.3rem 0.7rem;
+		margin: 0 0.3rem;
+	}
+	.danger {
+		background-color: lighten($danger-color, 40%);
+		color: darken($danger-color, 50%);
+	}
+	.event-artifact-id {
+		.artifact-folder {
+			color: #aaa;
+		}
+		.artifact-name {
+			color: #333;
+		}
+	}
+	.event-summary {
+		padding: 1rem;
+		background-color: #eaeaea;
+		border: solid 1px #ccc;
+		margin: 1rem 0;
+		.key {
+			color: #aaa;
+			width: 50px;
+			display: inline-block;
+		}
+		.value {
+			color: #333;
+			display: inline-block;
+		}
+		.tag {
+			margin-left: 0.7rem;
+		}
+	}
+}

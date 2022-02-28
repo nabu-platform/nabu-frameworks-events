@@ -1,0 +1,4 @@
+<structure name="option">
+    <field comment="The relevant key for searching (e.g. an id)" name="key" type="java.lang.String"/>
+    <field comment="What the user sees" name="label" type="java.lang.String"/>
+</structure>

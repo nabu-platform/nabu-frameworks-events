@@ -12,4 +12,28 @@
         <x>583</x>
         <y>267</y>
     </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.events.database.types.eventFunnel</type>
+        <x>1016</x>
+        <y>97</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.events.database.types.eventFunnelStep</type>
+        <x>1418</x>
+        <y>97</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.events.database.types.eventFunnelInstance</type>
+        <x>1007</x>
+        <y>409</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.events.database.types.eventFunnelStepInstance</type>
+        <x>1506</x>
+        <y>351</y>
+    </entries>
 </dataModel>

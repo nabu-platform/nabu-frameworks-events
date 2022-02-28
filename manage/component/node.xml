@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2020-10-26T10:16:05.247+01:00" lastModified="2020-11-09T13:21:30.267+01:00" leaf="true" version="11"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>nabu.frameworks.events.manage.crud.event</references><references>nabu.frameworks.events.manage.crud.eventNotification</references><references>nabu.frameworks.events.manage.crud.eventNotificationRule</references><references>nabu.frameworks.events.manage.crud.eventNotificationSubscriber</references><references>nabu.frameworks.events.manage.crud.eventRule</references><references>nabu.frameworks.events.manage.crud.serverGroup</references><references>nabu.frameworks.events.manage.crud.serviceInstance</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2020-10-26T10:16:05.247+01:00" lastModified="2022-01-14T21:06:22.315+01:00" leaf="true" version="13">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.frameworks.events.manage.crud.eventRule</references>
+    <references>nabu.frameworks.events.manage.crud.event</references>
+    <references>nabu.frameworks.events.manage.rest.options.serverGroups</references>
+    <references>nabu.frameworks.events.manage.rest.options.serverNames</references>
+</node>

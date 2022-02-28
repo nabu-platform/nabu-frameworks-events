@@ -1,0 +1,1 @@
+We don't broadcast the changes ourselves, but we use this CRUD so other CRUDs can choose to broadcast if they want.

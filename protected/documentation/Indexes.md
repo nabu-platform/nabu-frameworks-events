@@ -1,3 +1,13 @@
+auto generated:
+create index idx_events_artifact_id on events(artifact_id);
+create index idx_events_event_name on events(event_name);
+create index idx_events_created on events(created);
+create index idx_events_classification on events(classification);
+create index idx_events_state on events(state);
+
+
+
+
 Because both the classification and notification work on the state, we need to index that:
 
 ```sql

@@ -8,4 +8,6 @@
     <field comment="The rule priority (defaults to 0). Higher priority rules are fired first." name="priority" type="java.lang.Integer"/>
     <field comment="The classification to set on the event (if any). In theory only classified events are considered &quot;handled&quot;. A rule can however be used to notify without classifying." minOccurs="0" name="classification" type="java.lang.String"/>
     <field comment="Whether or not to send a signal for events that match this rule" minOccurs="0" name="signal" type="java.lang.Boolean"/>
+    <field comment="You can optionally override the severity of the event. For example upgrade an ERROR to CRITICAL." minOccurs="0" name="severity" type="java.lang.String"/>
+    <field comment="You can change the priority of an event, this is useful for example for signalling." minOccurs="0" name="eventPriority" type="java.lang.Long"/>
 </structure>

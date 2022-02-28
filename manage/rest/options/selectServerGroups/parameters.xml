@@ -1,0 +1,3 @@
+<structure name="parameter">
+    <field minOccurs="0" name="q" type="java.lang.String"/>
+</structure>

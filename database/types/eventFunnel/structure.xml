@@ -1,0 +1,11 @@
+<structure collectionName="eventFunnels" name="eventFunnel">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field name="created" timezone="UTC" type="java.util.Date"/>
+    <field comment="If you update a funnel, we don't rescan incomplete past funnels with the new definition. This serves as an absolute minimum timestamp for further evaluation." name="modified" timezone="UTC" type="java.util.Date"/>
+    <field name="name" type="java.lang.String"/>
+    <field comment="We need to know how long a funnel can take to identify it" name="maxDuration" type="be.nabu.libs.types.base.Duration"/>
+    <field comment="The field to group on, e.g. &quot;sessionId&quot;, &quot;correlationId&quot;,..." name="groupField" type="java.lang.String"/>
+    <field comment="You can set a rule here to extract a funnel key. It will be attempted on every event in the funnel until a first match is found." minOccurs="0" name="funnelKey" type="java.lang.String"/>
+    <field name="enabled" type="java.lang.Boolean"/>
+    <field comment="The minimum sequence that must be reached before we consider the funnel valid. If not filled in, only one valid sequence is enough (the lowest)" minOccurs="0" name="validationSequence" type="java.lang.Long"/>
+</structure>

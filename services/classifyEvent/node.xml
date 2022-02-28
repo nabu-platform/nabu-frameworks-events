@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-22T20:03:52.410+02:00" lastModified="2021-11-23T14:01:54.021+01:00" leaf="true" version="32">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-22T20:03:52.410+02:00" lastModified="2021-12-12T11:38:05.576+01:00" leaf="true" version="35">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
-    <references>nabu.services.glue.Services.execute</references>
     <references>nabu.utils.Date.now</references>
     <references>nabu.frameworks.events.database.event</references>
     <references>java.lang.Boolean</references>
+    <references>nabu.services.glue.Services.evaluate</references>
     <references>java.lang.String</references>
     <references>nabu.frameworks.events.database.eventRule</references>
-    <references>nabu.utils.reflection.Type.get</references>
 </node>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2022-01-14T20:54:52.963+01:00" lastModified="2022-01-14T21:16:08.001+01:00" leaf="true" version="13">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.frameworks.events.manage.rest.options.selectServerNames.results</references>
+    <references>nabu.frameworks.events.manage.rest.options.optionList</references>
+    <references>nabu.frameworks.events.manage.rest.options.selectServerNames</references>
+</node>
