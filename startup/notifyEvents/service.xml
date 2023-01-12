@@ -85,7 +85,8 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 					disabled="false"
 					id="e7e26569-e77e-4fe0-bb37-017fbafc8421"
-					lineNumber="6">
+					lineNumber="6"
+					scopeDefaultTransaction="true">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="We want best effort locking, don't block if you can't, someone else is dealing with it"
 						disabled="false"
@@ -136,8 +137,7 @@
 						disabled="false"
 						id="0f419766-a009-4da3-b094-03df76c0303d"
 						label="locked"
-						lineNumber="8"
-						scopeDefaultTransaction="true">
+						lineNumber="8">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 							comment="Get unnotified events in batches of 1000"
 							disabled="false"

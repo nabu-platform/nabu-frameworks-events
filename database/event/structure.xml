@@ -69,4 +69,7 @@
     <field indexed="true" minOccurs="0" name="ownerId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.lang.String"/>
     <field comment="The priority of the event can be manipulated with rules and can be used in signalling. You choose (based on the rules) how many levels you have." indexed="true" minOccurs="0" name="priority" type="java.lang.Long"/>
     <field comment="If an event has been looked at and &quot;handled&quot;, the priority is likely changed and a comment can be added to indicate the reasoning." minOccurs="0" name="comment" type="java.lang.String"/>
+    <field comment="The alias of the impersonator (if any)" minOccurs="0" name="impersonator" type="java.lang.String"/>
+    <field comment="The realm of the impersonator" minOccurs="0" name="impersonatorRealm" type="java.lang.String"/>
+    <field comment="The unique identifier of the impersonator" minOccurs="0" name="impersonatorId" type="java.lang.String"/>
 </structure>

@@ -85,7 +85,8 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 					disabled="false"
 					id="1c834b1d-a2d8-4bba-acf6-02a07185d45f"
-					lineNumber="6">
+					lineNumber="6"
+					transactionVariable="transactionId">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="We want best effort locking, don't block if you can't, someone else is dealing with it"
 						disabled="false"
@@ -120,6 +121,15 @@
 							<from>false</from>
 							<to>local</to>
 						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="8c1d2a80-edcc-4046-a617-b66669280fa1"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>transactionId</from>
+							<to>transactionId</to>
+						</steps>
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
@@ -140,8 +150,7 @@
 						disabled="false"
 						id="4edcac02-7701-4013-94d9-5b90fe245a99"
 						label="locked"
-						lineNumber="8"
-						transactionVariable="transactionId">
+						lineNumber="8">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 							comment="We get the active rules, we classify even if we have no rules"
 							disabled="false"

@@ -10,4 +10,5 @@
     <field comment="Whether or not to send a signal for events that match this rule" minOccurs="0" name="signal" type="java.lang.Boolean"/>
     <field comment="You can optionally override the severity of the event. For example upgrade an ERROR to CRITICAL." minOccurs="0" name="severity" type="java.lang.String"/>
     <field comment="You can change the priority of an event, this is useful for example for signalling." minOccurs="0" name="eventPriority" type="java.lang.Long"/>
+    <field comment="Automated feedback from the system" minOccurs="0" name="systemLog" type="java.lang.String"/>
 </structure>
