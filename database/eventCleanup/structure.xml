@@ -1,0 +1,9 @@
+<structure collectionName="eventCleanups" name="eventCleanup">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field indexed="true" minOccurs="0" name="serverGroup" type="java.lang.String"/>
+    <field minOccurs="0" name="serverName" type="java.lang.String"/>
+    <field comment="The event name, as decided by the originator" indexed="true" minOccurs="0" name="eventName" type="java.lang.String"/>
+    <field comment="The event category as decided by the originator" minOccurs="0" name="eventCategory" type="java.lang.String"/>
+    <field minOccurs="0" name="severity" type="java.lang.String"/>
+    <field comment="After how much time should events be deleted that match all these conditions?" name="retention" type="be.nabu.libs.types.base.Duration"/>
+</structure>

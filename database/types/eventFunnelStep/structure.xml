@@ -1,8 +1,0 @@
-<structure collectionName="eventFunnelSteps" name="eventFunnelStep">
-    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
-    <field foreignKey="nabu.frameworks.events.database.types.eventFunnel:id" name="eventFunnelId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-    <field name="name" type="java.lang.String"/>
-    <field comment="This rule is evaluated against the events that match the groupField" name="rule" type="java.lang.String"/>
-    <field comment="The sequence of this step. You can have multiple steps with the same sequence." name="stepSequence" type="java.lang.Long"/>
-    <field comment="An instance inherits the highest priority step that was activated." name="priority" type="java.lang.Long"/>
-</structure>

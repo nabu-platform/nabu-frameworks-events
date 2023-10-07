@@ -1,0 +1,10 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<inputDefinition>nabu.frameworks.events.services.cleanupEventInput</inputDefinition>
+	<sql>delete from ~events
+where (:serverGroup is null or server_group = :serverGroup)
+	and (:serverName is null or server_name = :serverName)
+	and (:eventName is null or event_name = :eventName)
+	and (:eventCategory is null or event_category = :eventCategory)
+	and (:severity is null or severity = :severity)
+	and created &lt; :before</sql>
+</jdbcService>

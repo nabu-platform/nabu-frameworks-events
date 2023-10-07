@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.data.model.DataModelManager" created="2020-10-24T21:09:27.992+02:00" lastModified="2022-08-04T12:25:46.322+02:00" leaf="true" version="43">
+<node artifactManager="be.nabu.eai.module.data.model.DataModelManager" created="2020-10-24T21:09:27.992+02:00" lastModified="2023-10-07T15:58:11.335+02:00" leaf="true" version="49">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
+    <references>nabu.frameworks.events.database.event</references>
+    <references>nabu.frameworks.events.database.eventRule</references>
+    <references>nabu.frameworks.events.database.eventCleanup</references>
 </node>

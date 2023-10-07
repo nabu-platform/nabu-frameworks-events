@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.startup.StartupServiceManager" created="2020-10-22T21:23:58.270+02:00" lastModified="2023-10-07T15:25:37.499+02:00" leaf="true" version="10">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.events.startup.cleanupEvents</references>
+</node>

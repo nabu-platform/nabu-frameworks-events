@@ -14,26 +14,28 @@
     </entries>
     <entries>
         <synchronize>true</synchronize>
-        <type>nabu.frameworks.events.database.types.eventFunnel</type>
         <x>1016</x>
         <y>97</y>
     </entries>
     <entries>
         <synchronize>true</synchronize>
-        <type>nabu.frameworks.events.database.types.eventFunnelStep</type>
         <x>1418</x>
         <y>97</y>
     </entries>
     <entries>
         <synchronize>true</synchronize>
-        <type>nabu.frameworks.events.database.types.eventFunnelInstance</type>
         <x>1007</x>
         <y>409</y>
     </entries>
     <entries>
         <synchronize>true</synchronize>
-        <type>nabu.frameworks.events.database.types.eventFunnelStepInstance</type>
         <x>1506</x>
         <y>351</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.events.database.eventCleanup</type>
+        <x>1026</x>
+        <y>48</y>
     </entries>
 </dataModel>

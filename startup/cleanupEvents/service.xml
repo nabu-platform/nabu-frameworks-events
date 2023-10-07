@@ -1,0 +1,435 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="1fc2f5141d5c4a6c94ed8d6a57fff8c6"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="bba19787-fffc-486f-9948-88e8078a1946"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="5bfc19ae-949a-4fac-b190-f55313855cf6"
+				serviceId="nabu.frameworks.events.utils.isSynchronized"
+				resultName="resultcf39271006164149a567ffed242aea9f"
+				temporaryMapping="true"
+				x="86"
+				y="72"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="24713ccfa97d45fc9707ec59f283b013"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultcf39271006164149a567ffed242aea9f/synchronized</from>
+			<to>synchronized</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="b0164577-456e-4739-9a02-3fa5e077c789"
+			lineNumber="3"
+			query="synchronized">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="737283c9-12bf-4c11-8c76-8501e3a6cb3f"
+				label="false"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="d73dc183-62b5-4308-acfb-af83e1ab023a"
+					serviceId="nabu.utils.Server.log"
+					resultName="resultc66d3c873cdf46318bc7e253d6a7c1ea"
+					temporaryMapping="true"
+					x="51"
+					y="71"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="166a01fa-d2b5-4f0d-8855-0f6de313d1ae"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>Either the jdbc pool for events is not configured, or the tables are not synchronized. Disabling event classification.</from>
+					<to>message</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="e51f6a68-7e47-43bf-b830-9bfbaeea0c44"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>WARN</from>
+					<to>level</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+				disabled="false"
+				id="f0809d5619444db0a1619870e2a74140"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="1afd4a74cf00448dbe41170a5f6845c8"
+					lineNumber="6">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="577248ecc553441e94cb56ad46741361"
+						serviceId="nabu.frameworks.events.crud.eventCleanup.services.list"
+						resultName="result3acfd05e457f49349e5f0edb7c6be9f5"
+						temporaryMapping="true"
+						x="98"
+						y="61"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="0291a5e95a63400f8c05312d77daad69"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result3acfd05e457f49349e5f0edb7c6be9f5/results</from>
+					<to>cleanupRules</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.For"
+					disabled="false"
+					id="5ffc8126-e3de-4a75-a9fb-4dbbbef7c864"
+					label="cleanupRules"
+					lineNumber="7">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+						disabled="false"
+						id="1c834b1d-a2d8-4bba-acf6-02a07185d45f"
+						lineNumber="8"
+						scopeDefaultTransaction="true">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+							comment="We want best effort locking, don't block if you can't, someone else is dealing with it"
+							disabled="false"
+							id="99097320-ab4f-40a6-839d-c877b51c52ad"
+							lineNumber="9">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+								disabled="false"
+								id="f9554ae1-f430-4101-8138-af0a1975b403"
+								serviceId="nabu.utils.Lock.tryLock"
+								resultName="result248f7e42fd7b46c99b8e3c59a94c9172"
+								temporaryMapping="true"
+								x="36"
+								y="56"
+								invocationOrder="0"
+								asynchronous="false"
+								recache="false">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="d961a5eb-2866-4678-be54-e968c01a748d"
+									mask="false"
+									optional="false"
+									fixedValue="true">
+								<from>cleanup-events</from>
+								<to>name</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="873aa6b4-7fa5-4a9a-84b4-5eaac1f63d0e"
+									mask="false"
+									optional="false"
+									fixedValue="true">
+								<from>false</from>
+								<to>local</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="8c1d2a80-edcc-4046-a617-b66669280fa1"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>transactionId</from>
+								<to>transactionId</to>
+							</steps>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="18424d51b8c84e00b4d179bd439e2558"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>result248f7e42fd7b46c99b8e3c59a94c9172/locked</from>
+							<to>locked</to>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+							comment="Only continue if we have the lock"
+							disabled="false"
+							id="4edcac02-7701-4013-94d9-5b90fe245a99"
+							label="locked"
+							lineNumber="10">
+						<steps xsi:type="be.nabu.libs.services.vm.step.For"
+								disabled="false"
+								id="f51347fde8cb4e08aa92dc7989d8271d"
+								lineNumber="11"
+								variable="cleanupRule"
+								into="resolvedCleanupRules">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+									disabled="false"
+									id="9496d16494e44e8fae27a68860a80e55"
+									lineNumber="12">
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="e142ba97fdaa4aea91400839c61e735e"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>cleanupRule/serverGroup</from>
+									<to>resolvedCleanupRules[0]/serverGroup</to>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="4e57bfa357704ed3bc22a243ac172395"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>cleanupRule/serverName</from>
+									<to>resolvedCleanupRules[0]/serverName</to>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="4af9c35134c446cfa7e4f6ff104a3472"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>cleanupRule/eventName</from>
+									<to>resolvedCleanupRules[0]/eventName</to>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="2b7ba2d8d438481b9b723af0287b9bba"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>cleanupRule/eventCategory</from>
+									<to>resolvedCleanupRules[0]/eventCategory</to>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="2940d0fd038b445d8e2b21f82863eca8"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>cleanupRule/severity</from>
+									<to>resolvedCleanupRules[0]/severity</to>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+										disabled="false"
+										id="2891b0055b72439c8d92ec62d12b8c3b"
+										serviceId="nabu.utils.Date.incrementDuration"
+										resultName="result2acb84164ce44ebd9c8781dd65e470cb"
+										temporaryMapping="true"
+										x="66"
+										y="326"
+										invocationOrder="0"
+										asynchronous="false"
+										recache="false">
+									<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+											disabled="false"
+											id="15a4bfa5522946bf944e259cb199d9b6"
+											mask="false"
+											optional="false"
+											fixedValue="false">
+										<from>cleanupRule/retention</from>
+										<to>duration</to>
+									</steps>
+									<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+											disabled="false"
+											id="f5bc70104d684f3a9501a0b8df1d3a98"
+											mask="false"
+											optional="false"
+											fixedValue="true">
+										<from>-1</from>
+										<to>times</to>
+									</steps>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="82efd2f23f164a919f5eeedac9964a7a"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>result2acb84164ce44ebd9c8781dd65e470cb/date</from>
+									<to>resolvedCleanupRules[0]/before</to>
+								</steps>
+							</steps>
+							<query>cleanupRules</query>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+								disabled="false"
+								id="151198ad42eb4447b6c86972d6ab00b6"
+								lineNumber="13">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+									disabled="false"
+									id="c67a2f51e99744a482786c56fa0ac57d"
+									serviceId="nabu.frameworks.events.services.cleanupEvents"
+									resultName="result9c2af58b9670405ca87302c55bb67e13"
+									temporaryMapping="true"
+									x="210"
+									y="112"
+									invocationOrder="0"
+									asynchronous="false"
+									recache="false">
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="75256f41ffb94deeab609ac35f395741"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>resolvedCleanupRules</from>
+									<to>parameters</to>
+								</steps>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="3d87f323f56a4ed9ba84921853206b9b"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>result9c2af58b9670405ca87302c55bb67e13/rowCount</from>
+								<to>amountOfDeleted</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Drop"
+									disabled="false"
+									id="9fb081e42cc2435fad3b1e201eb1f3bb"
+									path="resolvedCleanupRules" xsi:nil="true"/>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+								disabled="false"
+								id="f3582894781d4a259011951067129fca"
+								label="amountOfDeleted &gt; 0"
+								lineNumber="14">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+									disabled="false"
+									id="1265b61d00f3465b8564b7a14fca803f"
+									serviceId="nabu.utils.Server.log"
+									resultName="result430e30bc0fc8469c9bb098f1b3acd237"
+									temporaryMapping="true"
+									x="68"
+									y="75"
+									invocationOrder="0"
+									asynchronous="false"
+									recache="false">
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="35105ac2743948e58fa618c7b8e1b31c"
+										mask="false"
+										optional="false"
+										fixedValue="true">
+									<from>="Cleaned up " + amountOfDeleted + " events"</from>
+									<to>message</to>
+								</steps>
+							</steps>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Finally"
+								disabled="false"
+								id="861f1d31-56a8-4d82-9e45-b636cbcd9e11"
+								lineNumber="15">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+									disabled="false"
+									id="8e0ee8ce-25a8-4c54-9250-29b9954d0a79"
+									lineNumber="16">
+								<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+										disabled="false"
+										id="c5ba326d-e50b-48c3-8edc-b2f7c5c812a9"
+										serviceId="nabu.utils.Lock.unlock"
+										resultName="result5560234793f74e52b43ca55ead9ea137"
+										temporaryMapping="true"
+										x="84"
+										y="143"
+										invocationOrder="0"
+										asynchronous="false"
+										recache="false">
+									<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+											disabled="false"
+											id="845dc104-dc7e-4fbd-98c7-244942bb2535"
+											mask="false"
+											optional="false"
+											fixedValue="true">
+										<from>cleanup-events</from>
+										<to>name</to>
+									</steps>
+									<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+											disabled="false"
+											id="789333ad-9515-4283-86c3-6fe0a2a2347d"
+											mask="false"
+											optional="false"
+											fixedValue="true">
+										<from>false</from>
+										<to>local</to>
+									</steps>
+								</steps>
+							</steps>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
+							comment="We need to move on!"
+							disabled="false"
+							id="208940d4-b3ed-4c24-a5e7-5b17c2c05c16"
+							lineNumber="17">
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+						comment="Sleep a while"
+						disabled="false"
+						id="669e8091-9994-4873-bcf9-d885c326df21"
+						lineNumber="18">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+							comment="Sleep for a while. The server who previously had the lock takes a certain amount of time to classify, introducing random server selection"
+							disabled="false"
+							id="0e4030f2-e5a5-45b1-919f-116be753b737"
+							lineNumber="19">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+								disabled="false"
+								id="808f3358-1b26-459f-a34e-efc71393b5cf"
+								serviceId="nabu.utils.Server.sleep"
+								resultName="result5be0f7ac19604f488cb8d69cc086145a"
+								temporaryMapping="true"
+								x="21"
+								y="24"
+								invocationOrder="1"
+								asynchronous="false"
+								recache="false">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="ad1da4c6-3565-471f-a839-fafaf500fb54"
+									mask="false"
+									optional="false"
+									fixedValue="true">
+								<from>HOURS</from>
+								<to>unit</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="caf90a9e-2e99-4420-ba67-2c4c744497b4"
+									mask="false"
+									optional="false"
+									fixedValue="true">
+								<from>1</from>
+								<to>amount</to>
+							</steps>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
+							comment="No sleep for the wicked!"
+							disabled="false"
+							id="4df4d8bb-568f-4a64-8533-f9a88ea09e23"
+							lineNumber="20">
+					</steps>
+				</steps>
+				<query>true</query>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

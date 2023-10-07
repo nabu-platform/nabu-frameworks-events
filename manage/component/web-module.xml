@@ -4,5 +4,4 @@
     <webFragments>nabu.frameworks.events.manage.crud.event</webFragments>
     <webFragments>nabu.frameworks.events.manage.rest.options.serverGroups</webFragments>
     <webFragments>nabu.frameworks.events.manage.rest.options.serverNames</webFragments>
-    <audience>MANAGER</audience>
 </webModule>
