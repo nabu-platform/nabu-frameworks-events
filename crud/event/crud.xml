@@ -6,9 +6,18 @@
     <coreType>nabu.frameworks.events.database.event</coreType>
     <createRole>$user</createRole>
     <deleteRole>$user</deleteRole>
+    <hooks>false</hooks>
     <listRole>$user</listRole>
     <provider>nabu.services.crud.provider.basic.provider</provider>
+    <restLimitToUser>true</restLimitToUser>
     <updateRole>$user</updateRole>
+    <useAsAuthorizationServiceContext>false</useAsAuthorizationServiceContext>
     <useExplicitLanguage>false</useExplicitLanguage>
+    <useGlobalPermissionContext>false</useGlobalPermissionContext>
     <useLanguage>false</useLanguage>
+    <useListOutputForCreate>false</useListOutputForCreate>
+    <useListOutputForUpdate>false</useListOutputForUpdate>
+    <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
+    <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
+    <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
 </crud>
