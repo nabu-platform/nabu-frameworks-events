@@ -23,13 +23,13 @@
     <field maxLength="1000000" minOccurs="0" name="stacktrace" type="java.lang.String"/>
     <field comment="The context in which this occurred (e.g. service stack)" minOccurs="0" name="context" type="java.lang.String"/>
     <field minOccurs="0" name="action" type="java.lang.String"/>
-    <field comment="An external id for this event" minOccurs="0" name="externalId" type="java.lang.String"/>
+    <field comment="An external id for this event" indexed="true" minOccurs="0" name="externalId" type="java.lang.String"/>
     <field comment="A further clarification of the message, it can contain as many variables as are relevant to understand the problem" identifiable="true" maxLength="1000000" minOccurs="0" name="reason" type="java.lang.String"/>
     <field comment="Any structured data" identifiable="true" maxLength="1000000" minOccurs="0" name="data" type="java.lang.String"/>
     <field comment="Correlate an event to other events" indexed="true" minOccurs="0" name="correlationId" type="java.lang.String"/>
     <field identifiable="true" minOccurs="0" name="sourceHost" type="java.lang.String"/>
-    <field comment="The session id (especially for web contexts)" minOccurs="0" name="sessionId" type="java.lang.String"/>
-    <field minOccurs="0" name="deviceId" type="java.lang.String"/>
+    <field comment="The session id (especially for web contexts)" indexed="true" minOccurs="0" name="sessionId" type="java.lang.String"/>
+    <field indexed="true" minOccurs="0" name="deviceId" type="java.lang.String"/>
     <field comment="Each event can have a unique id, this can be communicated to other parties" minOccurs="0" name="eventId" type="java.lang.String"/>
     <field minOccurs="0" name="sourcePort" type="java.lang.Integer"/>
     <field identifiable="true" minOccurs="0" name="sourceIp" type="java.lang.String"/>
