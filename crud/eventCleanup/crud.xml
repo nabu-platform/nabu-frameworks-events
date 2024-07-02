@@ -4,16 +4,21 @@
     <broadcastCreate>false</broadcastCreate>
     <broadcastUpdate>false</broadcastUpdate>
     <coreType>nabu.frameworks.events.database.eventCleanup</coreType>
+    <createPermission>event.manage</createPermission>
     <createRole>$user</createRole>
+    <deletePermission>event.manage</deletePermission>
     <deleteRole>$user</deleteRole>
+    <getPermission>event.list</getPermission>
     <hooks>false</hooks>
+    <listPermission>event.list</listPermission>
     <listRole>$user</listRole>
     <provider>nabu.services.crud.provider.basic.provider</provider>
     <restLimitToUser>true</restLimitToUser>
+    <updatePermission>event.manage</updatePermission>
     <updateRole>$user</updateRole>
     <useAsAuthorizationServiceContext>false</useAsAuthorizationServiceContext>
     <useExplicitLanguage>false</useExplicitLanguage>
-    <useGlobalPermissionContext>false</useGlobalPermissionContext>
+    <useGlobalPermissionContext>true</useGlobalPermissionContext>
     <useLanguage>false</useLanguage>
     <useListOutputForCreate>false</useListOutputForCreate>
     <useListOutputForUpdate>false</useListOutputForUpdate>

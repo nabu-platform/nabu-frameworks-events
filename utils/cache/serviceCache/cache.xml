@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cache>
+    <cacheProvider>nabu.frameworks.events.utils.cache.memoryCache</cacheProvider>
+    <service>nabu.frameworks.events.services.getConnection</service>
+    <service>nabu.frameworks.events.utils.getActiveRules</service>
+    <enableInDevelopment>true</enableInDevelopment>
+</cache>

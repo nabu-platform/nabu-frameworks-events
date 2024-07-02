@@ -1,0 +1,31 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="ce51da0cf1a44b21accf8d2f7c7ad6d5"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="e95018b149cd4864b7a27249033c3d1e"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="c4c04e5745c44f07bcfeaaf807aab4a1"
+				serviceId="nabu.utils.Cache.clear"
+				resultName="resultf19c5c9f55bd4810872a4492e07b497a"
+				temporaryMapping="true"
+				x="61"
+				y="89"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1adff5efadb949bb9aa659cad1d59095"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>nabu.frameworks.events.utils.cache.memoryCache</from>
+				<to>cacheProviderId</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

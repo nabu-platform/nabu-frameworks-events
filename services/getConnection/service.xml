@@ -1,0 +1,129 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="02c681c49f5d4756ab0fec586262212a"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Get connection"
+			disabled="false"
+			id="e050700b4f5c46d2a2e538c712be92fc"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="3895da3fad3946c8a7e8fa445566556f"
+				serviceId="nabu.utils.Server.property"
+				resultName="result57cdc7c8e50a497fb8be442c23683c9c"
+				temporaryMapping="true"
+				x="607"
+				y="163"
+				invocationOrder="2"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="5a31e151fceb43a296cd8bffc4dcdb3d"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>events.connection</from>
+				<to>key</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6a4e987bbd22459484bbd06a41689da6"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result0ff156fd336b41f4a57d40274a070972/first</from>
+				<to>defaultValue</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="d1d20e5c714346fea57ea9f9dfd749ee"
+				serviceId="nabu.utils.reflection.Node.dependencies"
+				resultName="result30eee302a6174e4a819701fcd0522941"
+				temporaryMapping="true"
+				x="95"
+				y="203"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="18867643dce74e598fe02bbdb70d0e98"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>nabu.frameworks.events.database.model</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="1fbfc844090647a7bec870306d09e001"
+				serviceId="nabu.utils.Object.first"
+				resultName="result0ff156fd336b41f4a57d40274a070972"
+				temporaryMapping="true"
+				x="290"
+				y="67"
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cdb1a3e79dae41d5a8d223b31bd01416"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result30eee302a6174e4a819701fcd0522941/nodes[artifactClass == "be.nabu.eai.module.jdbc.pool.JDBCPoolArtifact"]/id</from>
+				<to>options</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="1129a4e954744086a785d9cbe37478cb"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result57cdc7c8e50a497fb8be442c23683c9c/value</from>
+			<to>output/connectionId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Get jdbc artifact"
+			disabled="false"
+			id="bba19787-fffc-486f-9948-88e8078a1946"
+			label="output/connectionId == null"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="ca8c1260-3442-4109-85d1-b353fc7a72a5"
+				serviceId="nabu.utils.reflection.Node.resolveFor"
+				resultName="result1958f38e5ae446ee9da03bee7175bae8"
+				temporaryMapping="true"
+				x="258"
+				y="123"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="001ca72c-d953-4a9b-baaa-3c2e78a9de17"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>be.nabu.eai.module.jdbc.pool.JDBCPoolArtifact</from>
+				<to>type</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="fd4e432c66be467687ddbd0cc102c13a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result1958f38e5ae446ee9da03bee7175bae8/resolved/id</from>
+			<to>output/connectionId</to>
+		</steps>
+	</steps>
+</sequence>

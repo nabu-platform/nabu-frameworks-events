@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <webModule>
-    <webFragments>nabu.frameworks.events.manage.crud.eventRule</webFragments>
-    <webFragments>nabu.frameworks.events.manage.crud.event</webFragments>
+    <webFragments>nabu.frameworks.events.crud.eventRule</webFragments>
+    <webFragments>nabu.frameworks.events.crud.event</webFragments>
     <webFragments>nabu.frameworks.events.manage.rest.options.serverGroups</webFragments>
     <webFragments>nabu.frameworks.events.manage.rest.options.serverNames</webFragments>
+    <webFragments>nabu.frameworks.events.crud.eventCleanup</webFragments>
+    <webFragments>nabu.frameworks.events.manage.rest.clearCache</webFragments>
 </webModule>

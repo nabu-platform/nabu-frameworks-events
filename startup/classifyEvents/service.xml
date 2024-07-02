@@ -86,7 +86,7 @@
 					disabled="false"
 					id="1c834b1d-a2d8-4bba-acf6-02a07185d45f"
 					lineNumber="6"
-					transactionVariable="transactionId">
+					scopeDefaultTransaction="true">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="We want best effort locking, don't block if you can't, someone else is dealing with it"
 						disabled="false"
@@ -120,15 +120,6 @@
 								fixedValue="true">
 							<from>false</from>
 							<to>local</to>
-						</steps>
-						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-								disabled="false"
-								id="8c1d2a80-edcc-4046-a617-b66669280fa1"
-								mask="false"
-								optional="false"
-								fixedValue="false">
-							<from>transactionId</from>
-							<to>transactionId</to>
 						</steps>
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -175,15 +166,6 @@
 									fixedValue="true">
 								<from>priority desc</from>
 								<to>orderBy[0]</to>
-							</steps>
-							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-									disabled="false"
-									id="365c5f31-d551-49bb-b94f-7f3726d3110f"
-									mask="false"
-									optional="false"
-									fixedValue="false">
-								<from>transactionId</from>
-								<to>transaction</to>
 							</steps>
 							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 									disabled="false"
@@ -238,15 +220,6 @@
 									fixedValue="true">
 								<from>1000</from>
 								<to>limit</to>
-							</steps>
-							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-									disabled="false"
-									id="86e676c5-dc74-49e9-a93c-68ace5799218"
-									mask="false"
-									optional="false"
-									fixedValue="false">
-								<from>transactionId</from>
-								<to>transaction</to>
 							</steps>
 							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 									disabled="false"
@@ -338,15 +311,6 @@
 								</steps>
 								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 										disabled="false"
-										id="ad12b62e-f121-4cae-a581-b2c078aa3166"
-										mask="false"
-										optional="false"
-										fixedValue="false">
-									<from>transactionId</from>
-									<to>transactionId</to>
-								</steps>
-								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-										disabled="false"
 										id="29c2e9f1-40bd-4e6b-8dfa-11e2729b895f"
 										mask="false"
 										optional="false"
@@ -357,7 +321,7 @@
 							</steps>
 						</steps>
 						<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-								disabled="false"
+								disabled="true"
 								id="860a3691-ce47-4fd8-ae6b-204990df1b94"
 								lineNumber="13">
 							<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
@@ -398,22 +362,13 @@
 									<from>jdbcId</from>
 									<to>connectionId</to>
 								</steps>
-								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-										disabled="false"
-										id="5bd13bb9-119a-42ff-b657-f0c594a8a703"
-										mask="false"
-										optional="false"
-										fixedValue="false">
-									<from>transactionId</from>
-									<to>transactionId</to>
-								</steps>
 							</steps>
 						</steps>
 						<query>events</query>
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 							comment="Batch update"
-							disabled="true"
+							disabled="false"
 							id="e50acfae-be23-4eb2-b34a-ecb03b2ad2d2"
 							label="events"
 							lineNumber="14">
@@ -436,15 +391,6 @@
 									fixedValue="false">
 								<from>events</from>
 								<to>instances</to>
-							</steps>
-							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-									disabled="false"
-									id="64c61044-5f99-44c6-9163-def07415b458"
-									mask="false"
-									optional="false"
-									fixedValue="false">
-								<from>transactionId</from>
-								<to>transaction</to>
 							</steps>
 							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 									disabled="false"
