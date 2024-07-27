@@ -4,8 +4,8 @@ standardized ?= null
 @return
 additional = null
 
-standardKeys = keys(standardized)
-for (key : keys(event))
+standardKeys = script.keys(standardized)
+for (key : script.keys(event))
 	if (key !? standardKeys && event[/key] != null)
 		if (additional == null)
 			additional = structure()
