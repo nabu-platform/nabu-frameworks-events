@@ -9,4 +9,5 @@
         <structure collectionName="eventRules" definition="nabu.frameworks.events.database.eventRule" minOccurs="0" name="rule"/>
     </structure>
     <field name="value" type="java.lang.Boolean"/>
+    <field comment="The incident severity" minOccurs="0" name="targetSeverity" type="be.nabu.utils.cep.api.EventSeverity"/>
 </structure>

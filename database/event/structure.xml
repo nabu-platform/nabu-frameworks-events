@@ -74,4 +74,5 @@
     <field comment="The realm of the impersonator" minOccurs="0" name="impersonatorRealm" type="java.lang.String"/>
     <field comment="The unique identifier of the impersonator" minOccurs="0" name="impersonatorId" type="java.lang.String"/>
     <field minOccurs="0" name="locale" type="java.lang.String"/>
+    <field comment="You can group events together" minOccurs="0" name="groupKey" type="java.lang.String"/>
 </structure>

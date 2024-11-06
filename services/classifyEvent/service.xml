@@ -107,6 +107,15 @@
 			<from>result5f3357efdd4c441d9a292469492b968b/date</from>
 			<to>input/event/classified</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="f99f91199251451d84d59dd0d20d7759"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>CRITICAL</from>
+			<to>targetSeverity</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			comment="Set the state to either CLASSIFIED or IGNORED depending on whether you want to signal or not"
@@ -145,11 +154,27 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="If there is no rule managing the event, any severe enough event is queued for notification"
+			disabled="false"
+			id="d97f1bdfbf9b4e4495ec86c50f51d7f3"
+			label="output/rule == null &amp;&amp; input/event/severity != null &amp;&amp; targetSeverity &lt;= input/event/severity"
+			lineNumber="11">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="4bb45f016ea04423bc186694d3bd0249"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>CLASSIFIED</from>
+			<to>input/event/state</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="If we have a rule, update the event and start the notification process"
 			disabled="false"
 			id="ad1dd843-f73a-439a-9c38-56372d519cee"
 			label="output/rule"
-			lineNumber="11">
+			lineNumber="12">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="ad68bc04-3b2c-44b3-960a-9002fbd4072e"
@@ -174,7 +199,7 @@
 			disabled="false"
 			id="e276191e-d39f-4eff-9f12-349bfb363596"
 			label="output/rule/severity != null"
-			lineNumber="12">
+			lineNumber="13">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="2f82cb62-ae6a-4377-94ad-3b0cd5b3d15f"
@@ -190,7 +215,7 @@
 			disabled="false"
 			id="121bae3807b7458e9eb5f9c28070dc9d"
 			label="output/rule/eventPriority != null"
-			lineNumber="13">
+			lineNumber="14">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="b70a90b8-3fbd-457b-9acf-f96c9663afd9"
@@ -199,6 +224,51 @@
 				fixedValue="false">
 			<from>output/rule/eventPriority</from>
 			<to>input/event/priority</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="bd77ec957c78455f8d231f457c50ed35"
+			label="output/rule/groupKeyRule != null"
+			lineNumber="15">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="c7f50ec1231b42109f03442421aa4a83"
+				serviceId="nabu.services.glue.Services.evaluate"
+				resultName="resulteec232273cfe405cb47354d2adcb6bcb"
+				temporaryMapping="true"
+				x="253"
+				y="60"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4a3a49bafd654803b44ca7603f83a7d7"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event</from>
+				<to>context[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="81a25632f6a64e78abfb66fb83068586"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>output/rule/groupKeyRule</from>
+				<to>rule</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="1e2886acfe89490eabe6f2a24913a083"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resulteec232273cfe405cb47354d2adcb6bcb/response</from>
+			<to>input/event/groupKey</to>
 		</steps>
 	</steps>
 </sequence>

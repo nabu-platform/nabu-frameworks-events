@@ -1,0 +1,6 @@
+<structure name="pipeline">
+    <structure name="input">
+        <structure collectionName="events" definition="nabu.frameworks.events.database.event" name="event"/>
+    </structure>
+    <structure name="output"/>
+</structure>

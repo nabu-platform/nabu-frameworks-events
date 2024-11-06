@@ -2,6 +2,11 @@
 <startupService>
     <service>nabu.frameworks.events.startup.registerListener</service>
     <asynchronous>false</asynchronous>
-    <runPostDeploy>false</runPostDeploy>
+    <runPostDeployment>false</runPostDeployment>
     <properties/>
+    <runPreDeployment>false</runPreDeployment>
+    <runDuringDeployment>false</runDuringDeployment>
+    <runAtStartup>true</runAtStartup>
+    <runAfterStartup>false</runAfterStartup>
+    <startPhase>SECOND</startPhase>
 </startupService>
