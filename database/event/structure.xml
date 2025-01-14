@@ -33,7 +33,7 @@
     <field indexed="true" minOccurs="0" name="deviceId" type="java.lang.String"/>
     <field comment="Each event can have a unique id, this can be communicated to other parties" indexed="true" minOccurs="0" name="eventId" type="java.lang.String"/>
     <field minOccurs="0" name="sourcePort" type="java.lang.Integer"/>
-    <field identifiable="true" minOccurs="0" name="sourceIp" type="java.lang.String"/>
+    <field identifiable="true" indexed="true" minOccurs="0" name="sourceIp" type="java.lang.String"/>
     <field minOccurs="0" name="destinationHost" type="java.lang.String"/>
     <field minOccurs="0" name="destinationIp" type="java.lang.String"/>
     <field minOccurs="0" name="destinationPort" type="java.lang.Integer"/>
