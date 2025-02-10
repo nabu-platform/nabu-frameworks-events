@@ -1,0 +1,13 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <structure collectionName="events" definition="nabu.frameworks.events.database.event" maxOccurs="unbounded" minOccurs="0" name="events"/>
+    </structure>
+    <structure name="output">
+        <structure collectionName="events" definition="nabu.frameworks.events.database.event" maxOccurs="unbounded" minOccurs="0" name="reclassified"/>
+    </structure>
+    <structure collectionName="eventRules" definition="nabu.frameworks.events.database.eventRule" maxOccurs="unbounded" minOccurs="0" name="rules"/>
+    <structure collectionName="eventRules" definition="nabu.frameworks.events.database.eventRule" minOccurs="0" name="rule"/>
+    <field comment="The id of the rule that triggered this classification" foreignKey="nabu.frameworks.events.database.eventRule:id" minOccurs="0" name="currentEventRuleId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+</structure>

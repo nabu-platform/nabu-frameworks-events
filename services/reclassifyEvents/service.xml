@@ -1,0 +1,206 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="7b7cf1a2a13645ae9d621419cdf75a94"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="We get the active rules, we classify even if we have no rules"
+			disabled="false"
+			id="109f6fd3-1520-4385-996b-1406d63dcdc7"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="fa28ec2a-2a76-4a22-834c-2b3ee496df8c"
+				serviceId="nabu.frameworks.events.utils.getActiveRules"
+				resultName="resultd1656cd5344a407dbafc01d4f01976ab"
+				temporaryMapping="true"
+				x="73"
+				y="34"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="30236d26-9e97-47f5-b999-b3aee544b5d2"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>priority desc</from>
+				<to>orderBy[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="a6a9ce47e18f43168000d13124cf8f05"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0a9b45e2051440978000155c9587c613"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/transactionId</from>
+				<to>transaction</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="fa1e5446-6526-4544-83a2-431129830036"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultd1656cd5344a407dbafc01d4f01976ab/results</from>
+			<to>rules</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="7c299fd41ad74a21b2842be0ef982116"
+			lineNumber="3"
+			variable="event"
+			into="output/reclassified">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Check if it was reclassified"
+				disabled="false"
+				id="e2f4893a3c4d4e1b9f88eb8f1e53dd58"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0f0b13601d744461a2202817ed1da4d7"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>event/eventRuleId</from>
+				<to>currentEventRuleId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="7c82e5e47e5f4e60a09cb46b0a211f09"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="ab11425f59fb4ecf96963dc7db79c949"
+					serviceId="nabu.frameworks.events.services.classifyEvent"
+					resultName="result95c80324800a4770b2565e7dd60585ca"
+					temporaryMapping="true"
+					x="90"
+					y="78"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="f9d9f73cb45145a784da61dcef13d1fb"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/connectionId</from>
+					<to>connectionId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="39835bbf1f614828bf474cca7f8c0a4a"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/transactionId</from>
+					<to>transactionId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="2fd1e5fb22cb46a8bdd31b3526277fd5"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>event</from>
+					<to>event</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="bea961ad55434dea96c90adb74eb066b"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>rules</from>
+					<to>rules</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="78963b4b63e64fc693a5df6c53856a1f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result95c80324800a4770b2565e7dd60585ca/rule</from>
+				<to>rule</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Map to reclassified"
+				disabled="false"
+				id="4b421dad21794f878b377e448dd55705"
+				label="currentEventRuleId != event/eventRuleId"
+				lineNumber="6">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9e60f3545fc44ad1a045dd5fedeef1d9"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>event</from>
+				<to>output/reclassified[0]</to>
+			</steps>
+		</steps>
+		<query>input/events</query>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Update the events regardless of reclassification"
+			disabled="false"
+			id="04d2ff3c1e2e4ac281d71bc1982c8a22"
+			label="input/events"
+			lineNumber="7">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="67c02e5cad964246850329aef8dff4c4"
+				serviceId="nabu.services.jdbc.Services.update"
+				resultName="resultd4590131ef91492aa70ebda944898f0a"
+				temporaryMapping="true"
+				x="93"
+				y="106"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c5771aca36d04c809d23a3fa449d1c87"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/events</from>
+				<to>instances</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="63ff2d30c0b544d1a0223db49727bf21"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ea34fc8827e843e891b562ef81958f00"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/transactionId</from>
+				<to>transaction</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

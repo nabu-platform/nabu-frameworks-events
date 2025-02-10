@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2025-02-05T14:35:55.149+01:00" lastModified="2025-02-05T14:49:59.562+01:00" leaf="true" version="10">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.frameworks.events.services.classifyEvent</references>
+    <references>nabu.frameworks.events.utils.getActiveRules</references>
+    <references>nabu.frameworks.events.database.event</references>
+    <references>java.lang.String</references>
+    <references>java.util.UUID</references>
+    <references>nabu.frameworks.events.database.eventRule</references>
+</node>

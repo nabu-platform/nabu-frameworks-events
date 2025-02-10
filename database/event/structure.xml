@@ -76,4 +76,5 @@
     <field minOccurs="0" name="locale" type="java.lang.String"/>
     <field comment="You can group events together" minOccurs="0" name="groupKey" type="java.lang.String"/>
     <field comment="Correlate events in a larger narrative, usually cross system" indexed="true" minOccurs="0" name="conversationId" type="java.lang.String"/>
+    <field identifiable="true" indexed="true" minOccurs="0" name="sourceId" type="java.lang.String"/>
 </structure>
