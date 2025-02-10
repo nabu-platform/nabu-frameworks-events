@@ -27,7 +27,7 @@
     <field comment="An external id for this event" indexed="true" minOccurs="0" name="externalId" type="java.lang.String"/>
     <field comment="A further clarification of the message, it can contain as many variables as are relevant to understand the problem" identifiable="true" maxLength="1000000" minOccurs="0" name="reason" type="java.lang.String"/>
     <field comment="Any structured data" identifiable="true" maxLength="1000000" minOccurs="0" name="data" type="java.lang.String"/>
-    <field comment="Correlate an event to other events" indexed="true" minOccurs="0" name="correlationId" type="java.lang.String"/>
+    <field comment="Correlate an event to other events in the same execution unit (thread)" indexed="true" minOccurs="0" name="correlationId" type="java.lang.String"/>
     <field identifiable="true" minOccurs="0" name="sourceHost" type="java.lang.String"/>
     <field comment="The session id (especially for web contexts)" indexed="true" minOccurs="0" name="sessionId" type="java.lang.String"/>
     <field indexed="true" minOccurs="0" name="deviceId" type="java.lang.String"/>
@@ -75,6 +75,7 @@
     <field comment="The unique identifier of the impersonator" minOccurs="0" name="impersonatorId" type="java.lang.String"/>
     <field minOccurs="0" name="locale" type="java.lang.String"/>
     <field comment="You can group events together" minOccurs="0" name="groupKey" type="java.lang.String"/>
-    <field comment="Correlate events in a larger narrative, usually cross system" indexed="true" minOccurs="0" name="conversationId" type="java.lang.String"/>
+    <field comment="Correlate events in a larger context, usually a single action being pursued across multiple systems." indexed="true" minOccurs="0" name="conversationId" type="java.lang.String"/>
     <field identifiable="true" indexed="true" minOccurs="0" name="sourceId" type="java.lang.String"/>
+    <field comment="Correlate to a larger multistep narrative (usually a business process)" indexed="true" minOccurs="0" name="narrativeId" type="java.lang.String"/>
 </structure>
