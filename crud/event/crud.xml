@@ -307,7 +307,7 @@
     <filters>
         <caseInsensitive>false</caseInsensitive>
         <key>narrativeId</key>
-        <operator>=</operator>
+        <operator>like</operator>
         <or>false</or>
         <input>true</input>
         <vary>false</vary>
