@@ -78,4 +78,8 @@
     <field comment="Correlate events in a larger context, usually a single action being pursued across multiple systems." indexed="true" minOccurs="0" name="conversationId" type="java.lang.String"/>
     <field identifiable="true" indexed="true" minOccurs="0" name="sourceId" type="java.lang.String"/>
     <field comment="Correlate to a larger multistep narrative (usually a business process)" indexed="true" minOccurs="0" name="narrativeId" type="java.lang.String"/>
+    <field indexed="true" minOccurs="0" name="imageName" type="java.lang.String"/>
+    <field indexed="true" minOccurs="0" name="imageVersion" type="java.lang.String"/>
+    <field minOccurs="0" name="imageEnvironment" type="java.lang.String"/>
+    <field minOccurs="0" name="imageDate" type="java.util.Date"/>
 </structure>
