@@ -3,10 +3,38 @@
 		id="02c681c49f5d4756ab0fec586262212a"
 		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="3eec314cfc00422c863bd91689a493ab"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="efd2c86a1b7140c4b33fed71c3caff7f"
+				serviceId="nabu.frameworks.events.utils.isSynchronized"
+				resultName="result2e151a6002984733a1438bf6ed2126c4"
+				temporaryMapping="true"
+				x="72"
+				y="21"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e5bc526fb6364d72a23b67591e0bae27"
+				mask="false"
+				optional="false"
+				patch="false"
+				fixedValue="false">
+			<from>result2e151a6002984733a1438bf6ed2126c4/jdbcId</from>
+			<to>output/connectionId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get connection"
 			disabled="false"
 			id="e050700b4f5c46d2a2e538c712be92fc"
-			lineNumber="2">
+			label="output/connectionId == null"
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="3895da3fad3946c8a7e8fa445566556f"
@@ -23,6 +51,7 @@
 					id="5a31e151fceb43a296cd8bffc4dcdb3d"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="true">
 				<from>events.connection</from>
 				<to>key</to>
@@ -32,6 +61,7 @@
 					id="6a4e987bbd22459484bbd06a41689da6"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>result0ff156fd336b41f4a57d40274a070972/first</from>
 				<to>defaultValue</to>
@@ -53,6 +83,7 @@
 					id="18867643dce74e598fe02bbdb70d0e98"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="true">
 				<from>nabu.frameworks.events.database.model</from>
 				<to>id</to>
@@ -74,6 +105,7 @@
 					id="cdb1a3e79dae41d5a8d223b31bd01416"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>result30eee302a6174e4a819701fcd0522941/nodes[artifactClass == "be.nabu.eai.module.jdbc.pool.JDBCPoolArtifact"]/id</from>
 				<to>options</to>
@@ -84,6 +116,7 @@
 				id="1129a4e954744086a785d9cbe37478cb"
 				mask="false"
 				optional="false"
+				patch="false"
 				fixedValue="false">
 			<from>result57cdc7c8e50a497fb8be442c23683c9c/value</from>
 			<to>output/connectionId</to>
@@ -94,7 +127,7 @@
 			disabled="false"
 			id="bba19787-fffc-486f-9948-88e8078a1946"
 			label="output/connectionId == null"
-			lineNumber="3">
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="ca8c1260-3442-4109-85d1-b353fc7a72a5"
@@ -111,6 +144,7 @@
 					id="001ca72c-d953-4a9b-baaa-3c2e78a9de17"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="true">
 				<from>be.nabu.eai.module.jdbc.pool.JDBCPoolArtifact</from>
 				<to>type</to>
@@ -121,6 +155,7 @@
 				id="fd4e432c66be467687ddbd0cc102c13a"
 				mask="false"
 				optional="false"
+				patch="false"
 				fixedValue="false">
 			<from>result1958f38e5ae446ee9da03bee7175bae8/resolved/id</from>
 			<to>output/connectionId</to>

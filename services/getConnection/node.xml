@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-06-12T08:45:20.161+02:00" lastModified="2024-06-12T08:47:38.585+02:00" leaf="true" version="6">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-06-12T08:45:20.161+02:00" lastModified="2025-06-03T12:29:29.153+02:00" leaf="true" version="8">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.utils.reflection.Node.resolveFor</references>
     <references>nabu.utils.Object.first</references>
+    <references>nabu.frameworks.events.utils.isSynchronized</references>
     <references>nabu.utils.Server.property</references>
     <references>java.lang.String</references>
     <references>nabu.utils.reflection.Node.dependencies</references>
