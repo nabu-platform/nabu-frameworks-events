@@ -43,7 +43,7 @@
     <field minOccurs="0" name="sizeIn" type="java.lang.Long"/>
     <field minOccurs="0" name="sizeOut" type="java.lang.Long"/>
     <field minOccurs="0" name="method" type="java.lang.String"/>
-    <field minOccurs="0" name="requestUri" type="java.net.URI"/>
+    <field indexed="true" minOccurs="0" name="requestUri" type="java.net.URI"/>
     <field minOccurs="0" name="userAgent" type="java.lang.String"/>
     <field minOccurs="0" name="language" type="java.lang.String"/>
     <field minOccurs="0" name="bot" type="java.lang.Boolean"/>
