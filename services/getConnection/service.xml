@@ -3,7 +3,8 @@
 		id="02c681c49f5d4756ab0fec586262212a"
 		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			disabled="false"
+			comment="Throws class not found exceptions, seems to be only for initial events like startup?"
+			disabled="true"
 			id="3eec314cfc00422c863bd91689a493ab"
 			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
