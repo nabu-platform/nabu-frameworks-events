@@ -6,4 +6,5 @@
     <structure collectionName="eventCleanups" definition="nabu.frameworks.events.database.eventCleanup" maxOccurs="unbounded" minOccurs="0" name="cleanupRules"/>
     <field name="amountOfDeleted" type="java.lang.Long"/>
     <structure definition="nabu.frameworks.events.services.cleanupEventInput" maxOccurs="unbounded" name="resolvedCleanupRules" restrict="id,retention"/>
+    <field name="shouldProcess" type="java.lang.Boolean"/>
 </structure>

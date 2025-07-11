@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-22T20:03:37.199+02:00" lastModified="2024-06-26T11:13:29.745+02:00" leaf="true" version="84">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-22T20:03:37.199+02:00" lastModified="2025-07-01T16:27:15.872+02:00" leaf="true" version="87">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.utils.Server.log</references>
     <references>nabu.frameworks.events.database.event</references>
+    <references>nabu.utils.Server.property</references>
     <references>nabu.frameworks.events.utils.event.getUnclassified</references>
     <references>nabu.services.jdbc.Services.update</references>
     <references>nabu.utils.Lock.tryLock</references>

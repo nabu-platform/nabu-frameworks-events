@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-23T17:23:52.539+02:00" lastModified="2024-10-01T17:11:43.004+02:00" leaf="true" version="72">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-23T17:23:52.539+02:00" lastModified="2025-07-01T16:27:40.720+02:00" leaf="true" version="75">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
@@ -8,6 +8,7 @@
     <references>java.util.Date</references>
     <references>nabu.utils.Date.now</references>
     <references>nabu.frameworks.events.database.event</references>
+    <references>nabu.utils.Server.property</references>
     <references>nabu.frameworks.signals.fire</references>
     <references>nabu.frameworks.events.specs.signal</references>
     <references>java.util.UUID</references>

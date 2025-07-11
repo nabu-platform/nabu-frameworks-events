@@ -7,4 +7,5 @@
     <structure collectionName="eventRules" definition="nabu.frameworks.events.database.eventRule" maxOccurs="unbounded" minOccurs="0" name="rules"/>
     <field name="synchronized" type="java.lang.Boolean"/>
     <field minOccurs="0" name="jdbcId" type="java.lang.String"/>
+    <field name="shouldProcess" type="java.lang.Boolean"/>
 </structure>

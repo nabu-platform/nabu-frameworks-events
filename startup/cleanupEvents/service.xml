@@ -4,8 +4,53 @@
 		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="bba19787-fffc-486f-9948-88e8078a1946"
+			id="81acee61d31244728fd36a351527f339"
 			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="8183c7b4a88c4834809420fc7feccbd7"
+				serviceId="nabu.utils.Server.property"
+				resultName="result0b1ea0fbc6f143cdbaa9b6994808be30"
+				temporaryMapping="true"
+				x="179"
+				y="54"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="312b2fadd2b84f3a89b421414061750e"
+					fixedValue="true">
+				<from>event.processor</from>
+				<to>key</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b65d1320a5004ac5ac6e4d1059a2682d"
+					fixedValue="true">
+				<from>true</from>
+				<to>defaultValue</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="19fa0e641b5a4aa89336a127f800dafb"
+				fixedValue="false">
+			<from>result0b1ea0fbc6f143cdbaa9b6994808be30/value</from>
+			<to>shouldProcess</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Break"
+			disabled="false"
+			id="928f2317764548c19b2cec90ab555160"
+			label="!shouldProcess"
+			lineNumber="3">
+		<count>1</count>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="bba19787-fffc-486f-9948-88e8078a1946"
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="5bfc19ae-949a-4fac-b190-f55313855cf6"
@@ -31,13 +76,13 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			disabled="false"
 			id="b0164577-456e-4739-9a02-3fa5e077c789"
-			lineNumber="3"
+			lineNumber="5"
 			query="synchronized">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="737283c9-12bf-4c11-8c76-8501e3a6cb3f"
 				label="false"
-				lineNumber="4">
+				lineNumber="6">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="d73dc183-62b5-4308-acfb-af83e1ab023a"
@@ -72,11 +117,11 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 				disabled="false"
 				id="f0809d5619444db0a1619870e2a74140"
-				lineNumber="5">
+				lineNumber="7">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
 					id="1afd4a74cf00448dbe41170a5f6845c8"
-					lineNumber="6">
+					lineNumber="8">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="577248ecc553441e94cb56ad46741361"
@@ -103,17 +148,17 @@
 					disabled="false"
 					id="5ffc8126-e3de-4a75-a9fb-4dbbbef7c864"
 					label="cleanupRules"
-					lineNumber="7">
+					lineNumber="9">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 						disabled="false"
 						id="1c834b1d-a2d8-4bba-acf6-02a07185d45f"
-						lineNumber="8"
+						lineNumber="10"
 						scopeDefaultTransaction="true">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 							comment="We want best effort locking, don't block if you can't, someone else is dealing with it"
 							disabled="false"
 							id="99097320-ab4f-40a6-839d-c877b51c52ad"
-							lineNumber="9">
+							lineNumber="11">
 						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 								disabled="false"
 								id="f9554ae1-f430-4101-8138-af0a1975b403"
@@ -168,17 +213,17 @@
 							disabled="false"
 							id="4edcac02-7701-4013-94d9-5b90fe245a99"
 							label="locked"
-							lineNumber="10">
+							lineNumber="12">
 						<steps xsi:type="be.nabu.libs.services.vm.step.For"
 								disabled="false"
 								id="f51347fde8cb4e08aa92dc7989d8271d"
-								lineNumber="11"
+								lineNumber="13"
 								variable="cleanupRule"
 								into="resolvedCleanupRules">
 							<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 									disabled="false"
 									id="9496d16494e44e8fae27a68860a80e55"
-									lineNumber="12">
+									lineNumber="14">
 								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 										disabled="false"
 										id="e142ba97fdaa4aea91400839c61e735e"
@@ -269,7 +314,7 @@
 						<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 								disabled="false"
 								id="151198ad42eb4447b6c86972d6ab00b6"
-								lineNumber="13">
+								lineNumber="15">
 							<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 									disabled="false"
 									id="c67a2f51e99744a482786c56fa0ac57d"
@@ -309,7 +354,7 @@
 								disabled="false"
 								id="f3582894781d4a259011951067129fca"
 								label="amountOfDeleted &gt; 0"
-								lineNumber="14">
+								lineNumber="16">
 							<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 									disabled="false"
 									id="1265b61d00f3465b8564b7a14fca803f"
@@ -335,11 +380,11 @@
 						<steps xsi:type="be.nabu.libs.services.vm.step.Finally"
 								disabled="false"
 								id="861f1d31-56a8-4d82-9e45-b636cbcd9e11"
-								lineNumber="15">
+								lineNumber="17">
 							<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 									disabled="false"
 									id="8e0ee8ce-25a8-4c54-9250-29b9954d0a79"
-									lineNumber="16">
+									lineNumber="18">
 								<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 										disabled="false"
 										id="c5ba326d-e50b-48c3-8edc-b2f7c5c812a9"
@@ -377,19 +422,19 @@
 							comment="We need to move on!"
 							disabled="false"
 							id="208940d4-b3ed-4c24-a5e7-5b17c2c05c16"
-							lineNumber="17">
+							lineNumber="19">
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 						comment="Sleep a while"
 						disabled="false"
 						id="669e8091-9994-4873-bcf9-d885c326df21"
-						lineNumber="18">
+						lineNumber="20">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 							comment="Sleep for a while. The server who previously had the lock takes a certain amount of time to classify, introducing random server selection"
 							disabled="false"
 							id="0e4030f2-e5a5-45b1-919f-116be753b737"
-							lineNumber="19">
+							lineNumber="21">
 						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 								disabled="false"
 								id="808f3358-1b26-459f-a34e-efc71393b5cf"
@@ -425,7 +470,7 @@
 							comment="No sleep for the wicked!"
 							disabled="false"
 							id="4df4d8bb-568f-4a64-8533-f9a88ea09e23"
-							lineNumber="20">
+							lineNumber="22">
 					</steps>
 				</steps>
 				<query>true</query>

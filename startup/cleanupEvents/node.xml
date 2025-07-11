@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-10-07T15:25:17.781+02:00" lastModified="2023-10-07T16:05:11.613+02:00" leaf="true" version="14">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-10-07T15:25:17.781+02:00" lastModified="2025-07-01T08:34:01.335+02:00" leaf="true" version="16">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
-    <references>nabu.frameworks.events.database.eventCleanup</references>
     <references>nabu.utils.Server.log</references>
+    <references>nabu.frameworks.events.services.cleanupEventInput</references>
+    <references>nabu.utils.Server.property</references>
+    <references>nabu.frameworks.events.database.eventCleanup</references>
     <references>nabu.utils.Lock.tryLock</references>
     <references>java.lang.Long</references>
-    <references>nabu.frameworks.events.services.cleanupEventInput</references>
     <references>nabu.frameworks.events.utils.isSynchronized</references>
     <references>java.lang.Boolean</references>
     <references>nabu.frameworks.events.crud.eventCleanup.services.list</references>
