@@ -2,6 +2,10 @@
 <startupService>
     <service>nabu.frameworks.events.startup.classifyEvents</service>
     <asynchronous>true</asynchronous>
-    <runPostDeploy>false</runPostDeploy>
+    <runPostDeployment>false</runPostDeployment>
     <properties/>
+    <runPreDeployment>false</runPreDeployment>
+    <runDuringDeployment>false</runDuringDeployment>
+    <runAtStartup>true</runAtStartup>
+    <runAfterStartup>false</runAfterStartup>
 </startupService>

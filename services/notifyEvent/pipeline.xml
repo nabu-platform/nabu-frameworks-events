@@ -7,7 +7,7 @@
         <field maxOccurs="unbounded" minOccurs="0" name="typeId" type="java.lang.String"/>
     </structure>
     <structure name="output"/>
-    <structure collectionName="signalSubscription" definition="nabu.frameworks.signals.crud.signalSubscription.types.output" maxOccurs="unbounded" minOccurs="0" name="subscriptions"/>
+    <structure collectionName="signalSubscription" definition="nabu.frameworks.signals.crud.signalSubscription.types.output" enricher="nabu.frameworks.signals.crud.signalSubscription.services.list" maxOccurs="unbounded" minOccurs="0" name="subscriptions" persister="nabu.frameworks.signals.crud.signalSubscription.batch.updateAll"/>
     <structure definition="nabu.frameworks.events.types.propertyList" name="propertyList"/>
     <structure definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
     <field name="serviceInputMarshalled" type="java.lang.String"/>

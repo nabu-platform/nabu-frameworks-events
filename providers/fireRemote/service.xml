@@ -1,10 +1,12 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="32d74560-900d-49c5-b3a8-ee611ca42d8b">
+		id="32d74560-900d-49c5-b3a8-ee611ca42d8b"
+		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get connection settings"
 			disabled="false"
-			id="bbe11e8c-897c-4bee-9a55-4e4b2b641158">
+			id="bbe11e8c-897c-4bee-9a55-4e4b2b641158"
+			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="ae75c60b-1e35-4b05-9b8c-8edfd2bba306"
@@ -69,7 +71,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get some basic facts"
 			disabled="false"
-			id="6e4808d9-80f3-42d4-89a6-107247c2fae4">
+			id="6e4808d9-80f3-42d4-89a6-107247c2fae4"
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="2bb09ac4-4f1d-4718-8b9c-60788797c545"
@@ -158,12 +161,14 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.For"
 			disabled="false"
 			id="3fd4bad2-a725-4672-8239-789c32ffff9b"
+			lineNumber="4"
 			variable="event"
 			into="definedEvents">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="Standardize event and check if there is a source system"
 				disabled="false"
-				id="f3111e1a-f794-4eca-a410-ca671eabf8ff">
+				id="f3111e1a-f794-4eca-a410-ca671eabf8ff"
+				lineNumber="5">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="91cab901-71e4-41a7-8286-e6deac5178fe"
@@ -207,15 +212,18 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 				disabled="false"
 				id="40cfe476-e04d-4a11-a1ed-59634efac069"
+				lineNumber="6"
 				query="eventName">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 					comment="We don't store events that don't have an event name"
 					disabled="false"
 					id="edfbf134-ad58-4fd2-8a99-f2cdb7012647"
-					label="null">
+					label="null"
+					lineNumber="7">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						disabled="false"
-						id="48ad141a-d597-41ba-8d57-02be04bc2f68">
+						id="48ad141a-d597-41ba-8d57-02be04bc2f68"
+						lineNumber="8">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 							disabled="false"
 							id="18eb79f3-aaa4-4a6b-9514-3dd55dd10050"
@@ -288,7 +296,8 @@
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						disabled="false"
-						id="f8472899-9aad-489a-a4d4-bcfe3d30a978">
+						id="f8472899-9aad-489a-a4d4-bcfe3d30a978"
+						lineNumber="9">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 							disabled="false"
 							id="b48ab76a-6817-47e7-aa5b-b295ace75909"
@@ -323,11 +332,13 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 					disabled="false"
-					id="a0053d30-4ad7-4b47-a0a0-40081ac29d39">
+					id="a0053d30-4ad7-4b47-a0a0-40081ac29d39"
+					lineNumber="10">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Map default values"
 						disabled="false"
-						id="2e7f0976-e440-401f-a4be-7dbbe6578af1">
+						id="2e7f0976-e440-401f-a4be-7dbbe6578af1"
+						lineNumber="11">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
 							id="713affcf-2918-4297-9b95-636197943c13"
@@ -386,7 +397,8 @@
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Add to list"
 						disabled="false"
-						id="fbdf6ee8-f6ce-451c-9a7a-4396ba985a52">
+						id="fbdf6ee8-f6ce-451c-9a7a-4396ba985a52"
+						lineNumber="12">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
 							id="0528d179-547e-4a53-a863-f1a4dbe06694"
@@ -405,7 +417,8 @@
 			comment="Send over REST to the configured server"
 			disabled="false"
 			id="abed6c7a-a998-4021-b33d-7f09c4a4c8b3"
-			label="definedEvents">
+			label="definedEvents"
+			lineNumber="13">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="7bc2bdd4-9517-4e21-8de8-510abac1b675"

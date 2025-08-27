@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2022-01-14T20:54:52.963+01:00" lastModified="2022-01-14T21:15:47.729+01:00" leaf="true" version="8">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2022-01-14T20:54:52.963+01:00" lastModified="2025-08-26T12:21:59.984+02:00" leaf="true" version="9">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.frameworks.events.manage.rest.options.selectServerGroups</references>
     <references>nabu.frameworks.events.manage.rest.options.optionList</references>

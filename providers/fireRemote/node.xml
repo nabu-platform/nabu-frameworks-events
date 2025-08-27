@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-20T17:47:50.635+02:00" lastModified="2021-09-14T23:56:10.228+02:00" leaf="true" version="58">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-10-20T17:47:50.635+02:00" lastModified="2025-08-26T12:22:00.037+02:00" leaf="true" version="59">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.utils.Runtime.getCurrentToken</references>
     <references>nabu.utils.Server.log</references>
